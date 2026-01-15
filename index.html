@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="vi" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWF - Antigravity Workflow Framework | The Logic of Vibe Coding</title>
+    <title>AWF - Antigravity Workflow Framework | Engineered for AI Agents</title>
     <meta name="description"
-        content="Biến AI thành Senior Engineer. Khắc phục Context Drift, lười code, và ảo giác. Bộ 14 workflow chuẩn Enterprise cho Antigravity.">
+        content="Turn AI into Senior Engineers. Disciplined workflows for Antigravity & Cursor. Biến AI thành Senior Dev với quy trình chuẩn Enterprise.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -58,7 +58,6 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
             transition: all 0.3s ease;
         }
-
         .glass:hover {
             border-color: rgba(255, 255, 255, 0.1);
             background: rgba(255, 255, 255, 0.05);
@@ -83,21 +82,18 @@
             transform: translateY(20px);
             transition: all 0.6s ease-out;
         }
-
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-        /* Workflow Step Line */
-        .step-line {
-            position: absolute;
-            left: 24px;
-            top: 40px;
-            bottom: 0;
-            width: 2px;
-            background: linear-gradient(to bottom, #334155 0%, transparent 100%);
-            z-index: 0;
+        .lang-vi {
+            display: block;
+            margin-top: 0.25rem;
+            color: #64748b; /* Slate-500 */
+            font-size: 0.9em;
+            font-weight: 400;
+            font-style: italic;
         }
     </style>
 </head>
@@ -107,10 +103,8 @@
     <!-- Ambient Mesh (Fixed) -->
     <div class="fixed inset-0 z-0 pointer-events-none">
         <div class="absolute inset-0 bg-noise opacity-30 mix-blend-overlay"></div>
-        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-600/20 rounded-full blur-[120px]">
-        </div>
-        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]">
-        </div>
+        <div class="absolute top-[-10%] right-[-5%] w-[500px] h-[500px] bg-brand-600/20 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[120px]"></div>
     </div>
 
     <!-- Nav -->
@@ -122,10 +116,9 @@
             <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
                 <a href="#pain" class="hover:text-white transition">The Problem</a>
                 <a href="#solution" class="hover:text-white transition">The Solution</a>
-                <a href="#docs" class="hover:text-white transition">Documentation</a>
+                <a href="#docs" class="hover:text-white transition">Docs</a>
             </div>
-            <a href="#install"
-                class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
+            <a href="#install" class="bg-brand-600 hover:bg-brand-500 text-white px-4 py-2 rounded-lg text-sm font-bold transition">
                 Install Global
             </a>
         </div>
@@ -138,11 +131,21 @@
                 <h1 class="font-display text-5xl md:text-7xl font-bold leading-tight mb-8">
                     Make AI <span class="text-gradient">Disciplined</span>.
                 </h1>
-                <p class="text-xl text-slate-400 max-w-2xl mx-auto mb-12">
-                    Đừng để AI code kiểu "ngẫu hứng". <br>
-                    AWF cài đặt bộ não kỹ sư vào Antigravity: biết lập kế hoạch, biết kiểm tra bảo mật, và không bao giờ
-                    quên context.
+                <p class="text-xl text-slate-300 max-w-2xl mx-auto mb-2">
+                   Don't just chat. Orchestrate your AI Agents to code like Seniors.
                 </p>
+                <p class="text-slate-500 max-w-2xl mx-auto italic mb-12">
+                   Đừng chỉ Chat. Hãy điều phối AI như một Senior Engineer thực thụ với quy trình chuẩn.
+                </p>
+                
+                <div class="flex justify-center gap-4">
+                    <a href="#install" class="bg-white text-black hover:bg-slate-200 px-8 py-3 rounded-full font-bold transition">
+                        Get Started
+                    </a>
+                    <a href="https://github.com/TUAN130294/awf" target="_blank" class="glass px-8 py-3 rounded-full font-bold hover:text-white transition">
+                        GitHub
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -151,37 +154,31 @@
     <section id="pain" class="py-20 px-6 bg-red-900/5 border-y border-red-500/10">
         <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="font-display text-3xl font-bold mb-4">Why do you need this?</h2>
-                <p class="text-slate-400">Sự thật đằng sau việc "Chat với AI"</p>
+                <h2 class="font-display text-3xl font-bold mb-2">Why do you need this?</h2>
+                <p class="text-slate-500">Tại sao bạn cần AWF?</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12">
                 <!-- The Problem -->
                 <div class="reveal">
                     <h3 class="text-danger font-bold text-xl mb-6 flex items-center gap-2">
-                        <span>⛔</span> Cách cũ (Default Chat)
+                        <span>⛔</span> The Reality (Thực tế)
                     </h3>
                     <div class="space-y-4">
                         <div class="bg-red-500/5 border border-red-500/10 p-5 rounded-xl">
-                            <h4 class="font-bold text-red-200 mb-2">Context Drift (Hay quên)</h4>
-                            <p class="text-sm text-slate-400">
-                                Sau khoảng 10 tin nhắn, AI bắt đầu quên cấu trúc Database cũ. Nó tự ý tạo bảng mới trùng
-                                lặp hoặc rollback code bạn vừa sửa.
-                            </p>
+                            <h4 class="font-bold text-red-200 mb-1">Context Drift</h4>
+                            <p class="text-sm text-slate-300">AI forgets architecture after 15+ messages.</p>
+                            <span class="lang-vi">AI bắt đầu "quên" kiến trúc dự án sau khoảng 15 tin nhắn.</span>
                         </div>
                         <div class="bg-red-500/5 border border-red-500/10 p-5 rounded-xl">
-                            <h4 class="font-bold text-red-200 mb-2">Lazy Coding (Code ẩu)</h4>
-                            <p class="text-sm text-slate-400">
-                                AI thường đưa code "chạy được là được". Thiếu try-catch, hard-code API Key, và bỏ qua
-                                các edge-cases quan trọng.
-                            </p>
+                            <h4 class="font-bold text-red-200 mb-1">Lazy Coding</h4>
+                            <p class="text-sm text-slate-300">Skipping error handling, hard-coding secrets.</p>
+                            <span class="lang-vi">Code ẩu, thiếu try-catch, lộ API Key vì lười check.</span>
                         </div>
                         <div class="bg-red-500/5 border border-red-500/10 p-5 rounded-xl">
-                            <h4 class="font-bold text-red-200 mb-2">The Loop of Death</h4>
-                            <p class="text-sm text-slate-400">
-                                Sửa lỗi A đẻ ra lỗi B. AI sửa lỗi B đẻ lại lỗi A. Bạn kẹt trong vòng lặp debug vô tận vì
-                                AI không hiểu Root Cause.
-                            </p>
+                            <h4 class="font-bold text-red-200 mb-1">Loop of Death</h4>
+                            <p class="text-sm text-slate-300">Fixing one bug creates two new ones.</p>
+                            <span class="lang-vi">Sửa lỗi này đẻ ra lỗi khác. Vòng lặp debug vô tận.</span>
                         </div>
                     </div>
                 </div>
@@ -189,29 +186,29 @@
                 <!-- The Solution -->
                 <div class="reveal delay-200">
                     <h3 class="text-brand-400 font-bold text-xl mb-6 flex items-center gap-2">
-                        <span>✅</span> Cách AWF (Engineered)
+                        <span>✅</span> The Engineered Way (Cách AWF)
                     </h3>
                     <div class="space-y-4">
                         <div class="glass p-5 rounded-xl border-brand-500/20">
-                            <h4 class="font-bold text-brand-200 mb-2">External Memory (Không bao giờ quên)</h4>
-                            <p class="text-sm text-slate-400">
-                                AWF buộc AI đọc file <code>.brain</code> và <code>docs/</code> trước khi viết bất kỳ
-                                dòng code nào. Kiến trúc dự án luôn được bảo toàn.
+                            <h4 class="font-bold text-brand-200 mb-1">External Memory</h4>
+                            <p class="text-sm text-slate-300">
+                                Forces AI to read <code>.brain</code> file before coding.
                             </p>
+                            <span class="lang-vi">AI buộc phải đọc file ký ức <code>.brain</code> trước khi viết code.</span>
                         </div>
                         <div class="glass p-5 rounded-xl border-brand-500/20">
-                            <h4 class="font-bold text-brand-200 mb-2">Security & Quality Gates</h4>
-                            <p class="text-sm text-slate-400">
-                                Workflow <code>/code</code> ép AI phải checklist bảo mật (SQL Injection, XSS) và viết
-                                Unit Test trước khi đưa code cho bạn.
+                            <h4 class="font-bold text-brand-200 mb-1">Security Gates</h4>
+                            <p class="text-sm text-slate-300">
+                                <code>/code</code> workflow enforces security checks & tests.
                             </p>
+                            <span class="lang-vi">Tự động kiểm tra bảo mật và viết test trước khi trả code.</span>
                         </div>
                         <div class="glass p-5 rounded-xl border-brand-500/20">
-                            <h4 class="font-bold text-brand-200 mb-2">Plan First, Code Later</h4>
-                            <p class="text-sm text-slate-400">
-                                Lệnh <code>/plan</code> bắt AI dừng lại suy nghĩ, viết Spec chi tiết để bạn duyệt. Hết
-                                cảnh "đập đi xây lại".
+                            <h4 class="font-bold text-brand-200 mb-1">Plan First</h4>
+                            <p class="text-sm text-slate-300">
+                                Stop AI from coding until a Spec is approved.
                             </p>
+                            <span class="lang-vi">Cấm code vội. Phải lên kế hoạch (Spec) và được duyệt mới làm.</span>
                         </div>
                     </div>
                 </div>
@@ -222,174 +219,108 @@
     <!-- DETAILED DOCS -->
     <section id="docs" class="py-24 px-6 relative z-10">
         <div class="max-w-6xl mx-auto">
-            <h2 class="font-display text-4xl font-bold mb-16 text-center">Documentation chi tiết 14 Lệnh</h2>
+            <h2 class="font-display text-4xl font-bold mb-2 text-center">Core Workflows</h2>
+            <p class="text-center text-slate-500 mb-16 italic">Quy trình làm việc cốt lõi</p>
 
             <div class="grid gap-20">
-                <!-- GROUP 1: INIT & PLAN -->
+                <!-- GROUP 1 -->
                 <div>
                     <h3 class="font-mono text-brand-400 mb-8 flex items-center gap-4">
                         <span class="text-2xl">01.</span>
                         <span class="h-px bg-white/10 flex-1"></span>
-                        PLANNING PHASE
+                        PLANNING
                     </h3>
-
+                    
                     <div class="grid lg:grid-cols-2 gap-8">
                         <!-- /init -->
                         <div class="glass p-8 rounded-2xl group hover:border-brand-500/30">
-                            <div class="flex justify-between items-start mb-6">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="font-mono text-2xl font-bold text-white">/init</div>
                                 <div class="px-3 py-1 bg-white/5 rounded text-xs text-slate-400">Setup</div>
                             </div>
-                            <p class="text-slate-400 mb-6">
-                                Khởi tạo dự án mới với cấu trúc chuẩn Enterprise. Không cần nhớ phải cài thư viện gì,
-                                config ESLint ra sao.
-                            </p>
+                            <p class="text-slate-300 mb-1">Initialize project with Enterprise structure.</p>
+                            <p class="lang-vi mb-6">Khởi tạo dự án chuẩn Enterprise.</p>
+                            
                             <div class="bg-black/40 p-4 rounded-lg text-sm font-mono text-slate-300 space-y-2">
                                 <div class="flex gap-2">
                                     <span class="text-brand-400">Input:</span>
-                                    <span>/init I want a Next.js E-commerce app</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <span class="text-purple-400">Process:</span>
-                                    <span>Tạo folder → Cài dependencies → Config Git/Prettier → Tạo README.</span>
+                                    <span>/init Next.js E-commerce</span>
                                 </div>
                             </div>
                         </div>
 
                         <!-- /plan -->
-                        <div
-                            class="glass p-8 rounded-2xl group hover:border-brand-500/30 border-brand-500/20 bg-brand-500/5">
-                            <div class="flex justify-between items-start mb-6">
+                        <div class="glass p-8 rounded-2xl group hover:border-brand-500/30 border-brand-500/20 bg-brand-500/5">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="font-mono text-2xl font-bold text-white">/plan</div>
                                 <div class="px-3 py-1 bg-brand-500/20 text-brand-400 rounded text-xs">Critical</div>
                             </div>
-                            <p class="text-slate-400 mb-6">
-                                Kiến trúc sư trưởng. Phân tích yêu cầu mơ hồ của bạn thành bản thiết kế kỹ thuật chi
-                                tiết.
-                            </p>
+                            <p class="text-slate-300 mb-1">Analyze requirements -> Technical Spec.</p>
+                            <p class="lang-vi mb-6">Phân tích yêu cầu -> Viết tài liệu kỹ thuật.</p>
+
                             <div class="bg-black/40 p-4 rounded-lg text-sm font-mono text-slate-300 space-y-2">
                                 <div class="flex gap-2">
                                     <span class="text-brand-400">Input:</span>
-                                    <span>/plan Add a payment system via Stripe</span>
-                                </div>
-                                <div class="flex gap-2">
-                                    <span class="text-purple-400">AI Steps:</span>
-                                    <ul class="list-disc pl-4 space-y-1 text-slate-500">
-                                        <li>Đọc database schema hiện tại.</li>
-                                        <li>Nghiên cứu Stripe API mới nhất.</li>
-                                        <li>Viết `spec.md` (API Flow, DB Changes).</li>
-                                    </ul>
+                                    <span>/plan Add Stripe Payment</span>
                                 </div>
                                 <div class="flex gap-2">
                                     <span class="text-success">Output:</span>
-                                    <span>File `docs/specs/payment-feature.md` để bạn duyệt.</span>
+                                    <span>docs/specs/payment-feature.md</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- GROUP 2: DEVELOP -->
+                <!-- GROUP 2 -->
                 <div>
                     <h3 class="font-mono text-purple-400 mb-8 flex items-center gap-4">
                         <span class="text-2xl">02.</span>
                         <span class="h-px bg-white/10 flex-1"></span>
-                        CONSTRUCTION PHASE
+                        CONSTRUCTION
                     </h3>
-
+                    
                     <div class="grid lg:grid-cols-2 gap-8">
                         <!-- /code -->
                         <div class="glass p-8 rounded-2xl group hover:border-purple-500/30">
-                            <div class="flex justify-between items-start mb-6">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="font-mono text-2xl font-bold text-white">/code</div>
                                 <div class="px-3 py-1 bg-white/5 rounded text-xs text-slate-400">Dev</div>
                             </div>
-                            <p class="text-slate-400 mb-6">
-                                Senior Developer thực thi. Viết code dựa trên bản plan đã duyệt. Tự động thêm comment và
-                                error handling.
-                            </p>
-                            <div class="bg-black/40 p-4 rounded-lg text-sm font-mono text-slate-300 space-y-2">
-                                <div class="flex gap-2">
-                                    <span class="text-purple-400">Logic:</span>
-                                    <span>Đọc `spec.md` → Viết Code → Check Security → Self-Review.</span>
-                                </div>
-                            </div>
+                            <p class="text-slate-300 mb-1">Implementation with Security & Tests.</p>
+                            <p class="lang-vi mb-6">Viết code kèm Test và kiểm tra bảo mật.</p>
                         </div>
 
                         <!-- /visualize -->
                         <div class="glass p-8 rounded-2xl group hover:border-purple-500/30">
-                            <div class="flex justify-between items-start mb-6">
+                            <div class="flex justify-between items-start mb-4">
                                 <div class="font-mono text-2xl font-bold text-white">/visualize</div>
-                                <div class="px-3 py-1 bg-white/5 rounded text-xs text-slate-400">UI/UX</div>
+                                <div class="px-3 py-1 bg-white/5 rounded text-xs text-slate-400">Design</div>
                             </div>
-                            <p class="text-slate-400 mb-6">
-                                Designer mode. Tạo HTML/CSS/Tailwind đẹp mắt. Sử dụng tư duy component-based.
-                            </p>
-                            <div class="bg-black/40 p-4 rounded-lg text-sm font-mono text-slate-300">
-                                <span class="text-purple-400">Output:</span> Tạo ra các file component `.tsx` hoặc
-                                `.html` với style hoàn chỉnh, responsive.
-                            </div>
+                            <p class="text-slate-300 mb-1">Generate UI Components & Mockups.</p>
+                            <p class="lang-vi mb-6">Thiết kế UI Component và Mockup.</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- GROUP 3: OPERATIONS -->
-                <div>
-                    <h3 class="font-mono text-rose-400 mb-8 flex items-center gap-4">
-                        <span class="text-2xl">03.</span>
-                        <span class="h-px bg-white/10 flex-1"></span>
-                        MAINTENANCE & OPS
-                    </h3>
-
-                    <div class="grid lg:grid-cols-3 gap-6">
-                        <!-- /debug -->
-                        <div class="glass p-6 rounded-2xl hover:border-rose-500/30">
-                            <div class="font-bold text-lg mb-2 text-white">/debug</div>
-                            <p class="text-sm text-slate-400 mb-4">
-                                Không sửa mò. Yêu cầu AI đọc log, tái lập lỗi, tìm Root Cause, sau đó mới đề xuất fix.
-                            </p>
-                        </div>
-
-                        <!-- /audit -->
-                        <div class="glass p-6 rounded-2xl hover:border-rose-500/30">
-                            <div class="font-bold text-lg mb-2 text-white">/audit</div>
-                            <p class="text-sm text-slate-400 mb-4">
-                                Quét toàn bộ project tìm code chết, API key bị lộ, thư viện cũ, và lỗi bảo mật.
-                            </p>
-                        </div>
-
-                        <!-- /deploy -->
-                        <div class="glass p-6 rounded-2xl hover:border-rose-500/30">
-                            <div class="font-bold text-lg mb-2 text-white">/deploy</div>
-                            <p class="text-sm text-slate-400 mb-4">
-                                Chuẩn bị Production: Build optimization, Dockerfile check, và setup Cloudflare Tunnel.
-                            </p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- GROUP 4: MEMORY (The Secret Sauce) -->
+                <!-- MEMORY -->
                 <div class="glass-strong p-8 rounded-3xl border-amber-500/20 relative overflow-hidden">
                     <div class="absolute -right-20 -top-20 w-60 h-60 bg-amber-500/10 rounded-full blur-[80px]"></div>
                     <div class="relative z-10 grid lg:grid-cols-3 gap-8 items-center">
                         <div class="lg:col-span-1">
-                            <h3 class="font-display text-3xl font-bold text-amber-400 mb-2">Memory System</h3>
-                            <p class="text-slate-400 text-sm">Vũ khí bí mật chống lại căn bệnh "Hay Quên" của AI.</p>
+                            <h3 class="font-display text-3xl font-bold text-amber-400 mb-1">Memory System</h3>
+                            <p class="lang-vi text-slate-500">Hệ thống bộ nhớ vĩnh cửu</p>
                         </div>
                         <div class="lg:col-span-2 grid sm:grid-cols-2 gap-4">
                             <div class="bg-black/40 p-4 rounded-xl border border-amber-500/10">
                                 <div class="font-mono font-bold text-white mb-1">/save-brain</div>
-                                <p class="text-xs text-slate-500">
-                                    Cuối ngày, chạy lệnh này để AI tóm tắt toàn bộ thay đổi vào `.brain`. Ngày mai nó sẽ
-                                    nhớ tất cả.
-                                </p>
+                                <p class="text-xs text-slate-300">Save context to <code>.brain</code> file.</p>
+                                <p class="text-xs text-slate-500 italic mt-1">Lưu kiến thức vào file não bộ.</p>
                             </div>
                             <div class="bg-black/40 p-4 rounded-xl border border-amber-500/10">
                                 <div class="font-mono font-bold text-white mb-1">/recap</div>
-                                <p class="text-xs text-slate-500">
-                                    Đầu ngày, chạy lệnh này để AI đọc lại `.brain` và báo cáo: "Hôm qua chúng ta đang
-                                    làm dở tính năng X".
-                                </p>
+                                <p class="text-xs text-slate-300">Restore context from memory.</p>
+                                <p class="text-xs text-slate-500 italic mt-1">Khôi phục lại ngữ cảnh làm việc.</p>
                             </div>
                         </div>
                     </div>
@@ -402,31 +333,24 @@
     <!-- INSTALL -->
     <section id="install" class="py-32 px-6 bg-brand-950 border-t border-white/5">
         <div class="max-w-4xl mx-auto text-center">
-            <h2 class="font-display text-5xl font-bold mb-8">One Command Install</h2>
-            <p class="text-slate-400 mb-12">Cài đặt Global vào <code>~/.gemini/global_workflows</code>. Tự động nhận
-                diện ở mọi dự án.</p>
+            <h2 class="font-display text-5xl font-bold mb-8">Global Installation</h2>
+            <p class="text-slate-300 mb-1">Install once. Use everywhere.</p>
+            <p class="text-slate-500 mb-12 italic">Cài đặt 1 lần. Dùng ở mọi dự án.</p>
 
-            <div
-                class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl relative overflow-hidden group">
-                <div class="absolute top-0 w-full h-1 bg-gradient-to-r from-brand-500 via-purple-500 to-brand-500">
-                </div>
-
+            <div class="bg-[#0a0a0a] border border-white/10 rounded-2xl p-8 max-w-2xl mx-auto shadow-2xl relative overflow-hidden group">
+                <div class="absolute top-0 w-full h-1 bg-gradient-to-r from-brand-500 via-purple-500 to-brand-500"></div>
+                
                 <div class="flex items-center gap-4 mb-6">
                     <button id="tab-win" class="text-white font-bold border-b-2 border-brand-500 pb-1">Windows</button>
-                    <button id="tab-mac" class="text-slate-500 hover:text-white pb-1"
-                        onclick="alert('Xem tab Windows để copy lệnh!')">Mac / Linux</button>
+                    <button id="tab-mac" class="text-slate-500 hover:text-white pb-1" onclick="alert('Check Windows tab to copy!')">Mac / Linux</button>
                 </div>
 
                 <div class="text-left font-mono text-sm space-y-4">
-                    <div class="text-slate-500"># 1. Open Antigravity/Cursor Terminal (Ctrl + `)</div>
+                    <div class="text-slate-500"># 1. Open Terminal (Ctrl + `)</div>
                     <div class="text-slate-500"># 2. Paste & Enter:</div>
-                    <div
-                        class="p-4 bg-white/5 rounded-xl border border-white/5 flex justify-between items-center group-hover:border-brand-500/30 transition">
-                        <code
-                            class="text-brand-400 break-all">iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)</code>
-                        <button
-                            onclick="navigator.clipboard.writeText('iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)')"
-                            class="bg-brand-600 hover:bg-brand-500 text-white px-3 py-1.5 rounded text-xs font-bold ml-4 shrink-0 transition">
+                    <div class="p-4 bg-white/5 rounded-xl border border-white/5 flex justify-between items-center group-hover:border-brand-500/30 transition">
+                        <code class="text-brand-400 break-all">iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)</code>
+                        <button onclick="navigator.clipboard.writeText('iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)')" class="bg-brand-600 hover:bg-brand-500 text-white px-3 py-1.5 rounded text-xs font-bold ml-4 shrink-0 transition">
                             COPY
                         </button>
                     </div>
@@ -440,10 +364,9 @@
     </footer>
 
     <script>
-        // Simple Reveal Animation
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-                if (entry.isIntersecting) {
+                if(entry.isIntersecting) {
                     entry.target.classList.add('active');
                 }
             });
@@ -452,5 +375,4 @@
         document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
     </script>
 </body>
-
 </html>

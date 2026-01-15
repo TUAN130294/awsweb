@@ -120,7 +120,7 @@
             </span>
             <div class="hidden md:flex gap-6 text-sm font-medium text-slate-400">
                 <a href="#pain" class="hover:text-white transition">The Problem</a>
-                <a href="#solution" class="hover:text-white transition">The Solution</a>
+                <a href="#journey" class="hover:text-white transition">Journey</a>
                 <a href="#docs" class="hover:text-white transition">Docs</a>
             </div>
             <a href="#install"
@@ -225,7 +225,207 @@
         </div>
     </section>
 
-    <!-- DETAILED DOCS -->
+    <!-- WORKFLOW JOURNEY - NEW SECTION -->
+    <section id="journey" class="py-24 px-6 relative z-10">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-4xl font-bold mb-2">Workflow Journey</h2>
+                <p class="text-slate-400">When to use which command?</p>
+                <p class="text-slate-500 italic">Dùng lệnh nào ở giai đoạn nào?</p>
+            </div>
+
+            <!-- Timeline -->
+            <div class="relative">
+                <!-- Vertical Line (Desktop) -->
+                <div
+                    class="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-500 via-purple-500 to-amber-500">
+                </div>
+
+                <!-- Stage 1: Start -->
+                <div class="relative grid lg:grid-cols-2 gap-8 mb-16">
+                    <div class="lg:text-right lg:pr-12">
+                        <div
+                            class="inline-block px-4 py-2 bg-brand-500/20 rounded-full text-brand-400 font-bold text-sm mb-4">
+                            🚀 Stage 1: Start Project
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Beginning a New Project</h3>
+                        <p class="text-slate-400 mb-1">You have an idea but no code yet.</p>
+                        <p class="text-slate-500 italic text-sm">Bạn có ý tưởng nhưng chưa có code.</p>
+                    </div>
+                    <div class="lg:pl-12">
+                        <div class="glass p-6 rounded-2xl">
+                            <div class="font-mono text-xl text-brand-400 font-bold mb-2">/init</div>
+                            <p class="text-slate-300 text-sm">AI creates folder structure, installs dependencies, sets
+                                up Git.</p>
+                            <p class="text-slate-500 italic text-xs mt-1">AI tạo cấu trúc thư mục, cài đặt thư viện,
+                                thiết lập Git.</p>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 bg-brand-500 rounded-full border-4 border-[#030014]">
+                    </div>
+                </div>
+
+                <!-- Stage 2: Plan -->
+                <div class="relative grid lg:grid-cols-2 gap-8 mb-16">
+                    <div class="lg:text-right lg:pr-12 lg:order-2">
+                        <div
+                            class="inline-block px-4 py-2 bg-purple-500/20 rounded-full text-purple-400 font-bold text-sm mb-4">
+                            📝 Stage 2: Plan Feature
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Designing a New Feature</h3>
+                        <p class="text-slate-400 mb-1">Before writing code, you need a blueprint.</p>
+                        <p class="text-slate-500 italic text-sm">Trước khi code, bạn cần bản thiết kế.</p>
+                    </div>
+                    <div class="lg:pr-12 lg:order-1">
+                        <div class="glass p-6 rounded-2xl border-purple-500/20">
+                            <div class="font-mono text-xl text-purple-400 font-bold mb-2">/plan</div>
+                            <p class="text-slate-300 text-sm">AI analyzes requirements, designs database, writes
+                                technical spec.</p>
+                            <p class="text-slate-500 italic text-xs mt-1">AI phân tích yêu cầu, thiết kế DB, viết tài
+                                liệu kỹ thuật.</p>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 bg-purple-500 rounded-full border-4 border-[#030014]">
+                    </div>
+                </div>
+
+                <!-- Stage 3: Build -->
+                <div class="relative grid lg:grid-cols-2 gap-8 mb-16">
+                    <div class="lg:text-right lg:pr-12">
+                        <div
+                            class="inline-block px-4 py-2 bg-green-500/20 rounded-full text-green-400 font-bold text-sm mb-4">
+                            💻 Stage 3: Build
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Writing Code</h3>
+                        <p class="text-slate-400 mb-1">Time to implement your plan.</p>
+                        <p class="text-slate-500 italic text-sm">Đã đến lúc viết code theo kế hoạch.</p>
+                    </div>
+                    <div class="lg:pl-12">
+                        <div class="space-y-3">
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-green-400 font-bold">/visualize</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Design UI first / Thiết kế giao diện
+                                    trước</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl border-green-500/20">
+                                <span class="font-mono text-green-400 font-bold">/code</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Write logic & backend / Viết logic và
+                                    backend</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-green-400 font-bold">/run</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Start app to test / Chạy app để test</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 bg-green-500 rounded-full border-4 border-[#030014]">
+                    </div>
+                </div>
+
+                <!-- Stage 4: Fix -->
+                <div class="relative grid lg:grid-cols-2 gap-8 mb-16">
+                    <div class="lg:text-right lg:pr-12 lg:order-2">
+                        <div
+                            class="inline-block px-4 py-2 bg-red-500/20 rounded-full text-red-400 font-bold text-sm mb-4">
+                            🐞 Stage 4: Fix Problems
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Something Broken?</h3>
+                        <p class="text-slate-400 mb-1">Bugs happen. Here's how to fix them.</p>
+                        <p class="text-slate-500 italic text-sm">Lỗi xảy ra. Đây là cách sửa.</p>
+                    </div>
+                    <div class="lg:pr-12 lg:order-1">
+                        <div class="space-y-3">
+                            <div class="glass p-4 rounded-xl border-red-500/20">
+                                <span class="font-mono text-red-400 font-bold">/debug</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Find & fix bugs / Tìm và sửa lỗi</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-red-400 font-bold">/rollback</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Undo if worse / Quay lại nếu hỏng nặng
+                                    hơn</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 bg-red-500 rounded-full border-4 border-[#030014]">
+                    </div>
+                </div>
+
+                <!-- Stage 5: Polish -->
+                <div class="relative grid lg:grid-cols-2 gap-8 mb-16">
+                    <div class="lg:text-right lg:pr-12">
+                        <div
+                            class="inline-block px-4 py-2 bg-yellow-500/20 rounded-full text-yellow-400 font-bold text-sm mb-4">
+                            ✨ Stage 5: Polish & Ship
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Ready for Production</h3>
+                        <p class="text-slate-400 mb-1">Clean up, test, and deploy.</p>
+                        <p class="text-slate-500 italic text-sm">Dọn dẹp, kiểm thử, và triển khai.</p>
+                    </div>
+                    <div class="lg:pl-12">
+                        <div class="space-y-3">
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-yellow-400 font-bold">/refactor</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Clean up code / Dọn dẹp code</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-yellow-400 font-bold">/test</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Run tests / Chạy kiểm thử</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-yellow-400 font-bold">/audit</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Security check / Kiểm tra bảo mật</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl border-yellow-500/20">
+                                <span class="font-mono text-yellow-400 font-bold">/deploy</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Go live! / Đưa lên production!</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 bg-yellow-500 rounded-full border-4 border-[#030014]">
+                    </div>
+                </div>
+
+                <!-- Stage 6: Remember -->
+                <div class="relative grid lg:grid-cols-2 gap-8">
+                    <div class="lg:text-right lg:pr-12 lg:order-2">
+                        <div
+                            class="inline-block px-4 py-2 bg-amber-500/20 rounded-full text-amber-400 font-bold text-sm mb-4">
+                            🧠 Daily: Memory
+                        </div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Never Forget</h3>
+                        <p class="text-slate-400 mb-1">Save knowledge before closing.</p>
+                        <p class="text-slate-500 italic text-sm">Lưu kiến thức trước khi tắt máy.</p>
+                    </div>
+                    <div class="lg:pr-12 lg:order-1">
+                        <div class="space-y-3">
+                            <div class="glass p-4 rounded-xl border-amber-500/20">
+                                <span class="font-mono text-amber-400 font-bold">/save-brain</span>
+                                <span class="text-slate-400 text-sm ml-2">→ End of day / Cuối ngày làm việc</span>
+                            </div>
+                            <div class="glass p-4 rounded-xl">
+                                <span class="font-mono text-amber-400 font-bold">/recap</span>
+                                <span class="text-slate-400 text-sm ml-2">→ Start of day / Đầu ngày làm việc</span>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dot -->
+                    <div
+                        class="hidden lg:block absolute left-1/2 top-8 -translate-x-1/2 w-4 h-4 bg-amber-500 rounded-full border-4 border-[#030014]">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="docs" class="py-24 px-6 relative z-10">
         <div class="max-w-6xl mx-auto">
             <h2 class="font-display text-4xl font-bold mb-2 text-center">Core Workflows</h2>

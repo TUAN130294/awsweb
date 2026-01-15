@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AWF - Antigravity Workflow Framework | Vibe Coding Revolution</title>
+    <meta name="description"
+        content="Biến AI thành đội ngũ kỹ sư chuyên nghiệp. Cài đặt 14 workflow để code bằng Vibe, không cần biết kỹ thuật.">
     <script src="https://cdn.tailwindcss.com"></script>
     <link
         href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
@@ -17,374 +19,559 @@
                         sans: ['Outfit', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
-                    colors: {
-                        brand: {
-                            50: '#f0f9ff',
-                            100: '#e0f2fe',
-                            400: '#38bdf8',
-                            500: '#0ea5e9',
-                            600: '#0284c7',
-                            900: '#0c4a6e',
-                        },
-                        dark: '#0B0F19',
-                    }
                 }
             }
         }
     </script>
     <style>
         body {
-            background-color: #0B0F19;
+            background: linear-gradient(180deg, #0B0F19 0%, #111827 100%);
             color: #fff;
+            font-family: 'Outfit', sans-serif;
         }
 
-        .glass-card {
+        .glass {
             background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(16px);
+            backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.08);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
         }
 
-        .glass-card:hover {
+        .glass:hover {
             background: rgba(255, 255, 255, 0.06);
             border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-        }
-
-        .hero-glow {
-            position: absolute;
-            width: 600px;
-            height: 600px;
-            background: radial-gradient(circle, rgba(14, 165, 233, 0.15) 0%, rgba(0, 0, 0, 0) 70%);
-            top: -200px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 0;
-            pointer-events: none;
-        }
-
-        .grid-bg {
-            background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-            background-size: 40px 40px;
-            mask-image: linear-gradient(black 40%, transparent 90%);
         }
 
         .text-gradient {
-            background: linear-gradient(135deg, #38bdf8 0%, #a78bfa 100%);
+            background: linear-gradient(135deg, #38bdf8, #a78bfa);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
-        .cmd-pill {
-            @apply inline-flex items-center px-2.5 py-0.5 rounded text-xs font-mono font-medium;
+        .glow {
+            box-shadow: 0 0 60px rgba(56, 189, 248, 0.15);
+        }
+
+        .cmd-tag {
+            @apply inline-block px-2 py-0.5 rounded text-xs font-mono font-bold border;
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-brand-500 selection:text-white">
+<body class="antialiased">
 
-    <!-- Background Grid -->
-    <div class="fixed inset-0 grid-bg pointer-events-none z-[-1]"></div>
-    <div class="hero-glow"></div>
-
-    <!-- Navigation -->
-    <nav class="fixed w-full z-50 border-b border-white/5 bg-dark/80 backdrop-blur-md">
+    <!-- ========== NAVIGATION ========== -->
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-slate-900/80 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
-            <div class="flex items-center gap-2 font-bold text-xl tracking-tight">
-                <span class="text-2xl">🚀</span> AWF
-            </div>
+            <a href="#" class="flex items-center gap-2 font-bold text-xl">🚀 AWF</a>
             <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
-                <a href="#features" class="hover:text-white transition">Tính năng</a>
+                <a href="#problem" class="hover:text-white transition">Vấn đề</a>
+                <a href="#commands" class="hover:text-white transition">14 Siêu lệnh</a>
                 <a href="#workflow" class="hover:text-white transition">Cách dùng</a>
                 <a href="#install" class="hover:text-white transition">Cài đặt</a>
+                <a href="#faq" class="hover:text-white transition">FAQ</a>
             </div>
             <a href="https://github.com/TUAN130294/awf" target="_blank"
-                class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-medium transition">
-                GitHub Repo
-            </a>
+                class="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg text-sm font-medium transition">GitHub</a>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="relative pt-32 pb-20 px-6 text-center max-w-5xl mx-auto">
+    <!-- ========== HERO ========== -->
+    <section class="relative pt-32 pb-24 px-6 text-center max-w-5xl mx-auto">
         <div
-            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-brand-500/30 bg-brand-500/10 text-brand-400 text-sm font-medium mb-8 animate-fade-in-up">
-            <span class="relative flex h-2 w-2">
-                <span
-                    class="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-400 opacity-75"></span>
-                <span class="relative inline-flex rounded-full h-2 w-2 bg-brand-500"></span>
-            </span>
-            V3.0 Ultimate Release
+            class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-sm font-medium mb-8">
+            <span class="relative flex h-2 w-2"><span
+                    class="animate-ping absolute h-full w-full rounded-full bg-sky-400 opacity-75"></span><span
+                    class="relative rounded-full h-2 w-2 bg-sky-500"></span></span>
+            Version 3.0 Ultimate
         </div>
-
-        <h1 class="text-6xl md:text-8xl font-extrabold tracking-tight mb-8 leading-[1.1]">
-            Đừng chỉ Chat với AI.<br>
-            Hãy <span class="text-gradient">Lãnh Đạo</span> nó.
+        <h1 class="text-5xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
+            Đừng chỉ Chat với AI.<br>Hãy <span class="text-gradient">Lãnh Đạo</span> nó.
         </h1>
-
-        <p class="text-xl text-slate-400 mb-12 max-w-2xl mx-auto leading-relaxed">
-            Antigravity Workflow Framework (AWF) biến IDE của bạn thành một Software House tự động.
-            Bạn ra lệnh (Vibe), AI tự lo Database, Security, và Deploy.
+        <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+            <strong>AWF (Antigravity Workflow Framework)</strong> là bộ 14 siêu lệnh để điều khiển AI Agent trong
+            Cursor/Windsurf.
+            Bạn chỉ cần có ý tưởng (Vibe), AI lo hết phần còn lại.
         </p>
-
-        <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
             <a href="#install"
-                class="bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-brand-500/20 transition hover:scale-105">
-                Cài đặt ngay (Miễn phí)
+                class="bg-sky-600 hover:bg-sky-500 text-white px-8 py-4 rounded-xl font-bold text-lg shadow-lg shadow-sky-500/20 transition hover:scale-105">
+                🚀 Cài đặt miễn phí
             </a>
-            <a href="#how-it-works"
-                class="glass-card px-8 py-4 rounded-xl font-bold text-lg transition hover:bg-white/10">
-                Xem Demo
+            <a href="#workflow" class="glass px-8 py-4 rounded-xl font-bold text-lg transition">
+                📖 Xem hướng dẫn
             </a>
         </div>
     </section>
 
-    <!-- The Problem -->
-    <section class="py-20 px-6">
+    <!-- ========== PROBLEM ========== -->
+    <section id="problem" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-rose-400 font-mono text-sm uppercase tracking-wider">The Problem</span>
+                <h2 class="text-4xl font-bold mt-2">Tại sao "Vibe Coding" vẫn khó?</h2>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl border border-rose-500/20 bg-rose-500/5">
+                    <div class="text-4xl mb-4">🧠</div>
+                    <h3 class="text-lg font-bold text-rose-300 mb-2">Context Drift</h3>
+                    <p class="text-slate-400 text-sm">Càng chat lâu, AI càng "quên" kiến trúc. Code mới đè code cũ, dự
+                        án dần biến thành rác.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-amber-500/20 bg-amber-500/5">
+                    <div class="text-4xl mb-4">🙈</div>
+                    <h3 class="text-lg font-bold text-amber-300 mb-2">Điểm mù kỹ thuật</h3>
+                    <p class="text-slate-400 text-sm">Bạn quên Security? AI cũng quên. Bạn không biết SEO? AI cũng im
+                        re. 50+ điểm mù không ai xử lý.</p>
+                </div>
+                <div class="p-6 rounded-2xl border border-orange-500/20 bg-orange-500/5">
+                    <div class="text-4xl mb-4">🚫</div>
+                    <h3 class="text-lg font-bold text-orange-300 mb-2">Deploy Hell</h3>
+                    <p class="text-slate-400 text-sm">Code chạy ngon trên localhost nhưng không biết làm sao đưa lên
+                        Internet với Domain, SSL, DNS.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== ALL 14 COMMANDS ========== -->
+    <section id="commands" class="py-20 px-6 bg-white/[0.02] border-t border-white/5">
         <div class="max-w-7xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl font-bold mb-4">Tại sao Vibe Coding vẫn khó?</h2>
-                <p class="text-slate-400">Bạn có ý tưởng, nhưng AI lại giống như một thực tập sinh mới vào nghề.</p>
+                <span class="text-sky-400 font-mono text-sm uppercase tracking-wider">The Ecosystem</span>
+                <h2 class="text-4xl font-bold mt-2">14 Siêu lệnh - Đội ngũ kỹ sư trong túi bạn</h2>
+                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Mỗi lệnh <code>/</code> kích hoạt một chuyên gia AI
+                    chuyên biệt.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="p-6 border border-red-500/20 bg-red-500/5 rounded-2xl">
-                    <div class="text-red-400 text-4xl mb-4">📉</div>
-                    <h3 class="text-lg font-bold text-red-200 mb-2">Context Drift (Quên não)</h3>
-                    <p class="text-slate-400 text-sm">Càng chat lâu, AI càng quên kiến trúc ban đầu. Code mới đè Code
-                        cũ, tạo ra đống rác.</p>
+            <!-- Category: Khởi động -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-emerald-400 mb-6 flex items-center gap-2">
+                    <span
+                        class="w-8 h-8 rounded-lg bg-emerald-500/20 flex items-center justify-center text-sm">🌟</span>
+                    Khởi động & Ngữ cảnh
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-emerald-500/30 text-emerald-400">/init</span>
+                            <span class="text-slate-500 text-sm">Project Bootstrapper</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Tạo dự án mới từ số 0. AI tự chọn tech stack, setup Git,
+                            Env, Code quality tools.</p>
+                        <p class="text-slate-500 text-xs">💡 Khi nào dùng: Bắt đầu project hoàn toàn mới</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-emerald-500/30 text-emerald-400">/recap</span>
+                            <span class="text-slate-500 text-sm">Memory Retriever</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Tóm tắt dự án khi quay lại sau nhiều ngày. AI đọc docs,
+                            git log và nhắc việc cần làm.</p>
+                        <p class="text-slate-500 text-xs">💡 Khi nào dùng: Sáng hôm sau, sau kỳ nghỉ</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-emerald-500/30 text-emerald-400">/save-brain</span>
+                            <span class="text-slate-500 text-sm">The Librarian</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Lưu kiến thức vào docs. AI tự update Architecture, API
+                            Docs, Changelog để không bị quên.</p>
+                        <p class="text-slate-500 text-xs">💡 Khi nào dùng: Cuối buổi làm việc, sau feature lớn</p>
+                    </div>
                 </div>
-                <div class="p-6 border border-orange-500/20 bg-orange-500/5 rounded-2xl">
-                    <div class="text-orange-400 text-4xl mb-4">🙈</div>
-                    <h3 class="text-lg font-bold text-orange-200 mb-2">Non-Tech Blindspots</h3>
-                    <p class="text-slate-400 text-sm">Bạn quên bảo mật? AI cũng quên. Bạn không biết về SEO? AI cũng lờ
-                        đi.</p>
+            </div>
+
+            <!-- Category: Phát triển -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-indigo-400 mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-indigo-500/20 flex items-center justify-center text-sm">🎯</span>
+                    Phát triển tính năng
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-indigo-500/30 text-indigo-400">/plan</span>
+                            <span class="text-slate-500 text-sm">The Architect</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Thiết kế tính năng toàn diện. AI tự hỏi về DB, Auth,
+                            Payment, Charts, Maps và viết Spec chi tiết.</p>
+                        <p class="text-slate-500 text-xs">💡 Điểm mù xử lý: 15+ (Database, Auth, Scheduled Tasks...)</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-indigo-500/30 text-indigo-400">/visualize</span>
+                            <span class="text-slate-500 text-sm">Creative Director</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Thiết kế UI từ "Vibe". AI vẽ mockup, code TailwindCSS, xử
+                            lý Mobile, Dark Mode, Accessibility.</p>
+                        <p class="text-slate-500 text-xs">💡 Điểm mù xử lý: Loading State, Error State, Empty State</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-indigo-500/30 text-indigo-400">/code</span>
+                            <span class="text-slate-500 text-sm">Senior Developer</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Viết code chất lượng. AI tự thêm Input Validation, Error
+                            Handling, Security (SQL Injection, XSS).</p>
+                        <p class="text-slate-500 text-xs">💡 Điểm mù xử lý: Bảo mật, Performance, Logging</p>
+                    </div>
                 </div>
-                <div class="p-6 border border-yellow-500/20 bg-yellow-500/5 rounded-2xl">
-                    <div class="text-yellow-400 text-4xl mb-4">🐌</div>
-                    <h3 class="text-lg font-bold text-yellow-200 mb-2">Deployment Hell</h3>
-                    <p class="text-slate-400 text-sm">Code xong chạy ngon ở localhost, nhưng không biết làm sao để đưa
-                        lên Internet.</p>
+            </div>
+
+            <!-- Category: Vận hành -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-sky-400 mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-sky-500/20 flex items-center justify-center text-sm">⚙️</span>
+                    Vận hành
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-sky-500/30 text-sky-400">/run</span>
+                            <span class="text-slate-500 text-sm">Operator</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Khởi động app. AI tự detect môi trường (npm/docker),
+                            check port, cài dependencies nếu thiếu.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-sky-500/30 text-sky-400">/test</span>
+                            <span class="text-slate-500 text-sm">QA Engineer</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Chạy test. Nếu chưa có test, AI tự tạo Quick Test Script
+                            để verify logic.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-sky-500/30 text-sky-400">/deploy</span>
+                            <span class="text-slate-500 text-sm">DevOps Master</span>
+                        </div>
+                        <p class="text-slate-300 text-sm mb-3">Đưa lên Internet. AI hướng dẫn Domain, SSL, tự setup SEO,
+                            Analytics, Backup, Monitoring.</p>
+                        <p class="text-slate-500 text-xs">💡 Điểm mù xử lý: SEO, Legal (Privacy Policy), Backup</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Bảo trì -->
+            <div class="mb-12">
+                <h3 class="text-xl font-bold text-rose-400 mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-rose-500/20 flex items-center justify-center text-sm">🔧</span>
+                    Bảo trì & Sửa lỗi
+                </h3>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-rose-500/30 text-rose-400">/debug</span>
+                            <span class="text-slate-500 text-sm">Detective</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">Hướng dẫn mô tả lỗi, tự điều tra log, giải thích bằng tiếng
+                            Việt và sửa tận gốc.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-rose-500/30 text-rose-400">/refactor</span>
+                            <span class="text-slate-500 text-sm">Gardener</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">Dọn dẹp code an toàn. AI cam kết không thay đổi logic, chỉ làm
+                            đẹp.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-rose-500/30 text-rose-400">/audit</span>
+                            <span class="text-slate-500 text-sm">Code Doctor</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">Khám tổng quát. Scan Security, Performance, Dead Code,
+                            Dependencies.</p>
+                    </div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-rose-500/30 text-rose-400">/rollback</span>
+                            <span class="text-slate-500 text-sm">Time Machine</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">Quay về phiên bản trước khi sửa xong hỏng nặng hơn.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category: Hạ tầng -->
+            <div>
+                <h3 class="text-xl font-bold text-violet-400 mb-6 flex items-center gap-2">
+                    <span class="w-8 h-8 rounded-lg bg-violet-500/20 flex items-center justify-center text-sm">🌐</span>
+                    Hạ tầng
+                </h3>
+                <div class="grid md:grid-cols-3 gap-6">
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-violet-500/30 text-violet-400">/cloudflare-tunnel</span>
+                            <span class="text-slate-500 text-sm">Tunnel Manager</span>
+                        </div>
+                        <p class="text-slate-300 text-sm">Quản lý Cloudflare Tunnel để expose app từ máy cá nhân ra
+                            Internet mà không cần VPS.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- The Solution: Command Center -->
-    <section id="features" class="py-20 px-6 bg-white/5 relative overflow-hidden">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent to-dark/50"></div>
-
-        <div class="max-w-7xl mx-auto relative z-10">
-            <div class="text-center mb-20">
-                <span class="text-brand-400 font-mono text-sm tracking-wider uppercase">The Ecosystem</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-2">Đội ngũ kỹ sư trong túi bạn</h2>
-                <p class="text-slate-400 mt-4 max-w-2xl mx-auto">Mỗi lệnh `/` kích hoạt một chuyên gia AI chuyên biệt,
-                    giải quyết triệt để từng khâu.</p>
+    <!-- ========== WORKFLOW JOURNEY ========== -->
+    <section id="workflow" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <span class="text-amber-400 font-mono text-sm uppercase tracking-wider">How To Use</span>
+                <h2 class="text-4xl font-bold mt-2">Hướng dẫn sử dụng từng bước</h2>
+                <p class="text-slate-400 mt-4">Đây là quy trình chuẩn để biến ý tưởng thành sản phẩm hoàn chỉnh.</p>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <div class="relative">
+                <!-- Timeline line -->
+                <div
+                    class="absolute left-8 top-0 bottom-0 w-px bg-gradient-to-b from-sky-500 via-indigo-500 to-emerald-500">
+                </div>
 
-                <!-- /plan -->
-                <div class="glass-card p-8 rounded-3xl relative group">
-                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition">
-                        <span class="text-8xl font-black">01</span>
-                    </div>
-                    <div class="inline-flex items-center gap-3 mb-6">
-                        <span
-                            class="bg-indigo-500/20 text-indigo-400 px-3 py-1 rounded font-mono font-bold text-lg border border-indigo-500/30">/plan</span>
-                        <span class="text-slate-400 font-medium">The Architect</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Bạn chỉ cần Vibe. AI lo Logic.</h3>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        Bạn không biết thiết kế Database? Không biết User Flow?
-                        Chỉ cần nói: <em>"Làm app bán hàng giống Shopee"</em>.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự động phỏng vấn để làm rõ nghiệp vụ (Auth, Payment, Email).</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự thiết kế Database Schema (PostgreSQL/SQLite) chuẩn chỉnh.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự phát hiện yêu cầu ẩn (Scheduled Tasks, Charts, Maps).</span>
-                        </li>
-                    </ul>
-                    <div class="bg-black/40 rounded-lg p-4 font-mono text-xs text-slate-400 border border-white/5">
-                        > Generating specs/checkout_flow.md...<br>
-                        > Detected missing requirement: 'Inventory Check'<br>
-                        > Added DB migration: 'CREATE TABLE orders...'
+                <!-- Step 1 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-sky-500 flex items-center justify-center text-sm font-bold">
+                        1</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-sky-500/30 text-sky-400">/init</span>
+                            <span class="text-white font-semibold">Tạo dự án mới</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Mở Terminal trong thư mục rỗng, gõ <code>/init</code>. AI
+                            sẽ hỏi bạn muốn làm Web App, API hay Mobile. Sau đó tự động dựng khung dự án, cài
+                            dependencies, setup Git.</p>
+                        <div class="bg-black/50 rounded-lg p-3 font-mono text-xs text-slate-400">
+                            User: /init<br>
+                            AI: "Anh muốn làm loại app gì? A) Website B) Web App C) API Backend..."
+                        </div>
                     </div>
                 </div>
 
-                <!-- /visualize -->
-                <div class="glass-card p-8 rounded-3xl relative group">
-                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition">
-                        <span class="text-8xl font-black">02</span>
+                <!-- Step 2 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-indigo-500 flex items-center justify-center text-sm font-bold">
+                        2</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-indigo-500/30 text-indigo-400">/plan</span>
+                            <span class="text-white font-semibold">Mô tả ý tưởng</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Gõ <code>/plan</code> rồi mô tả ý tưởng bằng tiếng Việt
+                            bình thường. VD: "Làm app bán hàng online có giỏ hàng, thanh toán VNPay". AI sẽ tự động
+                            phỏng vấn bạn về các yêu cầu ẩn (Auth, Email, Backup...), rồi viết file Spec chi tiết.</p>
+                        <div class="bg-black/50 rounded-lg p-3 font-mono text-xs text-slate-400">
+                            User: /plan Làm app quản lý kho hàng<br>
+                            AI: "Anh có cần đăng nhập không? Có mấy loại người dùng?..."<br>
+                            AI: "Đã tạo file docs/specs/inventory_spec.md"
+                        </div>
                     </div>
-                    <div class="inline-flex items-center gap-3 mb-6">
-                        <span
-                            class="bg-pink-500/20 text-pink-400 px-3 py-1 rounded font-mono font-bold text-lg border border-pink-500/30">/visualize</span>
-                        <span class="text-slate-400 font-medium">Creative Director</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Từ ngữ thành Giao diện.</h3>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        Không cần biết CSS hay Figma. Chỉ cần nói: <em>"Giao diện tối, kiểu Cyberpunk, nhiều Neon"</em>.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự vẽ Mockup rồi code pixel-perfect bằng TailwindCSS.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự xử lý Mobile Responsive và Dark Mode.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự thêm Loading State, Error State (những thứ newbie hay quên).</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- /deploy -->
-                <div class="glass-card p-8 rounded-3xl relative group">
-                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition">
-                        <span class="text-8xl font-black">03</span>
+                <!-- Step 3 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-pink-500 flex items-center justify-center text-sm font-bold">
+                        3</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-pink-500/30 text-pink-400">/visualize</span>
+                            <span class="text-white font-semibold">Thiết kế giao diện</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Gõ <code>/visualize</code> và mô tả "vibe" của giao diện.
+                            VD: "Giao diện tối, hiện đại, kiểu Apple". AI sẽ vẽ mockup, xin duyệt, rồi code HTML/CSS
+                            giống hệt.</p>
+                        <div class="bg-black/50 rounded-lg p-3 font-mono text-xs text-slate-400">
+                            User: /visualize Dashboard quản lý, vibe sáng sủa chuyên nghiệp<br>
+                            AI: "Generating mockup..." (hiển thị hình ảnh)<br>
+                            AI: "Anh thấy OK chưa? Em code luôn nhé?"
+                        </div>
                     </div>
-                    <div class="inline-flex items-center gap-3 mb-6">
-                        <span
-                            class="bg-emerald-500/20 text-emerald-400 px-3 py-1 rounded font-mono font-bold text-lg border border-emerald-500/30">/deploy</span>
-                        <span class="text-slate-400 font-medium">DevOps Master</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Đưa lên Internet trong 1 nốt nhạc.</h3>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        Bạn không biết VPS, SSL, DNS? Workflow này sẽ cầm tay chỉ việc.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự động check Build lỗi trước khi deploy.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Hướng dẫn setup Domain, HTTPS miễn phí.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự động setup SEO (Sitemap, Robots.txt) và Analytics.</span>
-                        </li>
-                    </ul>
                 </div>
 
-                <!-- /save-brain -->
-                <div class="glass-card p-8 rounded-3xl relative group">
-                    <div class="absolute top-0 right-0 p-6 opacity-10 group-hover:opacity-20 transition">
-                        <span class="text-8xl font-black">04</span>
+                <!-- Step 4 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-violet-500 flex items-center justify-center text-sm font-bold">
+                        4</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-violet-500/30 text-violet-400">/code</span>
+                            <span class="text-white font-semibold">Viết code</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Gõ <code>/code</code> và AI sẽ đọc Spec, rồi triển khai
+                            code. AI tự động thêm Security (validation, sanitization), Error Handling mà bạn không cần
+                            nhắc.</p>
+                        <div class="bg-black/50 rounded-lg p-3 font-mono text-xs text-slate-400">
+                            User: /code<br>
+                            AI: "Em đọc được Spec inventory_spec.md. Bắt đầu code..."<br>
+                            AI: "Đã tạo: src/services/inventory.ts, src/api/inventory.ts..."
+                        </div>
                     </div>
-                    <div class="inline-flex items-center gap-3 mb-6">
-                        <span
-                            class="bg-amber-500/20 text-amber-400 px-3 py-1 rounded font-mono font-bold text-lg border border-amber-500/30">/save-brain</span>
-                        <span class="text-slate-400 font-medium">The Librarian</span>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">AI không bao giờ "Quên não".</h3>
-                    <p class="text-slate-300 mb-6 leading-relaxed">
-                        Vũ khí bí mật chống lại căn bệnh Context Drift của LLM.
-                    </p>
-                    <ul class="space-y-3 mb-8">
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự động quét code thay đổi và update tài liệu Docs.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Tự động tạo API Documentation.</span>
-                        </li>
-                        <li class="flex items-start gap-3 text-sm text-slate-400">
-                            <span class="text-green-400 mt-1">✓</span>
-                            <span>Ngày mai quay lại chỉ cần gõ <code>/recap</code> là nhớ lại hết.</span>
-                        </li>
-                    </ul>
                 </div>
 
+                <!-- Step 5 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-teal-500 flex items-center justify-center text-sm font-bold">
+                        5</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-teal-500/30 text-teal-400">/run</span>
+                            <span class="text-white font-semibold">Chạy thử</span>
+                        </div>
+                        <p class="text-slate-400 text-sm">Gõ <code>/run</code>. AI tự detect môi trường và chạy lệnh phù
+                            hợp (npm run dev, docker-compose up...). Sau đó báo URL để bạn mở browser xem kết quả.</p>
+                    </div>
+                </div>
+
+                <!-- Step 6 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-amber-500 flex items-center justify-center text-sm font-bold">
+                        6</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-amber-500/30 text-amber-400">/test</span>
+                            <span class="text-white font-semibold">Kiểm tra</span>
+                        </div>
+                        <p class="text-slate-400 text-sm">Gõ <code>/test</code> để chạy unit test. Nếu chưa có test, AI
+                            tự tạo một script verify logic cơ bản.</p>
+                    </div>
+                </div>
+
+                <!-- Step 7 -->
+                <div class="relative pl-20 pb-12">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-sm font-bold">
+                        7</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-emerald-500/30 text-emerald-400">/deploy</span>
+                            <span class="text-white font-semibold">Đưa lên Internet</span>
+                        </div>
+                        <p class="text-slate-400 text-sm mb-4">Gõ <code>/deploy</code>. AI hướng dẫn từng bước: chọn
+                            hosting, mua domain, cấu hình DNS, tự động setup SSL, SEO, Analytics, Privacy Policy...</p>
+                        <div class="bg-black/50 rounded-lg p-3 font-mono text-xs text-slate-400">
+                            User: /deploy<br>
+                            AI: "Anh có domain chưa? Muốn deploy lên Vercel hay VPS riêng?"<br>
+                            AI: "Đang build production... Đã setup SEO, Analytics. URL: https://myapp.com"
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 8 -->
+                <div class="relative pl-20">
+                    <div
+                        class="absolute left-4 w-8 h-8 rounded-full bg-rose-500 flex items-center justify-center text-sm font-bold">
+                        8</div>
+                    <div class="glass p-6 rounded-xl">
+                        <div class="flex items-center gap-3 mb-3">
+                            <span class="cmd-tag border-rose-500/30 text-rose-400">/save-brain</span>
+                            <span class="text-white font-semibold">Lưu kiến thức</span>
+                        </div>
+                        <p class="text-slate-400 text-sm">Cuối buổi, gõ <code>/save-brain</code>. AI tự động update tất
+                            cả tài liệu (Architecture, API Docs, Changelog). Ngày mai bạn chỉ cần gõ <code>/recap</code>
+                            là nhớ lại tất cả.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Installation -->
-    <section id="install" class="py-24 px-6">
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-4xl font-bold mb-12">Cài đặt trong 30 giây</h2>
+    <!-- ========== INSTALLATION ========== -->
+    <section id="install" class="py-20 px-6 bg-white/[0.02] border-t border-white/5">
+        <div class="max-w-3xl mx-auto text-center">
+            <h2 class="text-4xl font-bold mb-4">Cài đặt trong 30 giây</h2>
+            <p class="text-slate-400 mb-12">Mở Terminal trong thư mục dự án của bạn và chạy 1 lệnh.</p>
 
-            <div class="grid gap-8">
+            <div class="space-y-6 text-left">
                 <!-- Windows -->
-                <div class="glass-card p-8 rounded-2xl text-left">
-                    <div class="flex items-center gap-4 mb-6">
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center gap-3 mb-4">
                         <span class="text-3xl">🪟</span>
                         <div>
-                            <h3 class="text-xl font-bold">Windows</h3>
-                            <p class="text-slate-400 text-sm">Mở Terminal trong dự án (Ctrl + `) và dán lệnh:</p>
+                            <h3 class="font-bold text-lg">Windows (PowerShell)</h3>
+                            <p class="text-slate-500 text-sm">Nhấn <kbd
+                                    class="bg-white/10 px-1.5 py-0.5 rounded text-xs">Ctrl</kbd> + <kbd
+                                    class="bg-white/10 px-1.5 py-0.5 rounded text-xs">`</kbd> để mở Terminal</p>
                         </div>
                     </div>
-                    <div class="bg-black rounded-lg p-4 flex items-center justify-between border border-white/10 group">
+                    <div class="bg-black rounded-lg p-4 flex items-center gap-4 border border-white/10">
                         <code
-                            class="text-emerald-400 font-mono text-sm overflow-x-auto">iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)</code>
+                            class="flex-1 text-emerald-400 font-mono text-sm overflow-x-auto">iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)</code>
                         <button
                             onclick="navigator.clipboard.writeText('iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)')"
-                            class="ml-4 text-slate-400 hover:text-white transition">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 012 2v-8a2 2 0 01-2-2h-8a2 2 0 01-2 2v8a2 2 0 012 2z">
-                                </path>
-                            </svg>
-                        </button>
+                            class="shrink-0 bg-white/10 hover:bg-white/20 px-3 py-2 rounded text-sm transition">Copy</button>
                     </div>
                 </div>
 
-                <!-- Mac/Linux -->
-                <div class="glass-card p-8 rounded-2xl text-left">
-                    <div class="flex items-center gap-4 mb-6">
+                <!-- Mac -->
+                <div class="glass p-6 rounded-xl">
+                    <div class="flex items-center gap-3 mb-4">
                         <span class="text-3xl">🍎</span>
                         <div>
-                            <h3 class="text-xl font-bold">Mac / Linux</h3>
-                            <p class="text-slate-400 text-sm">Chạy lệnh sau trong Terminal:</p>
+                            <h3 class="font-bold text-lg">Mac / Linux</h3>
+                            <p class="text-slate-500 text-sm">Mở Terminal.app hoặc iTerm</p>
                         </div>
                     </div>
-                    <div class="bg-black rounded-lg p-4 flex items-center justify-between border border-white/10 group">
+                    <div class="bg-black rounded-lg p-4 flex items-center gap-4 border border-white/10">
                         <code
-                            class="text-brand-400 font-mono text-sm overflow-x-auto">curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh</code>
+                            class="flex-1 text-sky-400 font-mono text-sm overflow-x-auto">curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh</code>
                         <button
                             onclick="navigator.clipboard.writeText('curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh')"
-                            class="ml-4 text-slate-400 hover:text-white transition">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                    d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 012 2v-8a2 2 0 01-2-2h-8a2 2 0 01-2 2v8a2 2 0 012 2z">
-                                </path>
-                            </svg>
-                        </button>
+                            class="shrink-0 bg-white/10 hover:bg-white/20 px-3 py-2 rounded text-sm transition">Copy</button>
                     </div>
+                </div>
+            </div>
+
+            <p class="text-slate-500 text-sm mt-8">Sau khi cài xong, restart IDE (Cursor/Windsurf) và gõ <code>/</code>
+                để thấy các lệnh mới.</p>
+        </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="py-20 px-6 border-t border-white/5">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-bold text-center mb-12">Câu hỏi thường gặp</h2>
+            <div class="space-y-6">
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">AWF hoạt động với IDE nào?</h3>
+                    <p class="text-slate-400 text-sm">AWF được thiết kế cho <strong>Cursor</strong> và
+                        <strong>Windsurf</strong> - các IDE có tích hợp AI Agent. Nó cũng có thể hoạt động với GitHub
+                        Copilot Chat nếu bạn copy nội dung workflow vào context.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">AWF có miễn phí không?</h3>
+                    <p class="text-slate-400 text-sm">Hoàn toàn miễn phí và Open Source (MIT License). Tuy nhiên, bạn
+                        vẫn cần subscription của Cursor hoặc Windsurf để sử dụng AI Agent.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">Tôi không biết code, có dùng được không?</h3>
+                    <p class="text-slate-400 text-sm">Đó chính là mục tiêu của AWF! Bạn chỉ cần mô tả ý tưởng bằng tiếng
+                        Việt bình thường. AI sẽ tự lo phần kỹ thuật. Tuy nhiên, hiểu biết cơ bản về cách hoạt động của
+                        web sẽ giúp bạn giao tiếp với AI hiệu quả hơn.</p>
+                </div>
+                <div class="glass p-6 rounded-xl">
+                    <h3 class="font-bold text-lg mb-2">Làm sao để cập nhật AWF?</h3>
+                    <p class="text-slate-400 text-sm">Chạy lại lệnh cài đặt. Script sẽ tự động ghi đè các file workflow
+                        cũ bằng phiên bản mới nhất.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="border-t border-white/5 py-12 bg-dark">
+    <!-- ========== FOOTER ========== -->
+    <footer class="border-t border-white/5 py-12 bg-slate-900/50">
         <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
-            <div class="flex items-center gap-2 font-bold text-lg">
-                <span>🚀</span> AWF
-            </div>
-            <p class="text-slate-500 text-sm">
-                Open Source project maintained by Antigravity under MIT License.
-            </p>
+            <div class="flex items-center gap-2 font-bold text-lg">🚀 AWF</div>
+            <p class="text-slate-500 text-sm text-center">Open Source under MIT License. Maintained with ❤️ by
+                Antigravity.</p>
             <div class="flex gap-6 text-sm font-medium text-slate-400">
                 <a href="https://github.com/TUAN130294/awf" class="hover:text-white transition">GitHub</a>
-                <a href="#" class="hover:text-white transition">Documentation</a>
-                <a href="#" class="hover:text-white transition">Issues</a>
+                <a href="#commands" class="hover:text-white transition">Docs</a>
             </div>
         </div>
     </footer>

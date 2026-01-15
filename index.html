@@ -4,39 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AWF - Antigravity Workflow Framework | The Logic of Vibe Coding</title>
+    <title>AWF - Antigravity Workflow Framework | Engineered for Vibe</title>
     <meta name="description"
-        content="Biến AI thành đội ngũ kỹ sư chuyên nghiệp. Cài đặt 14 workflow Global cho Antigravity/Cursor. Code bằng Vibe, không cần biết kỹ thuật.">
+        content="Biến AI thành Senior Engineer. Bộ 14 workflow tối ưu hóa cho Antigravity & Cursor. Code chuẩn Enterprise với cảm giác Vibe Coding.">
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;800&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@300;500;700&display=swap"
         rel="stylesheet">
+
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     fontFamily: {
-                        sans: ['Outfit', 'sans-serif'],
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
                         mono: ['JetBrains Mono', 'monospace'],
                     },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            400: '#38bdf8',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                            950: '#020617', // Very dark slate
+                        }
+                    },
+                    backgroundImage: {
+                        'noise': "url('data:image/svg+xml,%3Csvg viewBox=\"0 0 200 200\" xmlns=\"http://www.w3.org/2000/svg\"%3E%3Cfilter id=\"noise\"%3E%3CfeTurbulence type=\"fractalNoise\" baseFrequency=\"0.8\" numOctaves=\"3\" stitchTiles=\"stitch\"/%3E%3C/filter%3E%3Crect width=\"100%25\" height=\"100%25\" filter=\"url(%23noise)\" opacity=\"0.05\"/%3E%3C/svg%3E')",
+                    },
                     animation: {
+                        'blob': 'blob 10s infinite',
                         'float': 'float 6s ease-in-out infinite',
-                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-                        'slide-up': 'slideUp 0.8s cubic-bezier(0.16, 1, 0.3, 1)',
-                        'fade-in': 'fadeIn 1s ease-out',
                     },
                     keyframes: {
+                        blob: {
+                            '0%': { transform: 'translate(0px, 0px) scale(1)' },
+                            '33%': { transform: 'translate(30px, -50px) scale(1.1)' },
+                            '66%': { transform: 'translate(-20px, 20px) scale(0.9)' },
+                            '100%': { transform: 'translate(0px, 0px) scale(1)' },
+                        },
                         float: {
                             '0%, 100%': { transform: 'translateY(0)' },
-                            '50%': { transform: 'translateY(-20px)' },
-                        },
-                        slideUp: {
-                            '0%': { transform: 'translateY(40px)', opacity: '0' },
-                            '100%': { transform: 'translateY(0)', opacity: '1' },
-                        },
-                        fadeIn: {
-                            '0%': { opacity: '0' },
-                            '100%': { opacity: '1' },
+                            '50%': { transform: 'translateY(-10px)' },
                         }
                     }
                 }
@@ -45,482 +59,458 @@
     </script>
     <style>
         body {
-            background: #000;
-            color: #fff;
+            background-color: #030014;
+            color: #e2e8f0;
             overflow-x: hidden;
-            background-image:
-                radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 40%),
-                radial-gradient(circle at 100% 0%, #312e81 0%, transparent 20%),
-                linear-gradient(180deg, #020617 0%, #0f172a 100%);
         }
 
-        .glass {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(16px);
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #030014;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        /* Reveal Animation Classes */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 {
+            transition-delay: 0.1s;
+        }
+
+        .delay-200 {
+            transition-delay: 0.2s;
+        }
+
+        .delay-300 {
+            transition-delay: 0.3s;
+        }
+
+        /* Glassmorphism Ultra */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
         }
 
-        .glass:hover {
-            background: rgba(255, 255, 255, 0.05);
-            border-color: rgba(255, 255, 255, 0.15);
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+        /* Grid Background animation */
+        .grid-bg {
+            background-size: 50px 50px;
+            background-image: linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
         }
 
-        .text-gradient {
-            background: linear-gradient(135deg, #38bdf8 0%, #818cf8 50%, #c084fc 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-size: 200% auto;
-            animation: gradientMove 5s linear infinite;
-        }
-
-        @keyframes gradientMove {
-            0% {
-                background-position: 0% 50%;
-            }
-
-            50% {
-                background-position: 100% 50%;
-            }
-
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        .cmd-tag {
-            @apply inline-flex items-center px-2.5 py-1 rounded text-xs font-mono font-bold border border-white/10 bg-white/5 text-slate-300;
-        }
-
-        /* Terminal Window Style */
-        .terminal {
-            @apply rounded-xl overflow-hidden border border-white/10 bg-[#0d1117] shadow-2xl;
-        }
-
-        .terminal-header {
-            @apply flex items-center gap-2 px-4 py-3 bg-white/5 border-b border-white/5;
-        }
-
-        .dot {
-            @apply w-3 h-3 rounded-full;
+        .text-glow {
+            text-shadow: 0 0 40px rgba(56, 189, 248, 0.3);
         }
     </style>
 </head>
 
-<body class="antialiased selection:bg-indigo-500/30">
+<body class="bg-brand-950 font-sans selection:bg-brand-500/30">
 
-    <!-- ========== NAVIGATION ========== -->
-    <nav class="fixed w-full z-50 border-b border-white/5 bg-[#020617]/80 backdrop-blur-xl transition-all duration-300">
+    <!-- Ambient Background -->
+    <div class="fixed inset-0 z-0 pointer-events-none">
+        <div class="absolute inset-0 bg-noise opacity-30 mix-blend-overlay"></div>
+        <div
+            class="absolute top-0 -left-40 w-96 h-96 bg-purple-600/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob">
+        </div>
+        <div
+            class="absolute top-0 -right-40 w-96 h-96 bg-brand-500/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-2000">
+        </div>
+        <div
+            class="absolute -bottom-40 left-1/2 w-96 h-96 bg-indigo-600/20 rounded-full mix-blend-screen filter blur-[120px] animate-blob animation-delay-4000">
+        </div>
+        <div class="absolute inset-0 grid-bg z-0"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 border-b border-white/5 bg-[#030014]/80 backdrop-blur-xl">
         <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-2 font-bold text-2xl tracking-tighter">
-                <span class="text-3xl">🚀</span> AWF
-            </a>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
-                <a href="#antigravity" class="hover:text-white transition">Antigravity</a>
-                <a href="#problem" class="hover:text-white transition">Vấn đề</a>
-                <a href="#commands" class="hover:text-white transition">14 Siêu lệnh</a>
-                <a href="#workflow" class="hover:text-white transition">Workflow</a>
-                <a href="#install" class="hover:text-white transition text-sky-400">Cài đặt</a>
+            <div class="flex items-center gap-3">
+                <div
+                    class="w-8 h-8 bg-gradient-to-br from-brand-400 to-indigo-600 rounded-lg flex items-center justify-center font-bold text-white text-lg font-display">
+                    A</div>
+                <span class="font-display font-bold text-xl tracking-tight text-white">AWF <span
+                        class="text-white/30 font-normal">v3.0</span></span>
             </div>
+
+            <div class="hidden md:flex gap-8 text-sm font-medium text-slate-400">
+                <a href="#philosophy" class="hover:text-white transition-colors duration-300">Triết lý</a>
+                <a href="#features" class="hover:text-white transition-colors duration-300">Tính năng</a>
+                <a href="#install" class="hover:text-white transition-colors duration-300">Cài đặt</a>
+            </div>
+
             <a href="https://github.com/TUAN130294/awf" target="_blank"
-                class="bg-white/10 hover:bg-white/20 hover:scale-105 active:scale-95 px-5 py-2.5 rounded-full text-sm font-semibold transition border border-white/5">
-                GitHub v3.0
+                class="group flex items-center gap-2 px-4 py-2 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full transition-all duration-300">
+                <span class="text-sm font-medium group-hover:text-white text-slate-300">Github</span>
+                <svg class="w-4 h-4 text-slate-500 group-hover:text-white transition-colors" fill="currentColor"
+                    viewBox="0 0 24 24">
+                    <path
+                        d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" />
+                </svg>
             </a>
         </div>
     </nav>
 
-    <!-- ========== HERO ========== -->
-    <section class="relative pt-40 pb-32 px-6 text-center max-w-6xl mx-auto overflow-hidden">
-        <!-- Background Glows -->
-        <div
-            class="absolute top-20 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-indigo-600/20 rounded-full blur-[120px] -z-10 animate-pulse-slow">
-        </div>
-
-        <div class="animate-slide-up">
-            <div
-                class="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-sky-500/30 bg-sky-500/10 text-sky-400 text-sm font-medium mb-8 backdrop-blur-md">
-                <span class="relative flex h-2 w-2">
-                    <span class="animate-ping absolute h-full w-full rounded-full bg-sky-400 opacity-75"></span>
-                    <span class="relative rounded-full h-2 w-2 bg-sky-500"></span>
-                </span>
-                New: Global Install for Antigravity
-            </div>
-
-            <h1 class="text-6xl md:text-8xl font-black tracking-tight mb-8 leading-[1.1]">
-                Logic của <br>
-                <span class="text-gradient">Vibe Coding</span>
-            </h1>
-
-            <p class="text-xl md:text-2xl text-slate-400 mb-12 max-w-3xl mx-auto leading-relaxed">
-                Đừng chỉ Chat. Hãy <strong>Lãnh đạo</strong> AI.<br>
-                Bộ framework giúp bạn kiểm soát hoàn toàn AI Agent, từ ý tưởng đến sản phẩm thực tế.
-            </p>
-
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-5">
-                <a href="#install"
-                    class="group relative bg-indigo-600 hover:bg-indigo-500 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-lg shadow-indigo-500/25 transition-all hover:-translate-y-1 overflow-hidden">
-                    <div
-                        class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
-                    </div>
-                    <span class="relative">🚀 Cài đặt Global (1 Lệnh)</span>
-                </a>
-                <a href="#workflow" class="glass px-10 py-5 rounded-2xl font-bold text-lg hover:text-sky-300">
-                    📖 Xem hướng dẫn
-                </a>
-            </div>
-        </div>
-
-        <!-- Floating UI Mockup -->
-        <div class="mt-24 relative max-w-4xl mx-auto animate-float terminal">
-            <div class="terminal-header">
-                <div class="dot bg-red-500"></div>
-                <div class="dot bg-yellow-500"></div>
-                <div class="dot bg-green-500"></div>
-                <div class="ml-4 text-xs text-slate-500 font-mono">Antigravity Terminal</div>
-            </div>
-            <div class="p-6 bg-[#0d1117] text-left font-mono text-sm md:text-base border-t border-white/5">
-                <div class="mb-2 text-slate-400"><span class="text-emerald-400">➜</span> <span
-                        class="text-sky-400">~</span> <span class="typing-effect">/plan I want a Spotify clone</span>
-                </div>
-                <div class="text-slate-500 mb-4 animate-fade-in" style="animation-delay: 1s;">Generating technical
-                    spec...</div>
-
-                <div class="mb-2 text-slate-400 animate-fade-in" style="animation-delay: 1.5s;"><span
-                        class="text-emerald-400">➜</span> <span class="text-sky-400">~</span> /visualize Modern dark
-                    glassmorphism</div>
-                <div class="text-slate-500 mb-4 animate-fade-in" style="animation-delay: 2s;">Generating UI mockups &
-                    Tailwind components...</div>
-
-                <div class="mb-2 text-slate-400 animate-fade-in" style="animation-delay: 2.5s;"><span
-                        class="text-emerald-400">➜</span> <span class="text-sky-400">~</span> /code</div>
-                <div class="text-white animate-fade-in" style="animation-delay: 3s;">
-                    <span class="text-emerald-400">✓</span> Created src/components/Player.tsx<br>
-                    <span class="text-emerald-400">✓</span> Created src/lib/spotify-api.ts<br>
-                    <span class="text-emerald-400">✓</span> Done! App is ready.
-                </div>
-            </div>
-            <!-- Glow Effect behind terminal -->
-            <div
-                class="absolute -inset-1 bg-gradient-to-r from-sky-500 to-indigo-500 rounded-xl opacity-20 blur-lg -z-10">
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== ANTIGRAVITY SECTION ========== -->
-    <section id="antigravity" class="py-24 px-6 relative">
-        <div class="max-w-6xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div
-                        class="inline-flex items-center gap-2 px-3 py-1 rounded bg-indigo-500/10 text-indigo-400 text-xs font-bold uppercase tracking-wider mb-6 border border-indigo-500/20">
-                        Integration
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-bold mb-6">Bạn thân của <span
-                            class="text-gradient">Antigravity</span></h2>
-                    <p class="text-slate-400 text-lg leading-relaxed mb-8">
-                        Antigravity (Google DeepMind) cực thông minh nhưng đôi khi cần định hướng.
-                        AWF cài đặt "bản năng kỹ thuật" vào agent, giúp nó tự động hỏi về Security, Database, và
-                        Deployment trước khi viết code.
-                    </p>
-
-                    <div class="space-y-4">
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center text-emerald-400 text-xl shrink-0 border border-emerald-500/20">
-                                🧠</div>
-                            <div>
-                                <h4 class="font-bold text-white">Chống Context Drift</h4>
-                                <p class="text-slate-500 text-sm">Giữ AI luôn nhớ kiến trúc dự án dù chat dài đến đâu.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-lg bg-sky-500/10 flex items-center justify-center text-sky-400 text-xl shrink-0 border border-sky-500/20">
-                                🗣️</div>
-                            <div>
-                                <h4 class="font-bold text-white">Giao tiếp Tiếng Việt</h4>
-                                <p class="text-slate-500 text-sm">Toàn bộ 14 workflow được tối ưu cho ngôn ngữ tự nhiên
-                                    tiếng Việt.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div
-                                class="w-10 h-10 rounded-lg bg-rose-500/10 flex items-center justify-center text-rose-400 text-xl shrink-0 border border-rose-500/20">
-                                🛡️</div>
-                            <div>
-                                <h4 class="font-bold text-white">Tự động phát hiện điểm mù</h4>
-                                <p class="text-slate-500 text-sm">Security, Privacy, Edge Cases - AI sẽ chủ động hỏi
-                                    bạn.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="relative">
-                    <div
-                        class="absolute inset-0 bg-gradient-to-tr from-indigo-500/10 to-sky-500/10 rounded-3xl blur-2xl">
-                    </div>
-                    <div class="glass p-8 rounded-3xl border border-white/10 relative">
-                        <h3 class="font-mono text-xs text-slate-500 mb-4 uppercase tracking-widest text-center">Global
-                            Workflow Architecture</h3>
-                        <div class="space-y-3">
-                            <!-- Diagram Item -->
-                            <div class="flex items-center gap-4 p-3 rounded-xl bg-white/5 border border-white/5">
-                                <span class="text-2xl">👤</span>
-                                <div class="flex-1 h-1 bg-white/10 rounded overflow-hidden">
-                                    <div class="h-full bg-indigo-500 w-1/2 animate-[pulse_2s_infinite]"></div>
-                                </div>
-                                <span class="text-2xl">🤖</span>
-                            </div>
-                            <!-- Arrows -->
-                            <div class="flex justify-center text-slate-600">↓</div>
-                            <!-- AWF Core -->
-                            <div class="p-4 rounded-xl bg-indigo-500/10 border border-indigo-500/30 text-center">
-                                <div class="font-bold text-indigo-300">AWF Global Core</div>
-                                <div class="text-xs text-indigo-400/70">~/.gemini/antigravity/global_workflows</div>
-                            </div>
-                            <!-- Arrows -->
-                            <div class="flex justify-center gap-12 text-slate-600">
-                                <span>↙</span><span>↓</span><span>↘</span>
-                            </div>
-                            <!-- Projects -->
-                            <div class="flex items-center justify-between gap-2">
-                                <div
-                                    class="h-10 w-full rounded bg-white/5 border border-white/5 text-[10px] flex items-center justify-center text-slate-500">
-                                    Project A</div>
-                                <div
-                                    class="h-10 w-full rounded bg-white/5 border border-white/5 text-[10px] flex items-center justify-center text-slate-500">
-                                    Project B</div>
-                                <div
-                                    class="h-10 w-full rounded bg-white/5 border border-white/5 text-[10px] flex items-center justify-center text-slate-500">
-                                    Project C</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ========== COMMANDS ========== -->
-    <section id="commands" class="py-24 px-6 bg-white/[0.02]">
+    <!-- Hero Section -->
+    <section class="relative pt-40 pb-20 px-6 z-10">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20">
-                <span class="text-sky-400 font-mono text-sm uppercase tracking-wider">The Toolkit</span>
-                <h2 class="text-4xl md:text-5xl font-bold mt-2">14 Siêu lệnh</h2>
-                <p class="text-slate-400 mt-4">Kích hoạt chuyên gia ở mọi lĩnh vực chỉ bằng phím sượt <code>/</code></p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <!-- Group 1 -->
-                <div class="space-y-6">
-                    <h3
-                        class="font-mono text-xs text-emerald-400 uppercase tracking-widest border-b border-emerald-500/20 pb-2">
-                        Start</h3>
-                    <div class="glass p-5 rounded-xl hover:border-emerald-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-emerald-300">/init</span>
-                            <span class="text-xl group-hover:scale-110 transition">🌟</span>
-                        </div>
-                        <h4 class="font-bold mb-1">Project Bootstrapper</h4>
-                        <p class="text-xs text-slate-400">Khởi tạo dự án, stack, git.</p>
+            <div class="grid lg:grid-cols-2 gap-16 items-center">
+                <div class="reveal">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-brand-500/20 bg-brand-500/5 text-brand-400 text-xs font-mono mb-8 hover:bg-brand-500/10 transition-colors cursor-default">
+                        <span class="w-1.5 h-1.5 rounded-full bg-brand-400 animate-pulse"></span>
+                        ANTIGRAVITY WORKFLOW FRAMEWORK 3.0
                     </div>
-                    <div class="glass p-5 rounded-xl hover:border-emerald-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-emerald-300">/plan</span>
-                            <span class="text-xl group-hover:scale-110 transition">🗺️</span>
-                        </div>
-                        <h4 class="font-bold mb-1">The Architect</h4>
-                        <p class="text-xs text-slate-400">Viết Spec, Database, Flow.</p>
+
+                    <h1 class="font-display text-6xl md:text-7xl font-bold leading-[1.1] mb-8 tracking-tight">
+                        Don't just chat. <br>
+                        <span
+                            class="text-transparent bg-clip-text bg-gradient-to-r from-white via-brand-200 to-indigo-400 text-glow">Engineer.</span>
+                    </h1>
+
+                    <p class="text-xl text-slate-400 leading-relaxed mb-10 max-w-lg">
+                        Biến Cursor & Antigravity thành Senior Engineer. Bộ framework giúp kiểm soát logic, bảo mật và
+                        kiến trúc hệ thống
+                        <span class="text-white italic">trước khi</span> dòng code đầu tiên được viết.
+                    </p>
+
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#install"
+                            class="group relative px-8 py-4 bg-white text-black font-bold rounded-xl overflow-hidden hover:scale-105 transition-transform duration-300">
+                            <span class="relative z-10">Cài đặt Global</span>
+                            <div
+                                class="absolute inset-0 bg-brand-400 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                            </div>
+                        </a>
+                        <a href="https://github.com/TUAN130294/awf" target="_blank"
+                            class="px-8 py-4 glass-panel text-white font-medium rounded-xl hover:bg-white/5 transition-colors">
+                            Khám phá Github
+                        </a>
                     </div>
                 </div>
 
-                <!-- Group 2 -->
-                <div class="space-y-6">
-                    <h3
-                        class="font-mono text-xs text-indigo-400 uppercase tracking-widest border-b border-indigo-500/20 pb-2">
-                        Build</h3>
-                    <div class="glass p-5 rounded-xl hover:border-indigo-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-indigo-300">/visualize</span>
-                            <span class="text-xl group-hover:scale-110 transition">🎨</span>
-                        </div>
-                        <h4 class="font-bold mb-1">Creative Director</h4>
-                        <p class="text-xs text-slate-400">Thiết kế UI, Mockups, CSS.</p>
+                <!-- Floating Terminal -->
+                <div class="reveal delay-200 relative lg:h-[600px] flex items-center justify-center">
+                    <div
+                        class="absolute w-full h-full bg-gradient-to-tr from-brand-500/10 to-purple-500/10 blur-[80px] rounded-full">
                     </div>
-                    <div class="glass p-5 rounded-xl hover:border-indigo-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-indigo-300">/code</span>
-                            <span class="text-xl group-hover:scale-110 transition">💻</span>
+
+                    <div
+                        class="relative w-full max-w-lg glass-panel rounded-2xl shadow-2xl overflow-hidden border border-white/10 animate-float">
+                        <!-- Header -->
+                        <div class="flex items-center gap-2 px-4 py-3 border-b border-white/5 bg-[#0a0a0a]/50">
+                            <div class="flex gap-1.5">
+                                <div class="w-3 h-3 rounded-full bg-red-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-yellow-500/50"></div>
+                                <div class="w-3 h-3 rounded-full bg-green-500/50"></div>
+                            </div>
+                            <div class="text-xs text-slate-500 font-mono ml-4">antigravity.sys — zsh</div>
                         </div>
-                        <h4 class="font-bold mb-1">Senior Dev</h4>
-                        <p class="text-xs text-slate-400">Code logic, security, clean.</p>
+
+                        <!-- Body -->
+                        <div
+                            class="p-6 font-mono text-sm leading-7 text-slate-300 bg-[#050505]/80 h-[380px] overflow-hidden relative">
+                            <div
+                                class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#050505] z-10 pointer-events-none">
+                            </div>
+
+                            <!-- Fake Typing -->
+                            <div class="space-y-4">
+                                <div>
+                                    <span class="text-brand-400">➜</span>
+                                    <span class="text-purple-400">~</span>
+                                    <span>/plan Build a CRM dashboard</span>
+                                </div>
+                                <div class="pl-4 border-l-2 border-brand-500/20 text-slate-400 text-xs">
+                                    <div class="text-brand-300 font-bold mb-1">📝 PLANNER AGENT ACTIVE</div>
+                                    <p>Analyzing requirements...</p>
+                                    <p class="text-slate-500">> Database: PostgreSQL (Supabase)</p>
+                                    <p class="text-slate-500">> Auth: RBAC (Admin, Staff, Customer)</p>
+                                    <p class="text-slate-500">> UI: React + Tailwind + Recharts</p>
+                                    <p class="mt-2 text-white">✅ Technical Spec generated. Ready to code?</p>
+                                </div>
+
+                                <div>
+                                    <span class="text-brand-400">➜</span>
+                                    <span class="text-purple-400">~</span>
+                                    <span>/visualize Dashboard layout</span>
+                                </div>
+                                <div class="pl-4 border-l-2 border-brand-500/20 text-slate-400 text-xs">
+                                    <div class="text-brand-300 font-bold mb-1">🎨 DESIGNER AGENT ACTIVE</div>
+                                    <p>Generating wireframes...</p>
+                                    <div class="mt-2 text-white">✅ UI Components specs ready.</div>
+                                </div>
+
+                                <div class="animate-pulse">
+                                    <span class="text-brand-400">➜</span>
+                                    <span class="text-purple-400">~</span>
+                                    <span class="border-r-2 border-slate-500">_</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-
-                <!-- Group 3 -->
-                <div class="space-y-6">
-                    <h3
-                        class="font-mono text-xs text-rose-400 uppercase tracking-widest border-b border-rose-500/20 pb-2">
-                        Fix & Ops</h3>
-                    <div class="glass p-5 rounded-xl hover:border-rose-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-rose-300">/debug</span>
-                            <span class="text-xl group-hover:scale-110 transition">🐞</span>
-                        </div>
-                        <h4 class="font-bold mb-1">Detective</h4>
-                        <p class="text-xs text-slate-400">Tìm lỗi, phân tích log.</p>
-                    </div>
-                    <div class="glass p-5 rounded-xl hover:border-rose-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-rose-300">/deploy</span>
-                            <span class="text-xl group-hover:scale-110 transition">🚀</span>
-                        </div>
-                        <h4 class="font-bold mb-1">DevOps Master</h4>
-                        <p class="text-xs text-slate-400">Deploy, SSL, Domain.</p>
-                    </div>
-                </div>
-
-                <!-- Group 4 -->
-                <div class="space-y-6">
-                    <h3
-                        class="font-mono text-xs text-amber-400 uppercase tracking-widest border-b border-amber-500/20 pb-2">
-                        Brain</h3>
-                    <div class="glass p-5 rounded-xl hover:border-amber-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-amber-300">/save-brain</span>
-                            <span class="text-xl group-hover:scale-110 transition">🧠</span>
-                        </div>
-                        <h4 class="font-bold mb-1">The Librarian</h4>
-                        <p class="text-xs text-slate-400">Lưu context, chống quên.</p>
-                    </div>
-                    <div class="glass p-5 rounded-xl hover:border-amber-500/30 group">
-                        <div class="flex justify-between items-start mb-3">
-                            <span class="cmd-tag text-amber-300">/recap</span>
-                            <span class="text-xl group-hover:scale-110 transition">⏪</span>
-                        </div>
-                        <h4 class="font-bold mb-1">Historian</h4>
-                        <p class="text-xs text-slate-400">Nhắc lại việc cần làm.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="text-center mt-12">
-                <p class="text-slate-500 text-sm italic">+ và 6 lệnh khác: /run, /test, /audit, /refactor, /rollback,
-                    /cloudflare-tunnel</p>
             </div>
         </div>
     </section>
 
-    <!-- ========== INSTALLATION ========== -->
-    <section id="install" class="py-32 px-6 relative overflow-hidden">
-        <!-- Background accents -->
-        <div class="absolute inset-0 bg-indigo-900/10 -skew-y-3 transform origin-top-left -z-10"></div>
+    <!-- Philosophy -->
+    <section id="philosophy" class="py-32 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="mb-20">
+                <h2 class="font-display text-4xl font-bold mb-6 reveal">Anti-Hallucination <br>Architecture</h2>
+                <div class="h-1 w-20 bg-brand-500 reveal delay-100"></div>
+            </div>
 
-        <div class="max-w-4xl mx-auto text-center">
-            <h2 class="text-5xl md:text-6xl font-black mb-6">Cài đặt Global</h2>
-            <p class="text-xl text-slate-400 mb-12">Chỉ cần chạy 1 lần duy nhất. Có mặt ở mọi dự án.</p>
-
-            <div class="grid md:grid-cols-2 gap-8 text-left">
-                <!-- Windows -->
-                <div class="glass p-8 rounded-3xl border border-sky-500/20 relative group overflow-hidden">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="glass-panel p-8 rounded-3xl hover:bg-white/[0.02] transition-colors reveal delay-100 group">
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-sky-500/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
+                        class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">🧠</span>
                     </div>
-                    <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                            <span class="text-3xl">🪟</span> Windows
-                        </h3>
-                        <p class="text-slate-400 text-sm mb-4">Copy và dán vào PowerShell:</p>
-                        <div
-                            class="terminal p-4 bg-black/80 backdrop-blur-xl border border-sky-500/30 shadow-[0_0_30px_rgba(14,165,233,0.15)] group-hover:shadow-[0_0_50px_rgba(14,165,233,0.3)] transition duration-500">
-                            <code class="text-sky-400 font-mono text-xs break-all leading-relaxed">
-                                iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)
-                            </code>
+                    <h3 class="text-xl font-bold mb-3 font-display">Context Retention</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        LLM thường "quên" file cũ. AWF buộc Agent đọc lại file <code>.brain</code> trước khi viết code
+                        mới, đảm bảo tính nhất quán tuyệt đối.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="glass-panel p-8 rounded-3xl hover:bg-white/[0.02] transition-colors reveal delay-200 group">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">🛡️</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Security First</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Mỗi workflow đều có "Safety Check". Agent sẽ tự động từ chối xóa Database hoặc commit API Key
+                        nếu không có xác nhận.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="glass-panel p-8 rounded-3xl hover:bg-white/[0.02] transition-colors reveal delay-300 group">
+                    <div
+                        class="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                        <span class="text-2xl">⚡</span>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3 font-display">Vibe Coding</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">
+                        Không cần nhớ prompt dài. Chỉ cần gõ lệnh <code>/</code>, hệ thống sẽ bung ra prompt đã được tối
+                        ưu kỹ thuật (Prompt Engineering).
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bento Grid Features -->
+    <section id="features" class="py-20 px-6 bg-gradient-to-b from-transparent to-brand-900/10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-center font-display text-4xl font-bold mb-16 reveal">The Command Suite</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 auto-rows-[180px]">
+
+                <!-- /plan (Large) -->
+                <div
+                    class="md:col-span-2 md:row-span-2 glass-panel rounded-3xl p-8 relative overflow-hidden group reveal">
+                    <div
+                        class="absolute inset-0 bg-gradient-to-br from-brand-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                    </div>
+                    <div class="relative z-10 flex flex-col h-full justify-between">
+                        <div>
+                            <span
+                                class="font-mono text-xs text-brand-400 px-2 py-1 rounded bg-brand-500/10 mb-4 inline-block">CORE</span>
+                            <h3 class="text-3xl font-display font-bold mb-2">/plan</h3>
+                            <p class="text-slate-400">Kiến trúc sư trưởng. Phân tích yêu cầu, vẽ sơ đồ Database, và viết
+                                Technical Spec chi tiết.</p>
                         </div>
-                        <button
-                            onclick="navigator.clipboard.writeText('iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)')"
-                            class="mt-6 w-full py-3 bg-sky-600 hover:bg-sky-500 rounded-xl font-bold transition flex items-center justify-center gap-2">
-                            <span>📋 Copy Lệnh</span>
-                        </button>
+                        <div class="flex gap-2 mt-4">
+                            <span class="text-xs font-mono bg-black/40 px-2 py-1 rounded text-slate-500">Spec.md</span>
+                            <span
+                                class="text-xs font-mono bg-black/40 px-2 py-1 rounded text-slate-500">Schema.sql</span>
+                        </div>
                     </div>
                 </div>
 
-                <!-- Mac -->
-                <div class="glass p-8 rounded-3xl border border-purple-500/20 relative group overflow-hidden">
+                <!-- /code -->
+                <div
+                    class="glass-panel rounded-3xl p-6 reveal delay-100 group hover:border-brand-500/30 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-xl">💻
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-1">/code</h3>
+                    <p class="text-xs text-slate-400">Senior Dev mode. Viết code sạch, kèm comment và error handling.
+                    </p>
+                </div>
+
+                <!-- /visualize -->
+                <div
+                    class="glass-panel rounded-3xl p-6 reveal delay-100 group hover:border-purple-500/30 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-xl">🎨
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-1">/visualize</h3>
+                    <p class="text-xs text-slate-400">Designer mode. Tạo UI Components đẹp mắt, hiện đại.</p>
+                </div>
+
+                <!-- /debug -->
+                <div
+                    class="glass-panel rounded-3xl p-6 reveal delay-200 group hover:border-red-500/30 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-xl">🐞
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-1">/debug</h3>
+                    <p class="text-xs text-slate-400">Sherlock Holmes. Tìm Root Cause thay vì sửa mù quáng.</p>
+                </div>
+
+                <!-- /deploy -->
+                <div
+                    class="glass-panel rounded-3xl p-6 reveal delay-200 group hover:border-green-500/30 transition-colors">
+                    <div class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center mb-4 text-xl">🚀
+                    </div>
+                    <h3 class="font-bold font-display text-lg mb-1">/deploy</h3>
+                    <p class="text-xs text-slate-400">DevOps Engineer. Dockerize, CI/CD, Cloudflare.</p>
+                </div>
+
+                <!-- /save-brain (Wide) -->
+                <div
+                    class="md:col-span-2 glass-panel rounded-3xl p-8 flex items-center justify-between relative overflow-hidden group reveal delay-300">
                     <div
-                        class="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-transparent opacity-0 group-hover:opacity-100 transition duration-500">
+                        class="absolute -right-10 -bottom-10 w-40 h-40 bg-amber-500/10 rounded-full blur-3xl group-hover:bg-amber-500/20 transition-colors">
                     </div>
                     <div class="relative z-10">
-                        <h3 class="text-2xl font-bold mb-6 flex items-center gap-3">
-                            <span class="text-3xl">🍎</span> Mac / Linux
-                        </h3>
-                        <p class="text-slate-400 text-sm mb-4">Copy và dán vào Terminal:</p>
-                        <div
-                            class="terminal p-4 bg-black/80 backdrop-blur-xl border border-purple-500/30 shadow-[0_0_30px_rgba(168,85,247,0.15)] group-hover:shadow-[0_0_50px_rgba(168,85,247,0.3)] transition duration-500">
-                            <code class="text-purple-400 font-mono text-xs break-all leading-relaxed">
-                                curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh
-                            </code>
-                        </div>
-                        <button
-                            onclick="navigator.clipboard.writeText('curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh')"
-                            class="mt-6 w-full py-3 bg-purple-600 hover:bg-purple-500 rounded-xl font-bold transition flex items-center justify-center gap-2">
-                            <span>📋 Copy Lệnh</span>
-                        </button>
+                        <h3 class="text-2xl font-display font-bold mb-2">/save-brain</h3>
+                        <p class="text-slate-400 text-sm">Lưu toàn bộ kiến thức dự án vào <code>.brain</code>. Chống
+                            quên.</p>
                     </div>
+                    <span class="text-4xl">🧠</span>
                 </div>
             </div>
 
-            <p class="mt-12 text-slate-500 text-sm">
-                Sau khi chạy xong, hãy <strong>Restart Antigravity/Cursor</strong>. Workflows sẽ tự động nhận diện ở mọi
-                dự án.
+            <p class="text-center text-slate-500 text-sm mt-12 font-mono reveal">
+                +8 lệnh khác: /init, /run, /test, /recap, /audit, /refactor, /rollback, /tunnel
             </p>
         </div>
     </section>
 
-    <!-- ========== FAQ ========== -->
-    <section id="faq" class="py-24 px-6 border-t border-white/5 bg-[#050914]">
-        <div class="max-w-3xl mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-12">FAQ</h2>
-            <div class="space-y-4">
-                <details class="glass p-6 rounded-2xl group cursor-pointer">
-                    <summary class="font-bold flex justify-between items-center text-lg list-none text-slate-200">
-                        AWF có hoạt động với GitHub Copilot không?
-                        <span class="transition group-open:rotate-180">↓</span>
-                    </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed">
-                        AWF được tối ưu cho <strong>Antigravity trong Cursor/Windsurf</strong> vì nó dùng file Markdown
-                        workflow.
-                        Tuy nhiên, bạn có thể copy nội dung file vào chat của Copilot, nó vẫn hiểu nhưng kém hiệu quả
-                        hơn.
-                    </p>
-                </details>
-                <details class="glass p-6 rounded-2xl group cursor-pointer">
-                    <summary class="font-bold flex justify-between items-center text-lg list-none text-slate-200">
-                        Code được sinh ra có an toàn không?
-                        <span class="transition group-open:rotate-180">↓</span>
-                    </summary>
-                    <p class="text-slate-400 mt-4 text-sm leading-relaxed">
-                        Có. Workflow <code>/code</code> của AWF được thiết kế để luôn nhắc AI kiểm tra các lỗ hổng bảo
-                        mật phổ biến (SQL Injection, XSS) trước khi viết code.
-                    </p>
-                </details>
+    <!-- Installation -->
+    <section id="install" class="py-32 px-6">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="font-display text-5xl font-bold mb-8 reveal">Ready to upgrade your workflow?</h2>
+            <p class="text-slate-400 mb-16 reveal delay-100">Cài đặt 1 lần. Sử dụng trọn đời cho mọi dự án.</p>
+
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <!-- Windows Card -->
+                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group reveal delay-200">
+                    <div class="absolute top-0 right-0 p-6 opacity-20 grayscale group-hover:grayscale-0 transition-all">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+                            class="w-8 h-8" alt="Windows">
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 font-display">Windows</h3>
+
+                    <div
+                        class="p-4 bg-black/60 rounded-xl mb-6 border border-white/10 group-hover:border-brand-500/30 transition-colors">
+                        <code class="font-mono text-xs text-brand-400 break-all">
+                            iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)
+                        </code>
+                    </div>
+
+                    <button
+                        onclick="navigator.clipboard.writeText('iex (irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1)')"
+                        class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 font-bold border border-white/10 transition-all active:scale-95 flex items-center justify-center gap-2">
+                        <span>Copy Script</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Mac Card -->
+                <div class="glass-panel p-8 rounded-3xl relative overflow-hidden group reveal delay-300">
+                    <div class="absolute top-0 right-0 p-6 opacity-20 grayscale group-hover:grayscale-0 transition-all">
+                        <svg class="w-8 h-8" viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.164 6.839 9.49.5.09.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.27 2.75 1.026A9.664 9.664 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.161 22 16.418 22 12c0-5.523-4.477-10-10-10z" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-6 font-display">Mac / Linux</h3>
+
+                    <div
+                        class="p-4 bg-black/60 rounded-xl mb-6 border border-white/10 group-hover:border-purple-500/30 transition-colors">
+                        <code class="font-mono text-xs text-purple-400 break-all">
+                            curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh
+                        </code>
+                    </div>
+
+                    <button
+                        onclick="navigator.clipboard.writeText('curl -fsSL https://raw.githubusercontent.com/TUAN130294/awf/main/install.sh | sh')"
+                        class="w-full py-3 rounded-xl bg-white/5 hover:bg-white/10 font-bold border border-white/10 transition-all active:scale-95 flex items-center justify-center gap-2">
+                        <span>Copy Script</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3" />
+                        </svg>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- ========== FOOTER ========== -->
-    <footer class="border-t border-white/5 py-12 bg-[#020617]">
-        <div class="max-w-7xl mx-auto px-6 text-center text-slate-500 text-sm">
-            <p class="mb-4">Open Source under MIT License.</p>
-            <p>Built with ❤️ by <strong>Antigravity</strong> in Vibe Coding Mode.</p>
+    <!-- Footer -->
+    <footer class="border-t border-white/5 py-12 bg-black/50 backdrop-blur">
+        <div
+            class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center text-sm text-slate-500">
+            <p>© 2026 Antigravity Workflow Framework.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <a href="#" class="hover:text-white transition-colors">MIT License</a>
+                <a href="#" class="hover:text-white transition-colors">Documentation</a>
+            </div>
         </div>
     </footer>
 
+    <!-- Reveal on Scroll Script -->
+    <script>
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>

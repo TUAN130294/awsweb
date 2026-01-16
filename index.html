@@ -338,10 +338,360 @@
             <div class="mt-16 text-center">
                 <div class="inline-block px-6 py-3 rounded-full bg-brand-500/10 border border-brand-500/30">
                     <p class="text-brand-400 font-bold">
-                        <span data-lang="vi">👇 AWF giải quyết TẤT CẢ những vấn đề này bằng 16 Workflow có kỷ
-                            luật</span>
-                        <span data-lang="en">👇 AWF solves ALL these problems with 16 disciplined Workflows</span>
+                        <span data-lang="vi">👇 AWF giải quyết TẤT CẢ những vấn đề này bằng quy trình có kỷ luật</span>
+                        <span data-lang="en">👇 AWF solves ALL these problems with disciplined workflows</span>
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 3 SCENARIOS SECTION -->
+    <section id="scenarios" class="py-24 px-6 bg-[#050505] border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-white mb-4">
+                <span data-lang="vi">🗺️ Bạn đang ở đâu? Bắt đầu từ đây</span>
+                <span data-lang="en">🗺️ Where are you? Start here</span>
+            </h2>
+            <p class="text-center text-slate-400 mb-12 text-lg">
+                <span data-lang="vi">Chọn kịch bản phù hợp với tình huống của bạn</span>
+                <span data-lang="en">Choose the scenario that matches your situation</span>
+            </p>
+
+            <!-- Scenario Tabs -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button onclick="showScenario(1)" id="scenario-tab-1"
+                    class="scenario-tab px-6 py-3 rounded-full font-bold transition border border-brand-500/50 bg-brand-500/20 text-brand-400">
+                    <span data-lang="vi">🆕 Làm App Mới</span>
+                    <span data-lang="en">🆕 New App</span>
+                </button>
+                <button onclick="showScenario(2)" id="scenario-tab-2"
+                    class="scenario-tab px-6 py-3 rounded-full font-bold transition border border-white/10 text-slate-400 hover:border-white/30">
+                    <span data-lang="vi">📦 Có App Sẵn</span>
+                    <span data-lang="en">📦 Existing App</span>
+                </button>
+                <button onclick="showScenario(3)" id="scenario-tab-3"
+                    class="scenario-tab px-6 py-3 rounded-full font-bold transition border border-white/10 text-slate-400 hover:border-white/30">
+                    <span data-lang="vi">➕ Thêm Tính Năng</span>
+                    <span data-lang="en">➕ Add Feature</span>
+                </button>
+            </div>
+
+            <!-- Scenario 1: New App -->
+            <div id="scenario-1" class="scenario-content">
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="text-4xl">🆕</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">
+                                <span data-lang="vi">Tạo App Mới Từ Đầu</span>
+                                <span data-lang="en">Build New App From Scratch</span>
+                            </h3>
+                            <p class="text-slate-400">
+                                <span data-lang="vi">Bạn có ý tưởng và muốn làm app từ con số 0</span>
+                                <span data-lang="en">You have an idea and want to build from zero</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Flow Timeline -->
+                    <div class="relative">
+                        <div
+                            class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-500 via-green-500 to-purple-500">
+                        </div>
+
+                        <div class="space-y-6">
+                            <!-- Step 1 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-brand-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-brand-400 font-mono font-bold">/brainstorm</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Làm rõ ý tưởng, research thị trường</span>
+                                        <span data-lang="en">→ Clarify ideas, market research</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 2 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-brand-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-brand-400 font-mono font-bold">/init</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Tạo project, cài đặt môi trường</span>
+                                        <span data-lang="en">→ Create project, setup environment</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 3 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-brand-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-brand-400 font-mono font-bold">/plan</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Thiết kế Database, API, tính năng</span>
+                                        <span data-lang="en">→ Design Database, API, features</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 4 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-green-400 font-mono font-bold">/visualize</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Thiết kế giao diện đẹp</span>
+                                        <span data-lang="en">→ Design beautiful UI</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 5 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-green-400 font-mono font-bold">/code</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Viết code an toàn, bảo mật</span>
+                                        <span data-lang="en">→ Write secure code</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 6 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-green-400 font-mono font-bold">/run → /test</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Chạy app, kiểm tra lỗi</span>
+                                        <span data-lang="en">→ Run app, test for bugs</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 7 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-yellow-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-yellow-400 font-mono font-bold">/deploy</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Đưa lên internet 🌐</span>
+                                        <span data-lang="en">→ Deploy to internet 🌐</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <!-- Step 8 -->
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-purple-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-purple-400 font-mono font-bold">/save-brain</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Lưu kiến thức, kết thúc ✨</span>
+                                        <span data-lang="en">→ Save knowledge, done ✨</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario 2: Existing App -->
+            <div id="scenario-2" class="scenario-content hidden">
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="text-4xl">�</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">
+                                <span data-lang="vi">Thêm AWF vào App Có Sẵn</span>
+                                <span data-lang="en">Add AWF to Existing App</span>
+                            </h3>
+                            <p class="text-slate-400">
+                                <span data-lang="vi">Bạn đã có app đang chạy, muốn dùng AWF để phát triển tiếp</span>
+                                <span data-lang="en">You have an existing app and want AWF to help develop it</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Flow Timeline -->
+                    <div class="relative">
+                        <div class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-green-500 to-purple-500">
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-green-400 font-mono font-bold">Cài AWF</span>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Chạy lệnh cài đặt trong project</span>
+                                        <span data-lang="en">→ Run install command in project</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-brand-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-brand-400 font-mono font-bold">/recap</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ AI đọc và hiểu app của bạn</span>
+                                        <span data-lang="en">→ AI reads and understands your app</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-purple-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-purple-400 font-mono font-bold">/save-brain</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Lưu kiến thức về app vào bộ nhớ</span>
+                                        <span data-lang="en">→ Save app knowledge to memory</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div class="absolute left-4 w-5 h-5 rounded-full bg-white border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <span class="text-white font-bold">✅ Sẵn sàng!</span>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Dùng /plan, /debug, /refactor, /audit...</span>
+                                        <span data-lang="en">→ Use /plan, /debug, /refactor, /audit...</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-6 p-4 bg-green-500/10 border border-green-500/30 rounded-xl">
+                        <p class="text-green-400 text-sm">
+                            <span data-lang="vi">💡 <strong>Chỉ 3 bước</strong> là bạn có thể bắt đầu dùng AWF với app
+                                hiện có!</span>
+                            <span data-lang="en">💡 <strong>Only 3 steps</strong> to start using AWF with your existing
+                                app!</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scenario 3: Add Feature -->
+            <div id="scenario-3" class="scenario-content hidden">
+                <div class="glass-panel p-8 rounded-2xl">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="text-4xl">➕</div>
+                        <div>
+                            <h3 class="text-2xl font-bold text-white">
+                                <span data-lang="vi">Thêm Tính Năng Mới</span>
+                                <span data-lang="en">Add New Feature</span>
+                            </h3>
+                            <p class="text-slate-400">
+                                <span data-lang="vi">App đã có, bạn muốn thêm tính năng mới</span>
+                                <span data-lang="en">App exists, you want to add new features</span>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Flow Timeline -->
+                    <div class="relative">
+                        <div
+                            class="absolute left-6 top-0 bottom-0 w-0.5 bg-gradient-to-b from-brand-500 via-green-500 to-purple-500">
+                        </div>
+
+                        <div class="space-y-6">
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-slate-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-slate-400 font-mono font-bold">/recap</code>
+                                    <span class="text-slate-500 text-sm">
+                                        <span data-lang="vi">→ (Nếu lâu không làm) Nhớ lại context</span>
+                                        <span data-lang="en">→ (If long break) Restore context</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-brand-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-brand-400 font-mono font-bold">/brainstorm hoặc /plan</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Thiết kế tính năng mới</span>
+                                        <span data-lang="en">→ Design new feature</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-green-400 font-mono font-bold">/visualize → /code</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Thiết kế UI & Viết code</span>
+                                        <span data-lang="en">→ Design UI & Write code</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-green-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-green-400 font-mono font-bold">/run → /test</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Chạy & kiểm tra (cả cũ lẫn mới)</span>
+                                        <span data-lang="en">→ Run & test (old and new)</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-yellow-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-yellow-400 font-mono font-bold">/deploy</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Cập nhật lên server</span>
+                                        <span data-lang="en">→ Update to server</span>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="relative pl-16">
+                                <div
+                                    class="absolute left-4 w-5 h-5 rounded-full bg-purple-500 border-4 border-[#0A0A0A]">
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <code class="text-purple-400 font-mono font-bold">/save-brain</code>
+                                    <span class="text-slate-400 text-sm">
+                                        <span data-lang="vi">→ Cập nhật kiến thức về tính năng mới</span>
+                                        <span data-lang="en">→ Update knowledge about new feature</span>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -791,6 +1141,20 @@
                 contentMac.classList.remove('hidden');
                 contentWin.classList.add('hidden');
             }
+        }
+
+        // Scenario Tab Switching
+        function showScenario(num) {
+            // Hide all contents
+            document.querySelectorAll('.scenario-content').forEach(el => el.classList.add('hidden'));
+            // Reset all tabs
+            document.querySelectorAll('.scenario-tab').forEach(el => {
+                el.className = 'scenario-tab px-6 py-3 rounded-full font-bold transition border border-white/10 text-slate-400 hover:border-white/30';
+            });
+            // Show selected content
+            document.getElementById('scenario-' + num).classList.remove('hidden');
+            // Highlight selected tab
+            document.getElementById('scenario-tab-' + num).className = 'scenario-tab px-6 py-3 rounded-full font-bold transition border border-brand-500/50 bg-brand-500/20 text-brand-400';
         }
 
         // Copy Function

@@ -206,6 +206,147 @@
         </div>
     </section>
 
+    <!-- PAIN POINTS SECTION -->
+    <section id="problems" class="py-20 px-6 bg-[#080808] border-t border-white/5">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="font-display text-3xl md:text-4xl font-bold text-center text-white mb-4">
+                <span data-lang="vi">😫 Bạn có gặp những vấn đề này không?</span>
+                <span data-lang="en">😫 Do you face these problems?</span>
+            </h2>
+            <p class="text-center text-slate-400 mb-12 text-lg">
+                <span data-lang="vi">Nếu bạn đang dùng AI để code mà KHÔNG có kỷ luật...</span>
+                <span data-lang="en">If you're using AI for coding WITHOUT discipline...</span>
+            </p>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <!-- Pain 1: AI quên -->
+                <div class="glass-panel p-6 rounded-xl border-red-500/20 hover:border-red-500/50 transition">
+                    <div class="text-4xl mb-4">🧠💨</div>
+                    <h3 class="text-xl font-bold text-white mb-3">
+                        <span data-lang="vi">"AI quên hết rồi!"</span>
+                        <span data-lang="en">"AI forgot everything!"</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span data-lang="vi">Chat mới 20-30 tin nhắn, AI đã quên mất bạn đang dùng công nghệ gì,
+                            Database ra sao. Bắt đầu bịa code lung tung, tạo bảng trùng lặp.</span>
+                        <span data-lang="en">After just 20-30 messages, AI forgets your tech stack, database schema.
+                            Starts hallucinating code and creating duplicate tables.</span>
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-red-400 font-mono">
+                        <span data-lang="vi">⚠️ Mất công giải thích lại từ đầu</span>
+                        <span data-lang="en">⚠️ Wasting time re-explaining</span>
+                    </div>
+                </div>
+
+                <!-- Pain 2: Code ẩu -->
+                <div class="glass-panel p-6 rounded-xl border-red-500/20 hover:border-red-500/50 transition">
+                    <div class="text-4xl mb-4">💣</div>
+                    <h3 class="text-xl font-bold text-white mb-3">
+                        <span data-lang="vi">"Chạy được là được"</span>
+                        <span data-lang="en">"It works... barely"</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span data-lang="vi">AI đưa code "chạy tạm", không bắt lỗi (try-catch), hard-code API key, bỏ
+                            qua trường hợp edge case. Lên production là nổ.</span>
+                        <span data-lang="en">AI gives "it works" code without error handling, hardcoded secrets,
+                            ignoring edge cases. Production deployment = 💥</span>
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-red-400 font-mono">
+                        <span data-lang="vi">⚠️ Lỗi bảo mật, dễ bị hack</span>
+                        <span data-lang="en">⚠️ Security holes, easy to hack</span>
+                    </div>
+                </div>
+
+                <!-- Pain 3: Vòng lặp debug -->
+                <div class="glass-panel p-6 rounded-xl border-red-500/20 hover:border-red-500/50 transition">
+                    <div class="text-4xl mb-4">🌀</div>
+                    <h3 class="text-xl font-bold text-white mb-3">
+                        <span data-lang="vi">"Sửa xong lỗi A thì ra lỗi B"</span>
+                        <span data-lang="en">"Fixed A, now B is broken"</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span data-lang="vi">Vòng lặp debug vô tận. AI sửa mò mẫm, không tìm nguyên nhân gốc. Càng sửa
+                            code càng nát, cuối cùng phải xóa đi làm lại.</span>
+                        <span data-lang="en">Endless debug loop. AI patches blindly without finding root cause. Code
+                            gets messier until you delete and restart.</span>
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-red-400 font-mono">
+                        <span data-lang="vi">⚠️ Mất hàng giờ chạy vòng vòng</span>
+                        <span data-lang="en">⚠️ Hours wasted going in circles</span>
+                    </div>
+                </div>
+
+                <!-- Pain 4: Không biết bắt đầu -->
+                <div class="glass-panel p-6 rounded-xl border-yellow-500/20 hover:border-yellow-500/50 transition">
+                    <div class="text-4xl mb-4">🤷</div>
+                    <h3 class="text-xl font-bold text-white mb-3">
+                        <span data-lang="vi">"Giờ làm gì tiếp đây?"</span>
+                        <span data-lang="en">"What should I do next?"</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span data-lang="vi">Ngồi nhìn màn hình không biết bước tiếp theo là gì. Không có roadmap, không
+                            có quy trình rõ ràng. Cứ chat lung tung.</span>
+                        <span data-lang="en">Staring at screen with no idea what's next. No roadmap, no clear process.
+                            Just random chatting.</span>
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-yellow-400 font-mono">
+                        <span data-lang="vi">⚠️ Lãng phí thời gian suy nghĩ</span>
+                        <span data-lang="en">⚠️ Time wasted thinking</span>
+                    </div>
+                </div>
+
+                <!-- Pain 5: Code xấu -->
+                <div class="glass-panel p-6 rounded-xl border-yellow-500/20 hover:border-yellow-500/50 transition">
+                    <div class="text-4xl mb-4">🍝</div>
+                    <h3 class="text-xl font-bold text-white mb-3">
+                        <span data-lang="vi">"Codebase như mì Ý"</span>
+                        <span data-lang="en">"Spaghetti codebase"</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span data-lang="vi">AI cứ thêm code vào, không tổ chức. File dài hàng nghìn dòng, function lồng
+                            nhau chằng chịt. Sau 1 tuần chính mình cũng không hiểu.</span>
+                        <span data-lang="en">AI keeps adding code without organization. Files with thousands of lines,
+                            nested functions. After 1 week, you can't understand your own code.</span>
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-yellow-400 font-mono">
+                        <span data-lang="vi">⚠️ Khó bảo trì, khó mở rộng</span>
+                        <span data-lang="en">⚠️ Unmaintainable, unscalable</span>
+                    </div>
+                </div>
+
+                <!-- Pain 6: Không dám sửa -->
+                <div class="glass-panel p-6 rounded-xl border-yellow-500/20 hover:border-yellow-500/50 transition">
+                    <div class="text-4xl mb-4">😰</div>
+                    <h3 class="text-xl font-bold text-white mb-3">
+                        <span data-lang="vi">"Sợ sửa vì không có backup"</span>
+                        <span data-lang="en">"Afraid to change, no backup"</span>
+                    </h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        <span data-lang="vi">Muốn sửa feature nhưng sợ làm hỏng cái khác. Không biết Git, không có bản
+                            backup. Một sai lầm là mất hết công sức.</span>
+                        <span data-lang="en">Want to change something but afraid of breaking others. No Git, no backup.
+                            One mistake = all work gone.</span>
+                    </p>
+                    <div class="mt-4 pt-4 border-t border-white/5 text-xs text-yellow-400 font-mono">
+                        <span data-lang="vi">⚠️ Mất code, mất công</span>
+                        <span data-lang="en">⚠️ Lost code, lost effort</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Solution Teaser -->
+            <div class="mt-16 text-center">
+                <div class="inline-block px-6 py-3 rounded-full bg-brand-500/10 border border-brand-500/30">
+                    <p class="text-brand-400 font-bold">
+                        <span data-lang="vi">👇 AWF giải quyết TẤT CẢ những vấn đề này bằng 16 Workflow có kỷ
+                            luật</span>
+                        <span data-lang="en">👇 AWF solves ALL these problems with 16 disciplined Workflows</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- PIPELINE (The New 4-Phase Flow) -->
     <section id="pipeline" class="py-24 px-6 relative z-10">
         <div class="max-w-4xl mx-auto relative z-10">

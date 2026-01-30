@@ -169,28 +169,28 @@ document.addEventListener('DOMContentLoaded', () => {
     modal.addEventListener('click', (e) => {
         if (e.target === modal) closeCmdModal();
     });
-}
+});
 
 // Copy Installation Command
 function copyInstallCmd() {
-        const cmdText = document.getElementById('install-cmd').innerText;
-        navigator.clipboard.writeText(cmdText).then(() => {
-            const btn = document.querySelector('.cmd-copy-btn');
-            const originalHTML = btn.innerHTML;
+    const cmdText = document.getElementById('install-cmd').innerText;
+    navigator.clipboard.writeText(cmdText).then(() => {
+        const btn = document.querySelector('.cmd-copy-btn');
+        const originalHTML = btn.innerHTML;
 
-            btn.innerHTML = '<i data-lucide="check"></i> Đã Copy';
-            btn.style.background = '#4ade80';
-            btn.style.color = '#000';
+        btn.innerHTML = '<i data-lucide="check"></i> Đã Copy';
+        btn.style.background = '#4ade80';
+        btn.style.color = '#000';
+        lucide.createIcons();
+
+        setTimeout(() => {
+            btn.innerHTML = originalHTML;
+            btn.style.background = '#333';
+            btn.style.color = '#fff';
             lucide.createIcons();
-
-            setTimeout(() => {
-                btn.innerHTML = originalHTML;
-                btn.style.background = '#333';
-                btn.style.color = '#fff';
-                lucide.createIcons();
-            }, 2000);
-        });
-    }
+        }, 2000);
+    });
+}
 
 // Scroll Reveal Animation
 const observerOptions = {
@@ -219,4 +219,4 @@ window.addEventListener('load', () => {
             }
         });
     }, 100);
-}););
+});

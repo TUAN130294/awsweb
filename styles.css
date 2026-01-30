@@ -1929,3 +1929,1088 @@ footer {
         align-items: stretch;
     }
 }
+/* --- Modern Vibe Coding UI Updates (AWF 4.0) --- */
+
+.glass-panel {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+}
+
+.glass-panel:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(69, 237, 247, 0.3);
+    box-shadow: 0 0 20px rgba(69, 237, 247, 0.1);
+}
+
+.recipe-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.recipe-icon {
+    font-size: 1.5rem;
+    background: rgba(255, 255, 255, 0.1);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.code-block {
+    background: #0f172a;
+    border-radius: 8px;
+    padding: 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cmd-line {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.cmd-line:last-child { margin-bottom: 0; }
+
+.prompt { color: #f43f5e; font-weight: bold; }
+.text { color: #94a3b8; font-style: italic; }
+
+.btn-copy-small {
+    width: 100%;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    padding: 0.6rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-family: 'Outfit', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: all 0.2s;
+}
+
+.btn-copy-small:hover {
+    background: #fff;
+    color: #000;
+}
+
+.feature-name {
+    font-weight: 600;
+    color: #fff;
+    padding-left: 1rem;
+}
+
+.text-muted { color: #64748b !important; }
+
+.text-glow {
+    color: #4ade80 !important;
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.3);
+}
+
+.footer-motto {
+    font-family: 'JetBrains Mono', monospace;
+    color: #94a3b8;
+    margin-top: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    margin-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: #475569;
+    font-size: 0.8rem;
+}
+
+/* --- Global Polish (Scrollbar & Selection) --- */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #334155;
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #475569;
+}
+
+::selection {
+    background: rgba(139, 92, 246, 0.3);
+    color: #fff;
+    text-shadow: 0 0 5px rgba(139, 92, 246, 0.5);
+}
+
+/* Modal Polish */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(5px);
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    width: 90%;
+    max-width: 600px;
+    background: #0f172a;
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 20px;
+    padding: 2rem;
+    position: relative;
+    transform: translateY(20px) scale(0.95);
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.modal-close {
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.modal-close:hover {
+    color: #fff;
+}
+
+.modal-header {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.modal-icon {
+    width: 48px;
+    height: 48px;
+    background: rgba(139, 92, 246, 0.1);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #a78bfa;
+    font-size: 1.5rem;
+}
+
+.modal-header h2 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.modal-section {
+    margin-bottom: 1.5rem;
+}
+
+.modal-section h3 {
+    color: #94a3b8;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0.5rem;
+}
+
+.modal-section p {
+    line-height: 1.6;
+}
+
+/* --- VIBE CODING ULTRA POLISH --- */
+
+/* 1. Noise Texture for that 'Premium' feel */
+.noise-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.03;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* 2. Better Glassmorphism */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+}
+
+/* 3. Ultra Gradient Text */
+.gradient-text-wow {
+    background: linear-gradient(to right, #c084fc, #6366f1, #3b82f6);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 4s linear infinite;
+    font-weight: 800;
+}
+
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
+}
+
+/* 4. Chat Window - MacOS Style */
+.chat-window {
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5), 
+                0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.chat-header {
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.msg-bubble {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.ai-msg .msg-bubble {
+    background: rgba(30, 41, 59, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 5. Floating Badge Animation */
+@keyframes float-anim {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+.float-anim {
+    animation: float-anim 3s ease-in-out infinite;
+}
+
+/* 6. Button Wow */
+.btn-primary {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6, #d946ef);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, #4f46e5, #7c3aed, #c026d3);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+
+/* --- RADICAL REDESIGN (NEO-BRUTALISM + NEON) --- */
+
+/* 1. New Typography */
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: -0.02em;
+}
+
+h1, h2, h3, .logo-text {
+    font-family: 'Space Grotesk', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+p, .cmd-text, .msg-bubble {
+    font-family: 'Inter', sans-serif;
+    letter-spacing: normal;
+}
+
+/* 2. Hero Overhaul (Center Stage) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 100px;
+    min-height: 90vh;
+}
+
+.hero-layout {
+    display: flex; /* Changed from Grid to Flex Column */
+    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+}
+
+.hero-content {
+    margin-bottom: 4rem;
+}
+
+.hero-title {
+    font-size: clamp(3rem, 6vw, 5rem); /* Responsive Giant Text */
+    line-height: 1;
+    margin-bottom: 2rem;
+}
+
+.hero-visual {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    perspective: 1000px;
+}
+
+/* 3. Neo-Brutalism Cards */
+.recipe-card, .glass-panel, .install-box, .warning-box {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 4px; /* Sharper corners */
+    background: #000; /* Deep black */
+    box-shadow: 8px 8px 0px rgba(139, 92, 246, 0.6); /* Hard shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recipe-card:hover, .glass-panel:hover {
+    transform: translate(-4px, -4px);
+    box-shadow: 12px 12px 0px rgba(139, 92, 246, 0.8);
+    border-color: #fff;
+}
+
+/* 4. Neon Accents */
+.text-glow, .section-title {
+    text-shadow: 0 0 20px rgba(139, 92, 246, 0.5);
+}
+
+.nav-container {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(20px);
+    border-radius: 4px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 4px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 5. Terminal Vibe */
+kbd {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #4ade80; /* Matrix Green */
+}
+
+
+/* --- PHONE MOCKUP WOW --- */
+.phone-frame {
+    width: 300px;
+    height: 600px;
+    background: #000;
+    border-radius: 40px;
+    border: 8px solid #333;
+    padding: 10px;
+    position: relative;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    margin: 0 auto;
+}
+
+.phone-screen {
+    background: #fff;
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+}
+
+.phone-notch {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 120px;
+    height: 25px;
+    background: #333;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+    z-index: 10;
+}
+
+/* --- PAIN POINT SECTION (THE STRUGGLE) --- */
+.pain-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.pain-card {
+    background: rgba(239, 68, 68, 0.05); /* Red tint */
+    border: 1px solid rgba(239, 68, 68, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.2s;
+}
+
+.pain-card:hover {
+    transform: translateY(-5px);
+    background: rgba(239, 68, 68, 0.08);
+}
+
+.pain-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.pain-title {
+    color: #f87171;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.pain-desc {
+    color: #94a3b8;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+
+/* --- DARK AURORA THEME REBOOT --- */
+:root {
+    --bg-deep: #050505;
+    --accent-primary: #7c3aed; /* Violet */
+    --accent-secondary: #06b6d4; /* Cyan */
+    --accent-tertiary: #f43f5e; /* Rose */
+    
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+}
+
+body {
+    background: var(--bg-deep);
+    color: #e2e8f0;
+}
+
+/* Aurora Background Animation */
+.aurora-bg {
+    position: fixed;
+    top: -50%;
+    left: -50%;
+    right: -50%;
+    bottom: -50%;
+    width: 200%;
+    height: 200%;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.15), transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.1), transparent 40%),
+        radial-gradient(circle at 20% 80%, rgba(244, 63, 94, 0.1), transparent 40%);
+    animation: aurora-spin 20s linear infinite;
+    z-index: -1;
+    pointer-events: none;
+}
+
+@keyframes aurora-spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* Bento Grid System for Features */
+.bento-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    gap: 1.5rem;
+    margin-top: 4rem;
+}
+
+.bento-item {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.bento-item:hover {
+    background: rgba(255, 255, 255, 0.06);
+    transform: translateY(-5px) scale(1.02);
+    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+.bento-large {
+    grid-column: span 2;
+}
+
+.bento-tall {
+    grid-row: span 2;
+}
+
+.bento-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #fff, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.bento-desc {
+    color: #94a3b8;
+    line-height: 1.6;
+}
+
+.bento-visual {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* Feature Specific Visuals */
+.brain-visual {
+    width: 150px;
+    height: 150px;
+    background: radial-gradient(circle, var(--accent-primary), transparent);
+    filter: blur(40px);
+    animation: pulse-brain 4s infinite ease-in-out;
+}
+
+@keyframes pulse-brain {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 0.6; transform: scale(1.2); }
+}
+
+
+/* --- FIXED AURORA Z-INDEX --- */
+.aurora-bg {
+    z-index: -10 !important;
+}
+
+body {
+    background: transparent !important; /* Let Aurora show through */
+    background-color: var(--bg-deep) !important; /* Fallback */
+}
+
+.noise-overlay {
+    z-index: -5 !important;
+}
+
+/* --- GLOW UP INSTALL BOX --- */
+.install-box {
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(74, 222, 128, 0.3); /* Green tint */
+    box-shadow: 0 0 30px rgba(74, 222, 128, 0.1);
+}
+
+
+/* --- THAO COFFEE APP: MODERN REDESIGN --- */
+.app-header-modern {
+    background: url('https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=600&q=80') center/cover;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 1.5rem;
+}
+
+.app-header-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.8));
+}
+
+.app-title-box {
+    position: relative;
+    z-index: 2;
+    color: #fff;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.app-title-text h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    font-family: 'Space Grotesk', sans-serif;
+}
+
+.app-title-text span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    font-weight: 300;
+}
+
+.app-body-modern {
+    background: #f8fafc;
+    height: calc(100% - 180px);
+    overflow-y: auto;
+    padding: 1.5rem;
+    position: relative;
+}
+
+.category-pill {
+    display: inline-block;
+    padding: 6px 16px;
+    background: #475569;
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.category-pill.active {
+    background: #d97706; /* Amber-600 */
+}
+
+.drink-card-modern {
+    background: #fff;
+    border-radius: 16px;
+    padding: 12px;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    border: 1px solid transparent;
+}
+
+.drink-card-modern:hover {
+    transform: translateY(-2px);
+}
+
+.drink-card-modern.active {
+    border-color: #d97706;
+    background: #fffbeb;
+}
+
+.drink-thumb {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.drink-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.drink-name {
+    color: #334155;
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.drink-price {
+    color: #d97706;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.add-btn {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #f1f5f9;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.drink-card-modern.active .add-btn {
+    background: #d97706;
+    color: #fff;
+}
+
+/* Floating Checkout Bar */
+.checkout-bar {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    background: #1e293b;
+    border-radius: 16px;
+    padding: 16px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 10px 25px rgba(30, 41, 59, 0.3);
+}
+
+.checkout-total {
+    display: flex;
+    flex-direction: column;
+}
+
+.checkout-btn {
+    background: #d97706;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+
+/* --- MOCKUP SIZE FIX (COMPACT MODE) --- */
+.app-header-modern {
+    height: 140px; /* Reduced from 180 */
+    padding: 1rem;
+}
+
+.app-title-text h2 {
+    font-size: 1.2rem;
+}
+
+.category-pill {
+    padding: 4px 12px;
+    font-size: 0.7rem;
+    margin-bottom: 1rem;
+}
+
+.drink-card-modern {
+    padding: 8px; /* Compact padding */
+    gap: 10px;
+    margin-bottom: 0.8rem;
+}
+
+.drink-thumb {
+    width: 50px; /* Reduced from 70 */
+    height: 50px;
+}
+
+.drink-name {
+    font-size: 0.85rem;
+}
+
+.drink-price {
+    font-size: 0.8rem;
+}
+
+.checkout-bar {
+    bottom: 15px;
+    left: 15px;
+    right: 15px;
+    padding: 10px 15px;
+}
+
+.checkout-btn {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+}
+
+/* --- WORKFLOW MAP PRO (METRO STYLE) --- */
+.metro-map {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2rem 0;
+    position: relative;
+}
+
+/* Vertical Line connecting phases */
+.metro-map::before {
+    content: '';
+    position: absolute;
+    top: 50px;
+    bottom: 50px;
+    left: 20px;
+    width: 4px;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+}
+
+.phase-row {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding-left: 3rem; /* Space for timeline */
+    position: relative;
+}
+
+/* Phase Marker on Timeline */
+.phase-row::before {
+    content: '';
+    position: absolute;
+    left: 14px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: #000;
+    border: 4px solid var(--accent-primary);
+    z-index: 2;
+}
+
+.phase-label {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: #94a3b8;
+    position: absolute;
+    left: -20px;
+    top: 0;
+    height: 100%;
+    text-align: center;
+}
+
+.nodes-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    flex: 1;
+}
+
+.wf-node {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    padding: 0.8rem 1.2rem;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s;
+    user-select: none;
+    position: relative;
+    overflow: hidden;
+    min-width: 140px;
+    text-align: center;
+}
+
+.wf-node:hover {
+    background: rgba(255,255,255,0.1);
+    border-color: #fff;
+    transform: translateY(-3px);
+}
+
+.wf-cmd {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    color: #fff;
+    font-size: 1rem;
+    display: block;
+    margin-bottom: 0.2rem;
+}
+
+.wf-desc {
+    font-size: 0.75rem;
+    color: #94a3b8;
+}
+
+/* Pulse Animation */
+.pulse-node {
+    animation: pulse-glow 2s infinite;
+    border-color: var(--accent-primary);
+}
+
+@keyframes pulse-glow {
+    0% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+    70% { box-shadow: 0 0 0 10px rgba(124, 58, 237, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+}
+
+
+/* --- THEME UPDATE: MIDNIGHT BLUE (HIGH CONTRAST) --- */
+:root {
+    --bg-deep: #0f172a; /* Slate 900 - Easier on eyes than pure black */
+    --text-main: #f1f5f9; /* Slate 100 - High contrast text */
+    --text-muted: #cbd5e1; /* Slate 300 */
+}
+
+body {
+    background-color: var(--bg-deep) !important;
+    color: var(--text-main);
+}
+
+.noise-overlay {
+    opacity: 0.03 !important; /* Reduce noise for clarity */
+}
+
+/* Adjust text colors for readability */
+p, .hero-subtitle, .bento-desc, .pain-desc {
+    color: var(--text-muted) !important;
+}
+
+h1, h2, h3, h4, .bento-title, .pain-title {
+    color: #fff !important;
+}
+
+/* Brighter Aurora */
+.aurora-bg {
+    opacity: 0.6; /* Make background slightly pop more */
+}
+
+
+/* --- NEXT LEVEL UX: MAGIC CURSOR --- */
+body {
+    cursor: none; /* Hide default cursor */
+}
+
+.cursor-dot,
+.cursor-outline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 9999;
+    pointer-events: none;
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--accent-secondary);
+}
+
+.cursor-outline {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    transition: width 0.2s, height 0.2s, background-color 0.2s;
+}
+
+/* Hover effect */
+body:has(a:hover) .cursor-outline,
+body:has(button:hover) .cursor-outline,
+body:has(.wf-node:hover) .cursor-outline {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(6, 182, 212, 0.1);
+    border-color: var(--accent-secondary);
+}
+
+/* --- TEXTURE UPGRADE: GRID OVERLAY --- */
+.grid-overlay {
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    z-index: -2;
+    pointer-events: none;
+    mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+}
+
+
+/* --- EMERGENCY FIX: SHOW CURSOR --- */
+body {
+    cursor: auto !important; /* Force show default cursor */
+}
+.cursor-dot, .cursor-outline {
+    display: none !important; /* Hide magic cursor temporarily */
+}
+
+/* --- FIX OVERLAY Z-INDEX (CONTENT DISAPPEARANCE FIX) --- */
+.grid-overlay {
+    z-index: -9 !important; /* Above aurora (-10), below content (0) */
+}
+
+/* --- RESTORE MAGIC CURSOR --- */
+body {
+    cursor: none !important; /* Hide default again */
+}
+.cursor-dot, .cursor-outline {
+    display: block !important; /* Show magic cursor */
+}
+
+/* Ensure ALL sections have higher z-index than backgrounds */
+.section, .hero, .navbar, footer {
+    position: relative;
+    z-index: 10;
+}
+
+/* --- ULTIMATE BACKGROUND UPGRADE: CYBERSPACE --- */
+.aurora-bg {
+    background: 
+        radial-gradient(circle at 15% 50%, rgba(76, 29, 149, 0.25), transparent 25%), 
+        radial-gradient(circle at 85% 30%, rgba(6, 182, 212, 0.25), transparent 25%);
+    filter: blur(80px); /* Soften the glowing orbs */
+    z-index: -10;
+    animation: bg-pulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes bg-pulse {
+    0% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Moving Tech Partciles */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-image: 
+        radial-gradient(#ffffff 1px, transparent 1px), 
+        radial-gradient(#ffffff 1px, transparent 1px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    opacity: 0.05;
+    z-index: -5;
+    animation: particle-move 60s linear infinite;
+}
+
+@keyframes particle-move {
+    0% { background-position: 0 0, 25px 25px; }
+    100% { background-position: 100px 100px, 125px 125px; }
+}
+
+/* Deep Space Gradient Base */
+body {
+    background: linear-gradient(to bottom, #0f172a, #1e1b4b, #0f172a) !important;
+}

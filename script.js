@@ -146,6 +146,42 @@ document.addEventListener('DOMContentLoaded', () => {
             when: 'Khi bạn bị kẹt, không biết phải làm gì tiếp theo.',
             ai: 'AI sẽ đọc lại toàn bộ dự án và gợi ý bước tiếp theo hợp lý nhất.',
             example: 'user: /next\nAI: Bạn đã code xong Backend. Bước tiếp theo nên làm Frontend.'
+        },
+        'brainstorm': {
+            title: '/brainstorm',
+            when: 'Khi bạn bí ý tưởng, cần một luồng gió mới.',
+            ai: 'AI đóng vai chuyên gia sáng tạo, gợi ý 10 ý tưởng dựa trên keyword của bạn.',
+            example: 'user: /brainstorm "App hẹn hò cho chó mèo"'
+        },
+        'audit': {
+            title: '/audit',
+            when: 'Trước khi release, muốn kiểm tra xem code có an toàn/tối ưu không.',
+            ai: 'AI quét toàn bộ code, chấm điểm bảo mật, hiệu năng và chỉ ra chỗ cần sửa.',
+            example: 'user: /audit\nAI: Phát hiện vi lỗ hổng SQL Injection tại line 45.'
+        },
+        'test': {
+            title: '/test',
+            when: 'Muốn đảm bảo tính năng chạy đúng, không bug ngầm.',
+            ai: 'AI tự viết Test Case và chạy Unit Test cho toàn bộ dự án.',
+            example: 'user: /test\nAI: Đã chạy 50 test. Pass: 49. Fail: 1.'
+        },
+        'deploy': {
+            title: '/deploy',
+            when: 'Khi app đã xong, muốn đưa lên mạng cho cả thế giới dùng.',
+            ai: 'AI tự động build, cấu hình server (Vercel/Netlify/VPS) và trả về link web.',
+            example: 'user: /deploy\nAI: App đã online tại: https://thao-coffee.vercel.app'
+        },
+        'refactor': {
+            title: '/refactor',
+            when: 'Khi code chạy được nhưng nhìn "rối rắm", khó bảo trì.',
+            ai: 'AI viết lại code cho gọn, sạch, dễ đọc hơn mà không làm thay đổi tính năng.',
+            example: 'user: /refactor payment.js\nAI: Đã tối ưu function logic, giảm 50 dòng code thừa.'
+        },
+        'save_brain': {
+            title: '/save-brain',
+            when: 'Kết thúc buổi làm việc, muốn lưu lại mọi kiến thức đã học.',
+            ai: 'AI tổng hợp các rule, pattern mới vào "Bộ não", để lần sau thông minh hơn.',
+            example: 'user: /save-brain\nAI: Đã lưu kiến thức Module User vào Knowledge Base.'
         }
     };
 
@@ -219,4 +255,36 @@ window.addEventListener('load', () => {
             }
         });
     }, 100);
+});
+
+/* --- 5. MAGIC CURSOR LOGIC (SAFE MODE) --- */
+const cursorDot = document.querySelector('.cursor-dot');
+const cursorOutline = document.querySelector('.cursor-outline');
+
+if (cursorDot && cursorOutline) {
+    window.addEventListener('mousemove', (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Dot follows immediately
+        cursorDot.style.left = `${posX}px`;
+        cursorDot.style.top = `${posY}px`;
+
+        // Outline follows with slight delay
+        cursorOutline.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 500, fill: "forwards" });
+    });
+}
+
+// EMERGENCY FALLBACK: Force show content
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        document.querySelectorAll('.reveal').forEach(el => {
+            el.classList.add('active');
+            el.style.opacity = '1';
+            el.style.transform = 'translateY(0)';
+        });
+    }, 500);
 });

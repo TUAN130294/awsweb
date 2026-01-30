@@ -9,15 +9,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="background.css">
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
-    <!-- Animated Background -->
-    <div class="ambient-light">
+    <!-- Noise Texture -->
+    <div class="noise-overlay"></div>
+
+    <!-- Aurora Background (New UX) -->
+    <div class="aurora-bg"></div>
+    <div class="grid-overlay"></div>
+
+    <!-- Magic Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Animated Background (Old - Removed) -->
+    <div class="ambient-light" style="display: none;">
         <div class="light light-1"></div>
         <div class="light light-2"></div>
         <div class="light light-3"></div>
@@ -47,17 +59,18 @@
     <section class="hero">
         <div class="container hero-layout">
             <div class="hero-content reveal active">
-                <div class="hero-badge float-anim">
-                    <i data-lucide="sparkles" size="14"></i>
-                    <span>Cách mạng Vibe Coding 2026</span>
+                <div class="hero-badge float-anim"
+                    style="background: rgba(99, 102, 241, 0.1); border-color: rgba(99, 102, 241, 0.3);">
+                    <i data-lucide="sparkles" size="14" style="color: #a5b4fc;"></i>
+                    <span style="color: #e0e7ff; font-weight: 500;">Vibe Coding Era 2026</span>
                 </div>
                 <h1 class="hero-title">
                     Biến Ý Tưởng Thành App<br>
                     <span class="gradient-text-wow">Chỉ Bằng Lời Nói</span>
                 </h1>
-                <p class="hero-subtitle">
-                    Không cần gõ code từng dòng. AWF là "Hệ điều hành AI" tự động lập trình theo mệnh lệnh tiếng Việt
-                    của bạn.
+                <p class="hero-subtitle" style="font-size: 1.25rem; line-height: 1.6;">
+                    Quên việc gõ code từng dòng đi. <strong style="color: #fff;">AWF 4.0</strong> là "Hệ điều hành AI"
+                    lập trình tự động theo mệnh lệnh của bạn.
                 </p>
 
                 <div class="hero-actions">
@@ -110,106 +123,304 @@
         </div>
     </section>
 
+    <!-- The Pain Points (Why You Need AWF) -->
+    <section class="section reveal">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title text-glow"
+                    style="color: #fca5a5; text-shadow: 0 0 20px rgba(220, 38, 38, 0.4);">☠️ Mặt Trái Của "Vibe Coding"
+                </h2>
+                <p class="section-desc">Nếu không có quy trình (Workflow), niềm vui code bằng AI sẽ sớm thành ác mộng.
+                </p>
+            </div>
+
+            <div class="pain-grid">
+                <!-- Pain 1: SDD -->
+                <div class="pain-card">
+                    <span class="pain-icon">🍝</span>
+                    <h3 class="pain-title">Spaghetti Code (SDD)</h3>
+                    <p class="pain-desc">
+                        Ban đầu thì nhanh, nhưng sau 2 ngày, code của bạn thành một đống hổ lốn. AI sửa chỗ này hỏng chỗ
+                        kia vì thiếu cấu trúc (Structure Deficit Disorder).
+                    </p>
+                </div>
+
+                <!-- Pain 2: Context Amnesia -->
+                <div class="pain-card">
+                    <span class="pain-icon">🧠</span>
+                    <h3 class="pain-title">AI Mất Trí Nhớ</h3>
+                    <p class="pain-desc">
+                        <em>"Em quên mất quy định về database của anh rồi."</em><br>
+                        Khi project lớn lên, AI bắt đầu quên context. Bạn phải copy-paste lại prompt liên tục. Rất nản!
+                    </p>
+                </div>
+
+                <!-- Pain 3: BMAD -->
+                <div class="pain-card">
+                    <span class="pain-icon">😵</span>
+                    <h3 class="pain-title">Briefing Malfunction (BMAD)</h3>
+                    <p class="pain-desc">
+                        Bạn nói A, AI hiểu làm B. Lý do? Bạn thiếu kỹ năng ra lệnh (Briefing) chuẩn xác. Kết quả là làm
+                        đi làm lại 10 lần vẫn sai.
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 3rem;">
+                <p class="hero-subtitle" style="font-size: 1.1rem;">Đó là lý do <strong
+                        style="color: #818cf8;">AWF</strong> ra đời để trị dứt điểm căn bệnh này.</p>
+                <i data-lucide="arrow-down" style="color: #fff; animation: bounce 2s infinite;"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- AWF 4.0 Exclusive Features (Bento Grid) -->
+    <section class="section reveal" style="padding: 6rem 0;">
+        <div class="container">
+            <div class="section-header left-align" style="margin-bottom: 2rem;">
+                <span
+                    style="color: #7c3aed; font-family: 'JetBrains Mono'; background: rgba(124, 58, 237, 0.1); padding: 4px 12px; border-radius: 20px; font-size: 0.9rem;">✨
+                    ONLY IN AWF 4.0</span>
+                <h2 class="section-title text-glow" style="font-size: 3.5rem; margin-top: 1rem;">Siêu Năng Lực AI</h2>
+            </div>
+
+            <div class="bento-grid">
+
+                <!-- 1. Top Feature: Vietnamese Language (Large) -->
+                <div class="bento-item bento-large">
+                    <div class="bento-visual brain-visual"
+                        style="background: radial-gradient(circle, #f43f5e, transparent); bottom: -30px; right: -30px;">
+                    </div>
+                    <i data-lucide="languages" size="48" style="color: #f43f5e; margin-bottom: 1.5rem;"></i>
+                    <h3 class="bento-title">Nói Tiếng Việt 🇻🇳</h3>
+                    <p class="bento-desc">
+                        Bạn không biết từ chuyên ngành? Không sao.
+                        Cứ nói: <em>"Làm cho cái nút này bấm vào nó nảy nảy lên"</em>. AI sẽ tự hiểu là
+                        <code>animation: bounce</code>. Giao tiếp tự nhiên như hơi thở.
+                    </p>
+                </div>
+
+                <!-- 2. Workflow Map Behavior (Tall - Right Side) -->
+                <div class="bento-item bento-tall"
+                    style="background: linear-gradient(135deg, rgba(251, 191, 36, 0.05), rgba(0,0,0,0.2));">
+                    <i data-lucide="map" size="40" style="color: #fbbf24; margin-bottom: 1.5rem;"></i>
+                    <h3 class="bento-title">Đi Đúng Đường</h3>
+                    <p class="bento-desc">
+                        AI thông thường hay làm lan man sai đề bài. AWF ép AI đi theo lộ trình 3 bước chuẩn:
+                        <br><br>
+                        <strong>1. Nghĩ</strong> (Suy luận)<br>
+                        <strong>2. Lên kế hoạch</strong> (Viết ra giấy)<br>
+                        <strong>3. Làm</strong> (Code)<br>
+                        <br>
+                        Giúp bạn tiết kiệm hàng giờ sửa lỗi vặt.
+                    </p>
+                    <div style="margin-top: auto; opacity: 0.8; text-align: right;">
+                        <i data-lucide="arrow-down" style="color: #fbbf24;"></i>
+                    </div>
+                </div>
+
+                <!-- 3. Auto-Save Brain -->
+                <div class="bento-item">
+                    <i data-lucide="brain-circuit" size="40" style="color: #7c3aed; margin-bottom: 1.5rem;"></i>
+                    <h3 class="bento-title">Bộ "Não" Thứ 2</h3>
+                    <p class="bento-desc">
+                        Bạn làm xong dự án A, AI sẽ nhớ gu thẩm mỹ của bạn. Sang dự án B, nó tự động áp dụng luôn mà
+                        không cần bạn nhắc lại.
+                    </p>
+                </div>
+
+                <!-- 4. Self Healing (Large - Bottom) -->
+                <div class="bento-item bento-large">
+                    <i data-lucide="shield-check" size="40" style="color: #06b6d4; margin-bottom: 1.5rem;"></i>
+                    <h3 class="bento-title">Tự Động Sửa Lỗi</h3>
+                    <p class="bento-desc">
+                        Web bị lỗi đỏ lòm? Đừng hoảng. AWF tự động đọc lỗi, tìm cách sửa và làm cho web chạy lại bình
+                        thường. Bạn chỉ cần ngồi uống cafe và xem phép màu.
+                    </p>
+                </div>
+
+                <!-- 5. Simplification (New - Replaces Security) -->
+                <div class="bento-item">
+                    <i data-lucide="box-select" size="40" style="color: #10b981; margin-bottom: 1.5rem;"></i>
+                    <h3 class="bento-title">Một Lệnh Chấp Hết</h3>
+                    <p class="bento-desc">
+                        Thay vì phải nhớ "Plugin", "Extension", "Agent" rối rắm... AWF gom tất cả vào 1 quy trình duy
+                        nhất. Đơn giản hóa cuộc đời bạn.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- Quick Install Section (Priority #1) -->
     <section id="install" class="section install-section reveal">
         <div class="container">
             <div class="install-box">
                 <h2 class="section-title">🚀 Bắt Đầu Ngay (Chỉ 1 Bước)</h2>
-                <p class="section-desc">Mở Terminal trong Cursor (Ctrl + `) và dán lệnh sau:</p>
+                <p class="section-desc">Mở <strong style="color: #4ade80;">PowerShell</strong> hoặc Terminal bất kỳ và
+                    dán lệnh sau:</p>
 
-                <div class="install-cmd-wrapper">
-                    <code class="cmd-text"
-                        id="install-cmd">irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1 | iex</code>
-                    <button class="cmd-copy-btn" onclick="copyInstallCmd()">
-                        <i data-lucide="copy"></i> Copy Lệnh
+                <div class="install-cmd-wrapper glass-panel"
+                    style="padding: 1rem; border-radius: 12px; display: flex; align-items: center; gap: 1rem; margin-top: 1rem;">
+                    <code class="cmd-text" id="install-cmd"
+                        style="flex: 1; font-family: 'JetBrains Mono'; color: #a5b4fc;">irm https://raw.githubusercontent.com/TUAN130294/awf/main/install.ps1 | iex</code>
+                    <button class="cmd-copy-btn btn-primary" onclick="copyInstallCmd()"
+                        style="border-radius: 8px; font-size: 0.9rem; padding: 0.5rem 1rem;">
+                        <i data-lucide="copy" size="16"></i> Copy
                     </button>
                 </div>
 
-                <p style="color: #94a3b8; font-size: 0.9rem;">
-                    Sau đó gõ tiếp <code
-                        style="color: #fff; background: #333; padding: 2px 6px; border-radius: 4px;">/init</code> để bắt
-                    đầu.
-                </p>
+                <div
+                    style="margin-top: 1.5rem; display: flex; gap: 0.5rem; justify-content: center; align-items: center; color: #94a3b8; font-size: 0.9rem;">
+                    <i data-lucide="info" size="14"></i>
+                    <span>Sau đó gõ <code
+                            style="color: #fff; background: rgba(255,255,255,0.1); padding: 2px 6px; border-radius: 4px;">/init</code>
+                        để bắt đầu dự án mới.</span>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Case Study (Proof -> Motivation) -->
-    <section id="case-study" class="section reveal">
+    <!-- Case Study: Thảo Coffee (Reimagined) -->
+    <section id="case-study" class="section reveal" style="padding: 4rem 0;">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">Case Study: Chuyện của Thảo ☕</h2>
-                <p class="section-desc">Xem cách Thảo (chủ quán cafe) tạo app quản lý chỉ bằng cách chat với AI.</p>
+                <h2 class="section-title text-glow">Case Study: 15 Phút Của Thảo ☕</h2>
+                <p class="section-desc">Từ ý tưởng quán cafe đến App quản lý hoàn chỉnh.</p>
             </div>
 
-            <div class="case-study-timeline">
-                <!-- Step 1 -->
-                <div class="cs-step">
-                    <div class="cs-number">1</div>
-                    <div class="cs-content">
-                        <h3>Trò chuyện mở đầu</h3>
-                        <p>Thảo mở khung chat với AI và chào hỏi xác nhận bắt đầu:</p>
-                        <div class="chat-interface simple">
-                            <div class="msg user"><strong>Thảo:</strong> /init</div>
-                            <div class="msg ai"><strong>Antigravity:</strong> Chào Thảo! 👋 Hệ thống đã sẵn sàng.</div>
-                        </div>
+            <div class="story-layout"
+                style="display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;">
+
+                <!-- Left: The Story -->
+                <div class="story-content">
+                    <div class="story-step active"
+                        style="margin-bottom: 2rem; padding: 1.5rem; border-left: 2px solid #8b5cf6; background: rgba(255,255,255,0.02);">
+                        <h3 style="color: #a78bfa; margin-bottom: 0.5rem;">1. Khởi Động</h3>
+                        <p style="color: #94a3b8;">Thảo gõ <code>/init</code>. AI Team lập tức tập hợp. Project Manager
+                            "Hà" xuất hiện chào hỏi.</p>
+                    </div>
+                    <div class="story-step"
+                        style="margin-bottom: 2rem; padding: 1.5rem; border-left: 2px solid #334155; opacity: 0.7;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">2. Phỏng Vấn (Deep Interview)</h3>
+                        <p style="color: #94a3b8;">AI hỏi Thảo về Menu, Topping, và quy trình in bếp. Thảo chỉ cần trả
+                            lời như đang chat với bạn.</p>
+                    </div>
+                    <div class="story-step"
+                        style="margin-bottom: 2rem; padding: 1.5rem; border-left: 2px solid #334155; opacity: 0.7;">
+                        <h3 style="color: #fff; margin-bottom: 0.5rem;">3. AI Code Tự Động</h3>
+                        <p style="color: #94a3b8;">Thảo đi pha cafe. 5 phút sau quay lại, hàng chục file code đã được
+                            viết xong hoàn chỉnh.</p>
                     </div>
                 </div>
 
-                <!-- Step 2 -->
-                <div class="cs-step">
-                    <div class="cs-number">2</div>
-                    <div class="cs-content">
-                        <h3>Lên ý tưởng (Deep Interview)</h3>
-                        <div class="chat-interface simple">
-                            <div class="msg user"><strong>Thảo:</strong> /plan Chị muốn làm app order cafe.</div>
-                            <div class="msg ai"><strong>Hà (PM):</strong> Vâng chị. Menu có topping không? Cần in phiếu
-                                bếp không?</div>
-                            <div class="msg user"><strong>Thảo:</strong> Có size ly, có in phiếu.</div>
-                            <div class="msg ai"><strong>Hà (PM):</strong> ✅ Đã rõ! Em đề xuất làm Web App.</div>
-                        </div>
-                    </div>
-                </div>
+                <!-- Right: The WOW Result (Phone Mockup) -->
+                <div class="story-visual">
+                    <div class="phone-mockup float-anim">
+                        <div class="phone-frame">
+                            <div class="phone-notch"></div>
+                            <div class="phone-screen" style="background: #f8fafc; font-family: 'Inter', sans-serif;">
+                                <!-- Modern Header -->
+                                <div class="app-header-modern"
+                                    style="padding: 1.5rem 1rem 1rem; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                                    <div class="app-title-box"
+                                        style="display: flex; justify-content: space-between; align-items: center;">
+                                        <div class="app-title-text">
+                                            <h2
+                                                style="color: #1e293b; font-size: 1.25rem; font-weight: 800; margin: 0;">
+                                                Thảo Coffee ☕</h2>
+                                            <span style="color: #10b981; font-size: 0.75rem; font-weight: 600;">● Đang
+                                                mở cửa</span>
+                                        </div>
+                                        <div class="avatar"
+                                            style="width: 36px; height: 36px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #64748b;">
+                                            <i data-lucide="bell" size="18"></i>
+                                        </div>
+                                    </div>
 
-                <!-- Step 3 -->
-                <div class="cs-step">
-                    <div class="cs-number">3</div>
-                    <div class="cs-content">
-                        <h3>AI viết code</h3>
-                        <div class="code-progress-visual">
-                            <div class="cp-file"><i data-lucide="file-code"></i> <span>schema.sql</span> <span
-                                    class="badge done">Done</span></div>
-                            <div class="cp-file"><i data-lucide="coffee"></i> <span>order.js</span> <span
-                                    class="badge active">Writing...</span></div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Step 4 -->
-                <div class="cs-step">
-                    <div class="cs-number">4</div>
-                    <div class="cs-content">
-                        <h3>Kết quả thực tế</h3>
-                        <p>15 phút sau, Thảo quay lại gõ <code>/run</code>:</p>
-                        <div class="app-fluke premium">
-                            <div class="fluke-nav">
-                                <span>Thảo Coffee</span>
-                                <span class="user-badge">Admin</span>
-                            </div>
-                            <div class="fluke-grid">
-                                <div class="fluke-card">
-                                    <div class="f-circle brown"></div>
-                                    <b>Bạc Xỉu</b> <small>29k</small>
+                                    <!-- Search Bar -->
+                                    <div
+                                        style="margin-top: 1rem; background: #f1f5f9; padding: 0.6rem 1rem; border-radius: 12px; display: flex; align-items: center; gap: 0.5rem; color: #94a3b8; font-size: 0.85rem;">
+                                        <i data-lucide="search" size="14"></i>
+                                        <span>Tìm món yêu thích...</span>
+                                    </div>
                                 </div>
-                                <div class="fluke-card active">
-                                    <div class="f-circle green"></div>
-                                    <b>Trà Vải</b> <small>35k</small>
-                                    <div class="badge-count">1</div>
+
+                                <!-- Modern Body -->
+                                <div class="app-body-modern"
+                                    style="padding: 1rem; height: 100%; overflow-y: auto; padding-bottom: 80px;">
+                                    <!-- Categories -->
+                                    <div
+                                        style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem; overflow-x: auto; padding-bottom: 5px; scrollbar-width: none;">
+                                        <span
+                                            style="background: #3b82f6; color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600; white-space: nowrap; box-shadow: 0 4px 10px rgba(59, 130, 246, 0.3);">Cà
+                                            Phê</span>
+                                        <span
+                                            style="background: #fff; color: #64748b; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; white-space: nowrap; border: 1px solid #e2e8f0;">Trà
+                                            Trái Cây</span>
+                                        <span
+                                            style="background: #fff; color: #64748b; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 500; white-space: nowrap; border: 1px solid #e2e8f0;">Bánh
+                                            Ngọt</span>
+                                    </div>
+
+                                    <!-- Product Grid (2 Columns) -->
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                                        <!-- Item 1 -->
+                                        <div class="drink-card"
+                                            style="background: #fff; border-radius: 16px; padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: relative;">
+                                            <span
+                                                style="position: absolute; top: 8px; left: 8px; background: #f43f5e; color: #fff; font-size: 0.6rem; font-weight: 700; padding: 2px 6px; border-radius: 4px; z-index: 2;">HOT</span>
+                                            <div
+                                                style="position: relative; width: 100%; padding-top: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 0.8rem;">
+                                                <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=200&q=80"
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                                                    alt="Tra Nhan">
+                                            </div>
+                                            <h4 style="font-size: 0.9rem; color: #1e293b; margin-bottom: 4px;">Trà Nhãn
+                                                Sen</h4>
+                                            <div
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <span
+                                                    style="font-weight: 700; color: #3b82f6; font-size: 0.95rem;">45k</span>
+                                                <button
+                                                    style="width: 24px; height: 24px; background: #1e293b; color: #fff; border-radius: 6px; border: none; display: flex; align-items: center; justify-content: center;">+</button>
+                                            </div>
+                                        </div>
+
+                                        <!-- Item 2 -->
+                                        <div class="drink-card"
+                                            style="background: #fff; border-radius: 16px; padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
+                                            <div
+                                                style="position: relative; width: 100%; padding-top: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 0.8rem;">
+                                                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=200&q=80"
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
+                                                    alt="Latte">
+                                            </div>
+                                            <h4 style="font-size: 0.9rem; color: #1e293b; margin-bottom: 4px;">Latte Đá
+                                                Xay</h4>
+                                            <div
+                                                style="display: flex; justify-content: space-between; align-items: center;">
+                                                <span
+                                                    style="font-weight: 700; color: #3b82f6; font-size: 0.95rem;">55k</span>
+                                                <button
+                                                    style="width: 24px; height: 24px; background: #cbd5e1; color: #fff; border-radius: 6px; border: none; display: flex; align-items: center; justify-content: center;">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Bottom Cart Bar -->
+                                    <div class="checkout-bar float-anim"
+                                        style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: #1e293b; padding: 1rem; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; color: #fff; box-shadow: 0 10px 30px rgba(30, 41, 59, 0.4);">
+                                        <div style="display: flex; flex-direction: column;">
+                                            <span style="font-size: 0.7rem; opacity: 0.7;">1 món trong giỏ</span>
+                                            <span style="font-weight: 700;">45.000đ</span>
+                                        </div>
+                                        <span
+                                            style="font-weight: 600; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">Thanh
+                                            toán &rarr;</span>
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="fluke-footer">
-                                <span>Tổng: 35k</span>
-                                <button>Thanh Toán</button>
                             </div>
                         </div>
                     </div>
@@ -258,132 +469,285 @@
         </div>
     </section>
 
-    <!-- Smart Flowchart -->
+    <!-- Smart Flowchart (Metro Style Full Cycle) -->
     <section id="workflow-map" class="section reveal">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">🗺️ Bản Đồ Lệnh</h2>
-                <p class="section-desc">Bạn muốn làm gì? Hãy đi theo đường kẻ.</p>
+                <h2 class="section-title">🗺️ ĐƯỜNG TÀU CAO TỐC AWF</h2>
+                <p class="section-desc">Mọi giai đoạn phát triển phần mềm đều có AWF đồng hành.</p>
+
+                <!-- Interaction Hint -->
+                <div class="click-hint float-anim"
+                    style="margin-top: 1rem; display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(255,255,255,0.1); padding: 0.5rem 1rem; border-radius: 20px; border: 1px solid rgba(255,255,255,0.2);">
+                    <i data-lucide="mouse-pointer-click" size="16" style="color: #4ade80;"></i>
+                    <span style="font-size: 0.9rem; color: #fff;">Chạm vào từng Lệnh để xem chi tiết</span>
+                </div>
             </div>
-            <div class="flowchart-container">
-                <div class="flow-start">
-                    <div class="flow-node start-node">Bạn muốn làm gì?</div>
-                </div>
-                <div class="flow-branches">
-                    <div class="flow-branch">
-                        <div class="flow-line"></div>
-                        <div class="flow-node condition">Dự án mới</div>
-                        <div class="flow-arrow">↓</div>
-                        <div class="flow-node result purple" onclick="openCmdModal('init')"><code>/init</code><span>Khởi
-                                tạo</span></div>
-                    </div>
-                    <div class="flow-branch">
-                        <div class="flow-line"></div>
-                        <div class="flow-node condition">Ý tưởng</div>
-                        <div class="flow-arrow">↓</div>
-                        <div class="flow-node result blue" onclick="openCmdModal('plan')"><code>/plan</code><span>Lập kế
-                                hoạch</span></div>
-                    </div>
-                    <div class="flow-branch">
-                        <div class="flow-line"></div>
-                        <div class="flow-node condition">UI/UX</div>
-                        <div class="flow-arrow">↓</div>
-                        <div class="flow-node result pink" onclick="openCmdModal('visualize')">
-                            <code>/visualize</code><span>Thiết kế</span></div>
-                    </div>
-                    <div class="flow-branch">
-                        <div class="flow-line"></div>
-                        <div class="flow-node condition">Code</div>
-                        <div class="flow-arrow">↓</div>
-                        <div class="flow-node result green" onclick="openCmdModal('code')"><code>/code</code><span>Viết
-                                code</span></div>
+
+            <div class="metro-map">
+                <!-- Phase 1: Idea -->
+                <div class="phase-row">
+                    <div class="phase-label">IDEA</div>
+                    <div class="nodes-container">
+                        <div class="wf-node" onclick="openCmdModal('brainstorm')">
+                            <span class="wf-cmd">/brainstorm</span>
+                            <span class="wf-desc">Tìm Ý Tưởng</span>
+                        </div>
+                        <div class="wf-node pulse-node" onclick="openCmdModal('plan')" style="border-color: #3b82f6;">
+                            <span class="wf-cmd">/plan</span>
+                            <span class="wf-desc">Lên kế hoạch</span>
+                        </div>
                     </div>
                 </div>
-                <div class="flow-footer">
-                    <div class="flow-node condition alt">Gặp lỗi?</div>
-                    <div class="flow-connect">→</div>
-                    <div class="flow-node result orange" onclick="openCmdModal('debug')"><code>/debug</code></div>
+
+                <!-- Phase 2: Build -->
+                <div class="phase-row">
+                    <div class="phase-label">BUILD</div>
+                    <div class="nodes-container">
+                        <div class="wf-node pulse-node" onclick="openCmdModal('init')" style="border-color: #8b5cf6;">
+                            <span class="wf-cmd">/init</span>
+                            <span class="wf-desc">Khởi tạo</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('design')">
+                            <span class="wf-cmd">/design</span>
+                            <span class="wf-desc">Thiết kế DB/API</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('visualize')">
+                            <span class="wf-cmd">/visualize</span>
+                            <span class="wf-desc">Vẽ Mockup</span>
+                        </div>
+                        <div class="wf-node pulse-node" onclick="openCmdModal('code')" style="border-color: #10b981;">
+                            <span class="wf-cmd">/code</span>
+                            <span class="wf-desc">AI Viết Code</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 3: Verify -->
+                <div class="phase-row">
+                    <div class="phase-label">VERIFY</div>
+                    <div class="nodes-container">
+                        <div class="wf-node" onclick="openCmdModal('audit')">
+                            <span class="wf-cmd">/audit</span>
+                            <span class="wf-desc">Kiểm tra bảo mật</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('test')">
+                            <span class="wf-cmd">/test</span>
+                            <span class="wf-desc">Chạy Test Auto</span>
+                        </div>
+                        <div class="wf-node pulse-node" onclick="openCmdModal('debug')" style="border-color: #f59e0b;">
+                            <span class="wf-cmd">/debug</span>
+                            <span class="wf-desc">Sửa lỗi tự động</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Release -->
+                <div class="phase-row">
+                    <div class="phase-label">RELEASE</div>
+                    <div class="nodes-container">
+                        <div class="wf-node" onclick="openCmdModal('run')">
+                            <span class="wf-cmd">/run</span>
+                            <span class="wf-desc">Chạy thử Local</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('deploy')">
+                            <span class="wf-cmd">/deploy</span>
+                            <span class="wf-desc">Đẩy lên Server</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 5: Ops -->
+                <div class="phase-row">
+                    <div class="phase-label">OPS</div>
+                    <div class="nodes-container">
+                        <div class="wf-node" onclick="openCmdModal('refactor')">
+                            <span class="wf-cmd">/refactor</span>
+                            <span class="wf-desc">Dọn dẹp Code</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('save_brain')">
+                            <span class="wf-cmd">/save-brain</span>
+                            <span class="wf-desc">Lưu kiến thức</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+    <!-- Philosophy: Workflow vs Skills (The Why) -->
+    <section id="philosophy" class="section">
+        <div class="container">
+            <div class="glass-panel warning-box tilt-card" style="border-color: rgba(139, 92, 246, 0.3);">
+                <div class="warn-header"
+                    style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 1.5rem; margin-bottom: 2rem; text-align: center;">
+                    <h2 class="text-glow" style="font-size: 2rem; margin-bottom: 0.5rem;">🧠 Tại Sao Chọn "Workflow"
+                        Thay Vì "Skill Agent"?</h2>
+                    <p style="color: #94a3b8; font-size: 1.1rem;">Đừng biến AI của bạn thành một "đống lộn xộn" các công
+                        cụ rời rạc.</p>
+                </div>
+
+                <div class="trap-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem;">
+                    <!-- Problem: The Skill Trap -->
+                    <div class="trap-column">
+                        <h3
+                            style="color: #f43f5e; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="x-circle"></i> Cách Cũ: Cài Agent Lẻ Tẻ
+                        </h3>
+                        <div class="trap-item" style="margin-bottom: 1.5rem;">
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">1. Trôi Context (Mất Trí Nhớ)</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+                                Khi bạn gọi Agent A viết code, Agent B kiểm tra lỗi, Agent C viết doc... chúng
+                                <strong>không nói chuyện với nhau</strong>.
+                                Kết quả: Bạn phải copy-paste lại từ đầu cho từng con AI. Rất mệt!
+                            </p>
+                        </div>
+                        <div class="trap-item">
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">2. Quá Tải Não Bộ (Cognitive Load)</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+                                <em>"Lỗi này dùng Agent nào? Python Agent hay Debug Agent?"</em><br>
+                                Người mới sẽ bị loạn giữa rừng công cụ. Bạn muốn làm ra sản phẩm, không phải học cách
+                                quản lý 20 con bot.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Solution: The AWF Way -->
+                    <div class="trap-column">
+                        <h3
+                            style="color: #4ade80; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.5rem;">
+                            <i data-lucide="check-circle"></i> Cách AWF: Workflow Đồng Bộ
+                        </h3>
+                        <div class="trap-item" style="margin-bottom: 1.5rem;">
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">1. Context Liền Mạch (Flow)</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+                                AWF lưu giữ dòng chảy suy nghĩ. <code>/plan</code> tạo ra bản vẽ, <code>/code</code> tự
+                                động lấy bản vẽ đó để xây.
+                                AI tự biết nó đang ở giai đoạn nào, bạn không cần nhắc lại.
+                            </p>
+                        </div>
+                        <div class="trap-item">
+                            <h4 style="color: #fff; margin-bottom: 0.5rem;">2. Một Lệnh Cho Tất Cả</h4>
+                            <p style="color: #94a3b8; font-size: 0.95rem; line-height: 1.6;">
+                                Thay vì nhớ 20 agent, bạn chỉ cần nhớ quy trình 3 bước: <strong>Plan → Code →
+                                    Run</strong>.
+                                Scanner, Designer, Debugger đã được tích hợp ngầm bên dưới, tự kích hoạt khi cần.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="warn-footer"
+                    style="margin-top: 2.5rem; text-align: center; padding-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.05);">
+                    <p style="font-size: 1.1rem; color: #e2e8f0; font-weight: 500;">
+                        "AWF không bán cho bạn bộ đồ nghề sửa xe (Skills).<br>
+                        AWF bán cho bạn chiếc xe tự lái (Workflow)."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 
     <!-- Recipes / Templates -->
     <section id="recipes" class="section reveal">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">Công Thức "Mì Ăn Liền" 🍜</h2>
-                <p class="section-desc">Copy và dán để làm ngay.</p>
+                <div class="section-header center">
+                    <h2 class="section-title text-glow">⚡ Templates "Mì Ăn Liền"</h2>
+                    <p class="section-desc">Copy prompt này → Paste vào AI. Xong việc.</p>
+                </div>
             </div>
+
             <div class="recipe-grid">
-                <div class="recipe-card">
-                    <div class="recipe-icon">📝</div>
-                    <h3>Blog / Portfolio</h3>
-                    <div class="code-snippet">
-                        <span class="comment"># B1: Gõ /init</span>
-                        <br>"Tôi muốn làm Blog cá nhân đơn giản."
+                <!-- Blog Template -->
+                <div class="recipe-card glass-panel">
+                    <div class="recipe-header">
+                        <span class="recipe-icon">📝</span>
+                        <h3>Blog Cá Nhân</h3>
                     </div>
-                    <button class="btn-copy">Copy</button>
+                    <div class="code-block">
+                        <div class="cmd-line"><span class="prompt">$</span> /init</div>
+                        <div class="cmd-line text">"Làm blog công nghệ, giao diện tối giản, chuẩn SEO."</div>
+                    </div>
+                    <button class="btn-copy-small"
+                        onclick="navigator.clipboard.writeText('Tôi muốn làm Blog cá nhân đơn giản, giao diện Minimalist. Dùng để viết bài công nghệ.')">
+                        <i data-lucide="copy"></i> Copy Prompt
+                    </button>
                 </div>
-                <div class="recipe-card">
-                    <div class="recipe-icon">🛒</div>
-                    <h3>Shop Bán Hàng</h3>
-                    <div class="code-snippet">
-                        <span class="comment"># B1: Gõ /init</span>
-                        <br>"Làm web bán quần áo, có giỏ hàng, ship COD."
+
+                <!-- E-commerce Template -->
+                <div class="recipe-card glass-panel">
+                    <div class="recipe-header">
+                        <span class="recipe-icon">🛍️</span>
+                        <h3>Shop Online</h3>
                     </div>
-                    <button class="btn-copy">Copy</button>
+                    <div class="code-block">
+                        <div class="cmd-line"><span class="prompt">$</span> /init</div>
+                        <div class="cmd-line text">"Web bán quần áo, có giỏ hàng, thanh toán COD."</div>
+                    </div>
+                    <button class="btn-copy-small"
+                        onclick="navigator.clipboard.writeText('Làm web bán quần áo. Trang chủ có banner to. Có danh sách sản phẩm và giỏ hàng. Chỉ cần ship COD.')">
+                        <i data-lucide="copy"></i> Copy Prompt
+                    </button>
                 </div>
-                <div class="recipe-card">
-                    <div class="recipe-icon">📊</div>
-                    <h3>Dashboard</h3>
-                    <div class="code-snippet">
-                        <span class="comment"># B1: Gõ /init</span>
-                        <br>"Làm bảng chấm công nhân viên."
+
+                <!-- Dashboard Template -->
+                <div class="recipe-card glass-panel">
+                    <div class="recipe-header">
+                        <span class="recipe-icon">📊</span>
+                        <h3>Admin Dashboard</h3>
                     </div>
-                    <button class="btn-copy">Copy</button>
+                    <div class="code-block">
+                        <div class="cmd-line"><span class="prompt">$</span> /init</div>
+                        <div class="cmd-line text">"Hệ thống quản lý nhân sự, chấm công, báo cáo."</div>
+                    </div>
+                    <button class="btn-copy-small"
+                        onclick="navigator.clipboard.writeText('Làm bảng chấm công cho nhân viên. Có danh sách nhân viên và nút Check-in/Check-out.')">
+                        <i data-lucide="copy"></i> Copy Prompt
+                    </button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Evolution: 3.x vs 4.0 -->
-    <section id="evolution" class="section">
+    <!-- Evolution -->
+    <section id="evolution" class="section reveal">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">Bước Nhảy Vọt: AWF 3.x vs 4.0 🚀</h2>
-                <p class="section-desc">Từ bộ workflows đơn thuần đến Hệ điều hành AI hoàn chỉnh</p>
+                <h2 class="section-title">Next Level Coding 🚀</h2>
+                <p class="section-desc">Sự khác biệt giữa "Thợ code" và "Vibe Coder"</p>
             </div>
 
-            <div class="comparison-table-wrapper">
+            <div class="comparison-table-wrapper glass-panel">
                 <table class="comp-table">
                     <thead>
                         <tr>
-                            <th>Tính năng</th>
-                            <th class="ver-1">AWF 3.x (Cũ)</th>
-                            <th class="ver-2">AWF 4.0 (Hiện tại)</th>
+                            <th></th>
+                            <th class="ver-1 text-muted">Cách Cũ (3.x)</th>
+                            <th class="ver-2 text-glow">AWF 4.0 (Mới)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>⚡ Cách ra lệnh</td>
-                            <td class="bad">Nhớ prompt dài dòng<br><em>"Act as a developer..."</em></td>
-                            <td class="good">Lệnh ngắn gọn<br><code>/code</code>, <code>/fix</code></td>
+                            <td class="feature-name">Ra lệnh</td>
+                            <td class="bad">Nhớ prompt dài dòng</td>
+                            <td class="good">Lệnh ngắn: <code>/code</code>, <code>/fix</code></td>
                         </tr>
                         <tr>
-                            <td>🧠 Bộ nhớ (Context)</td>
-                            <td class="bad">Quên sau 1 buổi chat</td>
+                            <td class="feature-name">Bộ nhớ</td>
+                            <td class="bad">Quên sau 1 ngày</td>
                             <td class="good">Nhớ vĩnh viễn (Session Restore)</td>
                         </tr>
                         <tr>
-                            <td>🛠️ Công cụ (Skills)</td>
-                            <td class="bad">Phải cài thủ công từng cái</td>
-                            <td class="good">Tích hợp sẵn (All-in-One)</td>
-                        </tr>
-                        <tr>
-                            <td>🤖 Tư duy</td>
-                            <td class="bad">Thợ code (Bảo gì làm nấy)</td>
-                            <td class="good">Đội ngũ (PM, Dev, Tester) tự tư duy</td>
+                            <td class="feature-name">Tư duy</td>
+                            <td class="bad">Thợ code thụ động</td>
+                            <td class="good">Đội ngũ AI chủ động (PM, Dev, QA)</td>
                         </tr>
                     </tbody>
                 </table>
@@ -391,148 +755,29 @@
         </div>
     </section>
 
-    <!-- The Skill Trap Warning -->
-    <section id="skill-trap" class="section">
-        <div class="container">
-            <div class="warning-box tilt-card">
-                <div class="warn-header">
-                    <i data-lucide="alert-triangle"></i>
-                    <h2>Tại Sao KHÔNG Nên Cài Thêm Skill Agents Bên Ngoài?</h2>
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-container">
+            <div class="footer-left">
+                <div class="nav-logo">
+                    <div class="logo-box"><i data-lucide="zap"></i></div>
+                    <span class="logo-text">AWF</span>
                 </div>
-                <div class="warn-body">
-                    <p class="warn-intro">Người mới thường nghĩ: <em>"Càng cài nhiều Skills thì AI càng mạnh"</em>.
-                        <strong>SAI LẦM!</strong>
-                    </p>
-
-                    <div class="trap-grid">
-                        <div class="trap-item">
-                            <span class="trap-icon">😵</span>
-                            <h4>Gây Loạn AI</h4>
-                            <p>Quá nhiều chỉ thị chồng chéo khiến AI bị "đơ", không biết nghe theo ai.</p>
-                        </div>
-                        <div class="trap-item">
-                            <span class="trap-icon">🐢</span>
-                            <h4>Làm Chậm Hệ Thống</h4>
-                            <p>Mỗi Skill cài thêm là một gánh nặng context, làm AI phản hồi chậm hơn.</p>
-                        </div>
-                        <div class="trap-item">
-                            <span class="trap-icon">✅</span>
-                            <h4>AWF Đã Có Đủ</h4>
-                            <p>AWF 2.0 đã tích hợp sẵn <strong>awf-scanner, awf-designer, awf-debugger</strong>. Chúng
-                                được tối ưu để phối hợp với nhau mượt mà nhất.</p>
-                        </div>
-                    </div>
-                </div>
+                <p class="footer-motto">Code Less, Vibe More.</p>
+            </div>
+            <div class="footer-right">
+                <a href="https://github.com/TUAN130294/awf" target="_blank">GitHub</a>
+                <a href="#">Discord</a>
             </div>
         </div>
-    </section>
-
-    <!-- Recipes / Templates -->
-    <section id="recipes" class="section">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-title">Công Thức "Mì Ăn Liền" 🍜</h2>
-                <p class="section-desc">Copy những dòng này và dán vào Chat để làm ngay</p>
-            </div>
-
-            <div class="recipe-grid">
-                <div class="recipe-card">
-                    <div class="recipe-icon">📝</div>
-                    <h3>Blog Cá Nhân</h3>
-                    <p>Web viết bài, portfolio.</p>
-                    <div class="code-snippet">
-                        <span class="comment"># B1: Gõ /init, sau đó:</span>
-                        <br>"Tôi muốn làm Blog cá nhân đơn giản, giao diện Minimalist. Dùng để viết bài công nghệ."
-                        <br><br>/plan
-                        <br>/code
-                    </div>
-                    <button class="btn-copy">Copy Công Thức</button>
-                </div>
-
-                <div class="recipe-card">
-                    <div class="recipe-icon">🛒</div>
-                    <h3>Shop Bán Hàng</h3>
-                    <p>Trang bán quần áo đơn giản.</p>
-                    <div class="code-snippet">
-                        <span class="comment"># B1: Gõ /init, sau đó:</span>
-                        <br>"Làm web bán quần áo. Trang chủ có banner to. Có danh sách sản phẩm và giỏ hàng. Chỉ cần
-                        ship COD."
-                        <br><br>/plan
-                        <br>/code
-                    </div>
-                    <button class="btn-copy">Copy Công Thức</button>
-                </div>
-
-                <div class="recipe-card">
-                    <div class="recipe-icon">📊</div>
-                    <h3>Dashboard Nội Bộ</h3>
-                    <p>Quản lý nhân viên, chấm công.</p>
-                    <div class="code-snippet">
-                        <span class="comment"># B1: Gõ /init, sau đó:</span>
-                        <br>"Làm bảng chấm công cho nhân viên. Có danh sách nhân viên và nút Check-in/Check-out."
-                        <br><br>/plan
-                        <br>/code
-                    </div>
-                    <button class="btn-copy">Copy Công Thức</button>
-                </div>
-            </div>
+        <div class="footer-bottom">
+            © 2026 Antigravity Team. Open Source MIT License.
         </div>
-    </section>
+    </footer>
 
-    <!-- Personas -->
-    <section id="personas" class="section">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-title">Đội Ngũ Nhân Viên Của Bạn</h2>
-                <p class="section-desc">Mỗi khi gõ lệnh, một chuyên gia sẽ xuất hiện</p>
-            </div>
-            <div class="persona-scroll">
-                <div class="persona-card">
-                    <div class="persona-avatar p1">Hà</div>
-                    <h3>Hà (PM)</h3>
-                    <p class="role">Project Manager</p>
-                </div>
-                <div class="persona-card">
-                    <div class="persona-avatar p2">Tuấn</div>
-                    <h3>Tuấn (Dev)</h3>
-                    <p class="role">Senior Developer</p>
-                </div>
-                <div class="persona-card">
-                    <div class="persona-avatar p3">Mai</div>
-                    <h3>Mai (UX)</h3>
-                    <p class="role">Designer</p>
-                </div>
-                <div class="persona-card">
-                    <div class="persona-avatar p4">Long</div>
-                    <h3>Long (QA)</h3>
-                    <p class="role">Bug Hunter</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Interactive Command Grid -->
-    <section id="commands" class="section">
-        <div class="container">
-            <div class="section-header center">
-                <h2 class="section-title">Bảng Tra Cứu Nhanh</h2>
-                <p class="section-desc">Bấm vào lệnh để xem hướng dẫn</p>
-            </div>
-            <div class="cmd-grid">
-                <div class="cmd-item" onclick="openCmdModal('init')"><code>/init</code><span>Bắt đầu</span></div>
-                <div class="cmd-item" onclick="openCmdModal('plan')"><code>/plan</code><span>Kế hoạch</span></div>
-                <div class="cmd-item" onclick="openCmdModal('design')"><code>/design</code><span>Thiết kế</span></div>
-                <div class="cmd-item" onclick="openCmdModal('visualize')"><code>/visualize</code><span>Giao diện</span>
-                </div>
-                <div class="cmd-item" onclick="openCmdModal('code')"><code>/code</code><span>Viết code</span></div>
-                <div class="cmd-item" onclick="openCmdModal('run')"><code>/run</code><span>Chạy</span></div>
-                <div class="cmd-item" onclick="openCmdModal('debug')"><code>/debug</code><span>Sửa lỗi</span></div>
-                <div class="cmd-item" onclick="openCmdModal('next')"><code>/next</code><span>Tiếp theo</span></div>
-            </div>
-        </div>
-    </section>
+    <!-- Command Modal -->
     <div id="cmd-modal" class="modal-overlay">
-        <div class="modal-content tilt-card">
+        <div class="modal-content tilt-card glass-panel">
             <button class="modal-close" onclick="closeCmdModal()"><i data-lucide="x"></i></button>
             <div class="modal-header">
                 <div class="modal-icon"><i data-lucide="terminal"></i></div>
@@ -544,36 +789,17 @@
                     <p id="modal-when">Text explanation here...</p>
                 </div>
                 <div class="modal-section">
-                    <h3>🤖 AI sẽ làm gì?</h3>
-                    <p id="modal-ai">AI actions here...</p>
+                    <h3>🤖 AI làm gì?</h3>
+                    <p id="modal-ai">Thinking...</p>
                 </div>
                 <div class="modal-section">
-                    <h3>📝 Ví dụ</h3>
-                    <div class="code-snippet small" id="modal-example">
-                        Example code...
-                    </div>
+                    <h3>📝 Ví dụ:</h3>
+                    <pre id="modal-example" class="code-block"
+                        style="background: rgba(0,0,0,0.3); padding: 1rem; border-radius: 8px; margin-top: 0.5rem; white-space: pre-wrap;">Example...</pre>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer>
-        <div class="container footer-container">
-            <div class="footer-left">
-                <div class="nav-logo">
-                    <div class="logo-box"><i data-lucide="zap"></i></div>
-                    <span class="logo-text">AWF</span>
-                </div>
-                <p>Framework cho Vibe Coders.</p>
-            </div>
-            <div class="footer-right">
-                <a href="#">Github</a>
-                <a href="#">Discord</a>
-                <a href="#">Twitter</a>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
     <script>

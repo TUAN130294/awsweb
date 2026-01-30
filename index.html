@@ -316,95 +316,98 @@
                     </div>
                 </div>
 
-                <!-- Right: Phone Mockup -->
+                <!-- Right: Phone Mockup (Coffee Theme) -->
                 <div class="story-visual">
                     <div class="phone-mockup float-anim">
-                        <div class="phone-frame">
-                            <div class="phone-notch"></div>
-                            <div class="phone-screen" style="background: #f8fafc; font-family: 'Inter', sans-serif;">
+                        <div class="phone-frame" style="background: #1c1917; border: 6px solid #292524; border-radius: 44px; padding: 8px; box-shadow: 0 25px 60px rgba(0,0,0,0.4), inset 0 0 0 2px #3f3f46;">
+                            <div class="phone-notch" style="position: absolute; top: 8px; left: 50%; transform: translateX(-50%); width: 100px; height: 24px; background: #1c1917; border-radius: 0 0 16px 16px; z-index: 10;"></div>
+                            <div class="phone-screen" style="background: #FFFBEB; font-family: 'Inter', sans-serif; border-radius: 36px; overflow: hidden; height: 100%; position: relative;">
+
+                                <!-- Status Bar -->
+                                <div style="padding: 12px 20px 8px; display: flex; justify-content: space-between; align-items: center; font-size: 0.7rem; font-weight: 600; color: #78716c;">
+                                    <span>9:41</span>
+                                    <div style="display: flex; gap: 4px; align-items: center;">
+                                        <i data-lucide="signal" size="12"></i>
+                                        <i data-lucide="wifi" size="12"></i>
+                                        <i data-lucide="battery-full" size="12"></i>
+                                    </div>
+                                </div>
+
                                 <!-- Header -->
-                                <div class="app-header-modern"
-                                    style="padding: 1.5rem 1rem 1rem; background: #fff; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                                    <div class="app-title-box"
-                                        style="display: flex; justify-content: space-between; align-items: center;">
-                                        <div class="app-title-text">
-                                            <h2 style="color: #1e293b; font-size: 1.25rem; font-weight: 800; margin: 0;">
-                                                Thảo Coffee</h2>
-                                            <span style="color: #10b981; font-size: 0.75rem; font-weight: 600;">
-                                                <i data-lucide="circle" size="8" style="fill: #10b981;"></i> Đang mở cửa</span>
+                                <div style="padding: 0.8rem 1rem 1rem; background: linear-gradient(180deg, #FFFBEB 0%, #FEF3C7 100%);">
+                                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                        <div>
+                                            <span style="color: #92400e; font-size: 0.7rem; font-weight: 500;">Xin chào!</span>
+                                            <h2 style="color: #78350f; font-size: 1.1rem; font-weight: 800; margin: 2px 0 0 0;">Thảo Coffee</h2>
                                         </div>
-                                        <div class="avatar"
-                                            style="width: 36px; height: 36px; background: #f1f5f9; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #64748b;">
-                                            <i data-lucide="bell" size="18"></i>
+                                        <div style="width: 40px; height: 40px; background: #fff; border-radius: 12px; display: flex; align-items: center; justify-content: center; color: #d97706; box-shadow: 0 2px 8px rgba(217,119,6,0.15);">
+                                            <i data-lucide="coffee" size="20"></i>
                                         </div>
                                     </div>
-                                    <div
-                                        style="margin-top: 1rem; background: #f1f5f9; padding: 0.6rem 1rem; border-radius: 12px; display: flex; align-items: center; gap: 0.5rem; color: #94a3b8; font-size: 0.85rem;">
-                                        <i data-lucide="search" size="14"></i>
+
+                                    <!-- Search -->
+                                    <div style="background: #fff; padding: 0.7rem 1rem; border-radius: 14px; display: flex; align-items: center; gap: 0.6rem; color: #a8a29e; font-size: 0.8rem; box-shadow: 0 2px 8px rgba(0,0,0,0.04);">
+                                        <i data-lucide="search" size="16" style="color: #d97706;"></i>
                                         <span>Tìm món yêu thích...</span>
                                     </div>
                                 </div>
 
                                 <!-- Body -->
-                                <div class="app-body-modern"
-                                    style="padding: 1rem; height: 100%; overflow-y: auto; padding-bottom: 80px;">
+                                <div style="padding: 1rem; background: #FFFBEB; height: calc(100% - 180px); overflow-y: auto;">
                                     <!-- Categories -->
-                                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1.5rem;">
-                                        <span
-                                            style="background: #3b82f6; color: #fff; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; font-weight: 600;">Cà Phê</span>
-                                        <span
-                                            style="background: #fff; color: #64748b; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; border: 1px solid #e2e8f0;">Trà</span>
-                                        <span
-                                            style="background: #fff; color: #64748b; padding: 6px 16px; border-radius: 20px; font-size: 0.8rem; border: 1px solid #e2e8f0;">Bánh</span>
+                                    <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem; overflow-x: auto;">
+                                        <span style="background: #78350f; color: #fff; padding: 8px 16px; border-radius: 12px; font-size: 0.75rem; font-weight: 600; white-space: nowrap;">Cà Phê</span>
+                                        <span style="background: #fff; color: #78350f; padding: 8px 16px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; border: 1px solid #fde68a; white-space: nowrap;">Trà Sữa</span>
+                                        <span style="background: #fff; color: #78350f; padding: 8px 16px; border-radius: 12px; font-size: 0.75rem; font-weight: 500; border: 1px solid #fde68a; white-space: nowrap;">Bánh</span>
                                     </div>
 
-                                    <!-- Products -->
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                        <div class="drink-card"
-                                            style="background: #fff; border-radius: 16px; padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03); position: relative;">
-                                            <span
-                                                style="position: absolute; top: 8px; left: 8px; background: #f43f5e; color: #fff; font-size: 0.6rem; font-weight: 700; padding: 2px 6px; border-radius: 4px;">HOT</span>
-                                            <div
-                                                style="position: relative; width: 100%; padding-top: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 0.8rem;">
-                                                <img src="https://images.unsplash.com/photo-1594631252845-29fc4cc8cde9?auto=format&fit=crop&w=200&q=80"
-                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
-                                                    alt="Tra Nhan">
+                                    <!-- Products Grid -->
+                                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem;">
+                                        <!-- Product 1 -->
+                                        <div style="background: #fff; border-radius: 16px; padding: 0.6rem; box-shadow: 0 4px 12px rgba(120,53,15,0.08); position: relative;">
+                                            <span style="position: absolute; top: 10px; left: 10px; background: #dc2626; color: #fff; font-size: 0.55rem; font-weight: 700; padding: 3px 6px; border-radius: 6px; z-index: 2;">BEST</span>
+                                            <div style="position: relative; width: 100%; padding-top: 85%; border-radius: 12px; overflow: hidden; margin-bottom: 0.6rem;">
+                                                <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?auto=format&fit=crop&w=200&q=80"
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" alt="Capuccino">
                                             </div>
-                                            <h4 style="font-size: 0.9rem; color: #1e293b; margin-bottom: 4px;">Trà Nhãn Sen</h4>
+                                            <h4 style="font-size: 0.8rem; color: #1c1917; margin-bottom: 2px; font-weight: 600;">Capuccino</h4>
                                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                                <span style="font-weight: 700; color: #3b82f6; font-size: 0.95rem;">45k</span>
-                                                <button
-                                                    style="width: 24px; height: 24px; background: #1e293b; color: #fff; border-radius: 6px; border: none;">+</button>
+                                                <span style="font-weight: 700; color: #d97706; font-size: 0.85rem;">35k</span>
+                                                <button style="width: 26px; height: 26px; background: #78350f; color: #fff; border-radius: 8px; border: none; font-size: 1rem; cursor: pointer;">+</button>
                                             </div>
                                         </div>
 
-                                        <div class="drink-card"
-                                            style="background: #fff; border-radius: 16px; padding: 0.8rem; box-shadow: 0 4px 20px rgba(0,0,0,0.03);">
-                                            <div
-                                                style="position: relative; width: 100%; padding-top: 100%; border-radius: 12px; overflow: hidden; margin-bottom: 0.8rem;">
-                                                <img src="https://images.unsplash.com/photo-1541167760496-1628856ab772?auto=format&fit=crop&w=200&q=80"
-                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;"
-                                                    alt="Latte">
+                                        <!-- Product 2 -->
+                                        <div style="background: #fff; border-radius: 16px; padding: 0.6rem; box-shadow: 0 4px 12px rgba(120,53,15,0.08);">
+                                            <div style="position: relative; width: 100%; padding-top: 85%; border-radius: 12px; overflow: hidden; margin-bottom: 0.6rem;">
+                                                <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?auto=format&fit=crop&w=200&q=80"
+                                                    style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" alt="Latte">
                                             </div>
-                                            <h4 style="font-size: 0.9rem; color: #1e293b; margin-bottom: 4px;">Latte Đá Xay</h4>
+                                            <h4 style="font-size: 0.8rem; color: #1c1917; margin-bottom: 2px; font-weight: 600;">Latte Đá</h4>
                                             <div style="display: flex; justify-content: space-between; align-items: center;">
-                                                <span style="font-weight: 700; color: #3b82f6; font-size: 0.95rem;">55k</span>
-                                                <button
-                                                    style="width: 24px; height: 24px; background: #cbd5e1; color: #fff; border-radius: 6px; border: none;">+</button>
+                                                <span style="font-weight: 700; color: #d97706; font-size: 0.85rem;">45k</span>
+                                                <button style="width: 26px; height: 26px; background: #e7e5e4; color: #78716c; border-radius: 8px; border: none; font-size: 1rem; cursor: pointer;">+</button>
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <!-- Cart Bar -->
-                                    <div class="checkout-bar float-anim"
-                                        style="position: absolute; bottom: 20px; left: 20px; right: 20px; background: #1e293b; padding: 1rem; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; color: #fff;">
-                                        <div>
-                                            <span style="font-size: 0.7rem; opacity: 0.7;">1 món trong giỏ</span>
-                                            <span style="font-weight: 700; display: block;">45.000đ</span>
-                                        </div>
-                                        <span style="font-weight: 600; font-size: 0.9rem;">Thanh toán &rarr;</span>
                                     </div>
                                 </div>
+
+                                <!-- Cart Bar -->
+                                <div style="position: absolute; bottom: 16px; left: 12px; right: 12px; background: linear-gradient(135deg, #78350f 0%, #92400e 100%); padding: 0.9rem 1rem; border-radius: 16px; display: flex; justify-content: space-between; align-items: center; color: #fff; box-shadow: 0 8px 24px rgba(120,53,15,0.35);">
+                                    <div style="display: flex; align-items: center; gap: 0.6rem;">
+                                        <div style="width: 32px; height: 32px; background: rgba(255,255,255,0.2); border-radius: 10px; display: flex; align-items: center; justify-content: center;">
+                                            <i data-lucide="shopping-bag" size="16"></i>
+                                        </div>
+                                        <div>
+                                            <span style="font-size: 0.65rem; opacity: 0.85;">1 món</span>
+                                            <span style="font-weight: 700; display: block; font-size: 0.9rem;">35.000đ</span>
+                                        </div>
+                                    </div>
+                                    <div style="background: #fff; color: #78350f; padding: 8px 14px; border-radius: 10px; font-weight: 700; font-size: 0.8rem;">
+                                        Đặt ngay
+                                    </div>
+                                </div>
+
                             </div>
                         </div>
                     </div>

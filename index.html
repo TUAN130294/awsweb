@@ -219,13 +219,13 @@
                     </div>
                 </div>
 
-                <!-- 3. Auto-Save Brain -->
+                <!-- 3. Auto-Save Session (v4 Feature) -->
                 <div class="bento-item">
-                    <i data-lucide="brain-circuit" size="40" style="color: #7c3aed; margin-bottom: 1.5rem;"></i>
-                    <h3 class="bento-title">Bộ "Não" Thứ 2</h3>
+                    <i data-lucide="save" size="40" style="color: #7c3aed; margin-bottom: 1.5rem;"></i>
+                    <h3 class="bento-title">Tự Động Lưu Tiến Độ</h3>
                     <p class="bento-desc">
-                        Bạn làm xong dự án A, AI sẽ nhớ gu thẩm mỹ của bạn. Sang dự án B, nó tự động áp dụng luôn mà
-                        không cần bạn nhắc lại.
+                        <strong style="color: #a78bfa;">NEW v4:</strong> AI tự động lưu tiến độ vào <code>session.json</code>.
+                        Đóng app, mở lại, gõ <code>/recap</code> là tiếp tục ngay từ chỗ cũ.
                     </p>
                 </div>
 
@@ -789,12 +789,12 @@
         </div>
     </section>
 
-    <!-- Evolution -->
+    <!-- Evolution: v3 vs v4 -->
     <section id="evolution" class="section reveal">
         <div class="container">
             <div class="section-header center">
-                <h2 class="section-title">Next Level Coding 🚀</h2>
-                <p class="section-desc">Sự khác biệt giữa "Thợ code" và "Vibe Coder"</p>
+                <h2 class="section-title">🆕 CẢI TIẾN TỪ V3 LÊN V4</h2>
+                <p class="section-desc">Những tính năng mới giúp bạn làm việc hiệu quả hơn</p>
             </div>
 
             <div class="comparison-table-wrapper glass-panel">
@@ -802,25 +802,35 @@
                     <thead>
                         <tr>
                             <th></th>
-                            <th class="ver-1 text-muted">Cách Cũ (3.x)</th>
+                            <th class="ver-1 text-muted">AWF 3.x (Cũ)</th>
                             <th class="ver-2 text-glow">AWF 4.0 (Mới)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td class="feature-name">Ra lệnh</td>
-                            <td class="bad">Nhớ prompt dài dòng</td>
-                            <td class="good">Lệnh ngắn: <code>/code</code>, <code>/fix</code></td>
+                            <td class="feature-name">Lưu tiến độ</td>
+                            <td class="bad">Phải gõ <code>/save-brain</code> thủ công</td>
+                            <td class="good"><strong>Tự động lưu</strong> vào <code>session.json</code></td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Bộ nhớ</td>
-                            <td class="bad">Quên sau 1 ngày</td>
-                            <td class="good">Nhớ vĩnh viễn (Session Restore)</td>
+                            <td class="feature-name">Context đầy</td>
+                            <td class="bad">AI quên hết, phải bắt đầu lại</td>
+                            <td class="good"><strong>Proactive Handover</strong> - tự lưu trước khi đầy</td>
                         </tr>
                         <tr>
-                            <td class="feature-name">Tư duy</td>
-                            <td class="bad">Thợ code thụ động</td>
-                            <td class="good">Đội ngũ AI chủ động (PM, Dev, QA)</td>
+                            <td class="feature-name">Quay lại sau vài ngày</td>
+                            <td class="bad">Phải đọc lại code để nhớ</td>
+                            <td class="good">Gõ <code>/recap</code> - AI tóm tắt ngay</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Ngôn ngữ</td>
+                            <td class="bad">AI nói thuật ngữ khó hiểu</td>
+                            <td class="good"><strong>Adaptive Language</strong> - tự điều chỉnh theo level</td>
+                        </tr>
+                        <tr>
+                            <td class="feature-name">Lỗi kỹ thuật</td>
+                            <td class="bad">Hiện lỗi tiếng Anh, đọc không hiểu</td>
+                            <td class="good"><strong>Error Translator</strong> - dịch sang tiếng Việt đời thường</td>
                         </tr>
                     </tbody>
                 </table>

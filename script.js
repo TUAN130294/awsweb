@@ -194,6 +194,24 @@ document.addEventListener('DOMContentLoaded', () => {
             when: 'Khi bạn quay lại sau một thời gian và quên đang làm gì.',
             ai: 'AI đọc lại toàn bộ context của dự án và tóm tắt tiến độ cho bạn.',
             example: 'user: /recap\nAI: Dự án KFood đang ở Phase 2. Bạn đã làm xong Menu, đang làm Order.'
+        },
+        'customize': {
+            title: '/customize',
+            when: 'Khi bạn muốn dạy AI hiểu phong cách làm việc của mình.',
+            ai: 'AI sẽ hỏi bạn về sở thích: trình độ kỹ thuật, ngôn ngữ yêu thích, phong cách code... rồi lưu lại để áp dụng cho mọi dự án.',
+            example: 'user: /customize\nAI: Bạn muốn AI giải thích chi tiết hay ngắn gọn?\nuser: Chi tiết\nAI: Đã lưu! Từ giờ AI sẽ giải thích kỹ hơn.'
+        },
+        'review': {
+            title: '/review',
+            when: 'Trước khi deploy hoặc merge code, muốn có đôi mắt thứ hai kiểm tra.',
+            ai: 'AI đóng vai Senior Developer, review code và chỉ ra: code smell, bug tiềm ẩn, cách cải thiện.',
+            example: 'user: /review\nAI: Phát hiện 3 vấn đề:\n1. Function quá dài (>50 dòng)\n2. Thiếu error handling\n3. Magic number ở line 23'
+        },
+        'awf_update': {
+            title: '/awf-update',
+            when: 'Khi muốn kiểm tra và cập nhật AWF lên phiên bản mới nhất.',
+            ai: 'AI kiểm tra version hiện tại, so sánh với repo, và tự động cập nhật nếu có phiên bản mới.',
+            example: 'user: /awf-update\nAI: Phiên bản hiện tại: 4.0.1\nPhiên bản mới: 4.0.2\nĐang cập nhật... Hoàn tất!'
         }
     };
 

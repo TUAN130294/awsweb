@@ -3059,3 +3059,26 @@ body {
         font-size: 0.95rem !important;
     }
 }
+
+/* Pro Tips Section */
+.tip-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive for Pro Tips */
+@media (max-width: 1024px) {
+    .tips-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}
+
+@media (max-width: 640px) {
+    .tips-grid {
+        grid-template-columns: 1fr !important;
+    }
+}

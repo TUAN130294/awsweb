@@ -182,6 +182,18 @@ document.addEventListener('DOMContentLoaded', () => {
             when: 'Kết thúc buổi làm việc, muốn lưu lại mọi kiến thức đã học.',
             ai: 'AI tổng hợp các rule, pattern mới vào "Bộ não", để lần sau thông minh hơn.',
             example: 'user: /save-brain\nAI: Đã lưu kiến thức Module User vào Knowledge Base.'
+        },
+        'help': {
+            title: '/help',
+            when: 'Khi bạn không biết dùng lệnh gì, hoặc cần hướng dẫn.',
+            ai: 'AI hiển thị menu trợ giúp với tất cả các lệnh có sẵn và gợi ý phù hợp với tình huống hiện tại.',
+            example: 'user: /help\nAI: 📋 Bạn đang ở giai đoạn Code. Có thể dùng:\n- /run: Chạy thử app\n- /debug: Nếu có lỗi'
+        },
+        'recap': {
+            title: '/recap',
+            when: 'Khi bạn quay lại sau một thời gian và quên đang làm gì.',
+            ai: 'AI đọc lại toàn bộ context của dự án và tóm tắt tiến độ cho bạn.',
+            example: 'user: /recap\nAI: Dự án KFood đang ở Phase 2. Bạn đã làm xong Menu, đang làm Order.'
         }
     };
 

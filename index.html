@@ -282,6 +282,57 @@
         </div>
     </section>
 
+    <!-- Quick Start Guide (NEW - For Newbies) -->
+    <section id="quickstart" class="section reveal" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title text-glow">⚡ BẮT ĐẦU TRONG 3 PHÚT</h2>
+                <p class="section-desc">Không cần biết code. Chỉ cần làm theo 4 bước đơn giản.</p>
+            </div>
+
+            <div class="quickstart-grid" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; margin-top: 2rem;">
+                <!-- Step 1 -->
+                <div class="quickstart-step glass-panel" style="padding: 1.5rem; border-radius: 16px; text-align: center; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #8b5cf6; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">1</div>
+                    <i data-lucide="download" size="32" style="color: #8b5cf6; margin-bottom: 1rem; margin-top: 0.5rem;"></i>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">Cài Đặt</h4>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">Copy lệnh ở trên → Paste vào PowerShell</p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="quickstart-step glass-panel" style="padding: 1.5rem; border-radius: 16px; text-align: center; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #3b82f6; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">2</div>
+                    <i data-lucide="folder-plus" size="32" style="color: #3b82f6; margin-bottom: 1rem; margin-top: 0.5rem;"></i>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">Tạo Dự Án</h4>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">Gõ <code style="background: rgba(59,130,246,0.2); padding: 2px 6px; border-radius: 4px;">/init</code> + mô tả app</p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="quickstart-step glass-panel" style="padding: 1.5rem; border-radius: 16px; text-align: center; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #10b981; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">3</div>
+                    <i data-lucide="code-2" size="32" style="color: #10b981; margin-bottom: 1rem; margin-top: 0.5rem;"></i>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">AI Viết Code</h4>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">Gõ <code style="background: rgba(16,185,129,0.2); padding: 2px 6px; border-radius: 4px;">/code</code> → Ngồi xem AI làm</p>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="quickstart-step glass-panel" style="padding: 1.5rem; border-radius: 16px; text-align: center; position: relative;">
+                    <div style="position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: #f59e0b; color: white; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 0.9rem;">4</div>
+                    <i data-lucide="play" size="32" style="color: #f59e0b; margin-bottom: 1rem; margin-top: 0.5rem;"></i>
+                    <h4 style="color: #fff; margin-bottom: 0.5rem;">Chạy Thử</h4>
+                    <p style="color: #94a3b8; font-size: 0.85rem;">Gõ <code style="background: rgba(245,158,11,0.2); padding: 2px 6px; border-radius: 4px;">/run</code> → Mở browser xem kết quả</p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <p style="color: #64748b; font-size: 0.9rem;">
+                    <i data-lucide="help-circle" size="14" style="display: inline; vertical-align: middle;"></i>
+                    Bị stuck? Gõ <code style="color: #a78bfa; background: rgba(167,139,250,0.1); padding: 2px 6px; border-radius: 4px;">/help</code> bất cứ lúc nào để được hướng dẫn.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <!-- Case Study: Thảo Coffee (Reimagined) -->
     <section id="case-study" class="section reveal" style="padding: 4rem 0;">
         <div class="container">
@@ -485,13 +536,28 @@
             </div>
 
             <div class="metro-map">
+                <!-- Phase 0: Start (NEW) -->
+                <div class="phase-row">
+                    <div class="phase-label" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">BẮT ĐẦU</div>
+                    <div class="nodes-container">
+                        <div class="wf-node pulse-node" onclick="openCmdModal('init')" style="border-color: #8b5cf6; border-width: 2px;">
+                            <span class="wf-cmd">/init</span>
+                            <span class="wf-desc">Tạo dự án mới</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('help')" style="border-color: #64748b;">
+                            <span class="wf-cmd">/help</span>
+                            <span class="wf-desc">Trợ giúp</span>
+                        </div>
+                    </div>
+                </div>
+
                 <!-- Phase 1: Idea -->
                 <div class="phase-row">
-                    <div class="phase-label">IDEA</div>
+                    <div class="phase-label" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">Ý TƯỞNG</div>
                     <div class="nodes-container">
                         <div class="wf-node" onclick="openCmdModal('brainstorm')">
                             <span class="wf-cmd">/brainstorm</span>
-                            <span class="wf-desc">Tìm Ý Tưởng</span>
+                            <span class="wf-desc">Bàn ý tưởng</span>
                         </div>
                         <div class="wf-node pulse-node" onclick="openCmdModal('plan')" style="border-color: #3b82f6;">
                             <span class="wf-cmd">/plan</span>
@@ -500,74 +566,81 @@
                     </div>
                 </div>
 
-                <!-- Phase 2: Build -->
+                <!-- Phase 2: Design -->
                 <div class="phase-row">
-                    <div class="phase-label">BUILD</div>
+                    <div class="phase-label" style="background: linear-gradient(135deg, #3b82f6, #06b6d4);">THIẾT KẾ</div>
                     <div class="nodes-container">
-                        <div class="wf-node pulse-node" onclick="openCmdModal('init')" style="border-color: #8b5cf6;">
-                            <span class="wf-cmd">/init</span>
-                            <span class="wf-desc">Khởi tạo</span>
-                        </div>
-                        <div class="wf-node" onclick="openCmdModal('design')">
+                        <div class="wf-node pulse-node" onclick="openCmdModal('design')" style="border-color: #06b6d4;">
                             <span class="wf-cmd">/design</span>
-                            <span class="wf-desc">Thiết kế DB/API</span>
+                            <span class="wf-desc">Thiết kế kỹ thuật</span>
                         </div>
                         <div class="wf-node" onclick="openCmdModal('visualize')">
                             <span class="wf-cmd">/visualize</span>
-                            <span class="wf-desc">Vẽ Mockup</span>
-                        </div>
-                        <div class="wf-node pulse-node" onclick="openCmdModal('code')" style="border-color: #10b981;">
-                            <span class="wf-cmd">/code</span>
-                            <span class="wf-desc">AI Viết Code</span>
+                            <span class="wf-desc">Xem mockup UI</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Phase 3: Verify -->
+                <!-- Phase 3: Build -->
                 <div class="phase-row">
-                    <div class="phase-label">VERIFY</div>
+                    <div class="phase-label" style="background: linear-gradient(135deg, #10b981, #22c55e);">XÂY DỰNG</div>
                     <div class="nodes-container">
+                        <div class="wf-node pulse-node" onclick="openCmdModal('code')" style="border-color: #10b981; border-width: 2px;">
+                            <span class="wf-cmd">/code</span>
+                            <span class="wf-desc">AI viết code</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('run')">
+                            <span class="wf-cmd">/run</span>
+                            <span class="wf-desc">Chạy thử</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('debug')" style="border-color: #f59e0b;">
+                            <span class="wf-cmd">/debug</span>
+                            <span class="wf-desc">Sửa lỗi</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Phase 4: Verify -->
+                <div class="phase-row">
+                    <div class="phase-label" style="background: linear-gradient(135deg, #f59e0b, #eab308);">KIỂM TRA</div>
+                    <div class="nodes-container">
+                        <div class="wf-node" onclick="openCmdModal('test')">
+                            <span class="wf-cmd">/test</span>
+                            <span class="wf-desc">Test tự động</span>
+                        </div>
                         <div class="wf-node" onclick="openCmdModal('audit')">
                             <span class="wf-cmd">/audit</span>
                             <span class="wf-desc">Kiểm tra bảo mật</span>
                         </div>
-                        <div class="wf-node" onclick="openCmdModal('test')">
-                            <span class="wf-cmd">/test</span>
-                            <span class="wf-desc">Chạy Test Auto</span>
-                        </div>
-                        <div class="wf-node pulse-node" onclick="openCmdModal('debug')" style="border-color: #f59e0b;">
-                            <span class="wf-cmd">/debug</span>
-                            <span class="wf-desc">Sửa lỗi tự động</span>
-                        </div>
                     </div>
                 </div>
 
-                <!-- Phase 4: Release -->
+                <!-- Phase 5: Release -->
                 <div class="phase-row">
-                    <div class="phase-label">RELEASE</div>
+                    <div class="phase-label" style="background: linear-gradient(135deg, #ef4444, #dc2626);">XUẤT BẢN</div>
                     <div class="nodes-container">
-                        <div class="wf-node" onclick="openCmdModal('run')">
-                            <span class="wf-cmd">/run</span>
-                            <span class="wf-desc">Chạy thử Local</span>
-                        </div>
-                        <div class="wf-node" onclick="openCmdModal('deploy')">
+                        <div class="wf-node pulse-node" onclick="openCmdModal('deploy')" style="border-color: #ef4444;">
                             <span class="wf-cmd">/deploy</span>
-                            <span class="wf-desc">Đẩy lên Server</span>
+                            <span class="wf-desc">Đưa lên mạng</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Phase 5: Ops -->
+                <!-- Phase 6: Maintain -->
                 <div class="phase-row">
-                    <div class="phase-label">OPS</div>
+                    <div class="phase-label" style="background: linear-gradient(135deg, #64748b, #475569);">BẢO TRÌ</div>
                     <div class="nodes-container">
                         <div class="wf-node" onclick="openCmdModal('refactor')">
                             <span class="wf-cmd">/refactor</span>
-                            <span class="wf-desc">Dọn dẹp Code</span>
+                            <span class="wf-desc">Dọn code</span>
                         </div>
                         <div class="wf-node" onclick="openCmdModal('save_brain')">
                             <span class="wf-cmd">/save-brain</span>
                             <span class="wf-desc">Lưu kiến thức</span>
+                        </div>
+                        <div class="wf-node" onclick="openCmdModal('next')">
+                            <span class="wf-cmd">/next</span>
+                            <span class="wf-desc">Làm gì tiếp?</span>
                         </div>
                     </div>
                 </div>
@@ -751,6 +824,82 @@
                         </tr>
                     </tbody>
                 </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section (NEW - For Non-Tech Users) -->
+    <section id="faq" class="section reveal" style="padding: 4rem 0;">
+        <div class="container">
+            <div class="section-header center">
+                <h2 class="section-title">❓ CÂU HỎI THƯỜNG GẶP</h2>
+                <p class="section-desc">Những thắc mắc phổ biến của người mới.</p>
+            </div>
+
+            <div class="faq-grid" style="max-width: 800px; margin: 2rem auto 0; display: flex; flex-direction: column; gap: 1rem;">
+                <!-- FAQ 1 -->
+                <div class="faq-item glass-panel" style="padding: 1.5rem; border-radius: 12px; cursor: pointer;" onclick="this.classList.toggle('open')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="color: #fff; font-size: 1.05rem;">Tôi không biết code có dùng được không?</h4>
+                        <i data-lucide="chevron-down" size="20" style="color: #64748b; transition: transform 0.3s;"></i>
+                    </div>
+                    <p style="color: #94a3b8; margin-top: 1rem; display: none; line-height: 1.6;">
+                        <strong style="color: #4ade80;">Hoàn toàn được!</strong> AWF được thiết kế cho người không biết code.
+                        Bạn chỉ cần nói tiếng Việt bình thường, ví dụ: "Làm cho cái nút này bấm vào nó chuyển sang trang khác".
+                        AI sẽ tự hiểu và viết code giùm bạn.
+                    </p>
+                </div>
+
+                <!-- FAQ 2 -->
+                <div class="faq-item glass-panel" style="padding: 1.5rem; border-radius: 12px; cursor: pointer;" onclick="this.classList.toggle('open')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="color: #fff; font-size: 1.05rem;">Nếu bị lỗi thì sao?</h4>
+                        <i data-lucide="chevron-down" size="20" style="color: #64748b; transition: transform 0.3s;"></i>
+                    </div>
+                    <p style="color: #94a3b8; margin-top: 1rem; display: none; line-height: 1.6;">
+                        Gõ <code style="background: rgba(245,158,11,0.2); padding: 2px 6px; border-radius: 4px; color: #fbbf24;">/debug</code>
+                        và AI sẽ tự động đọc lỗi, tìm nguyên nhân, và sửa giùm bạn. Bạn không cần hiểu lỗi là gì, AI sẽ xử lý hết.
+                    </p>
+                </div>
+
+                <!-- FAQ 3 -->
+                <div class="faq-item glass-panel" style="padding: 1.5rem; border-radius: 12px; cursor: pointer;" onclick="this.classList.toggle('open')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="color: #fff; font-size: 1.05rem;">Tôi cần cài gì trước khi dùng AWF?</h4>
+                        <i data-lucide="chevron-down" size="20" style="color: #64748b; transition: transform 0.3s;"></i>
+                    </div>
+                    <p style="color: #94a3b8; margin-top: 1rem; display: none; line-height: 1.6;">
+                        Bạn cần có <strong style="color: #fff;">Claude Code</strong> (AI assistant trong terminal).
+                        Sau đó chỉ cần chạy 1 lệnh cài đặt AWF như hướng dẫn ở trên là xong.
+                        AWF sẽ tự động cài đặt mọi thứ cần thiết.
+                    </p>
+                </div>
+
+                <!-- FAQ 4 -->
+                <div class="faq-item glass-panel" style="padding: 1.5rem; border-radius: 12px; cursor: pointer;" onclick="this.classList.toggle('open')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="color: #fff; font-size: 1.05rem;">AWF có miễn phí không?</h4>
+                        <i data-lucide="chevron-down" size="20" style="color: #64748b; transition: transform 0.3s;"></i>
+                    </div>
+                    <p style="color: #94a3b8; margin-top: 1rem; display: none; line-height: 1.6;">
+                        <strong style="color: #4ade80;">Hoàn toàn miễn phí!</strong> AWF là dự án mã nguồn mở (Open Source).
+                        Tuy nhiên, bạn cần có tài khoản Claude để sử dụng AI (có gói miễn phí và trả phí).
+                    </p>
+                </div>
+
+                <!-- FAQ 5 -->
+                <div class="faq-item glass-panel" style="padding: 1.5rem; border-radius: 12px; cursor: pointer;" onclick="this.classList.toggle('open')">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <h4 style="color: #fff; font-size: 1.05rem;">Không biết gõ lệnh gì tiếp theo?</h4>
+                        <i data-lucide="chevron-down" size="20" style="color: #64748b; transition: transform 0.3s;"></i>
+                    </div>
+                    <p style="color: #94a3b8; margin-top: 1rem; display: none; line-height: 1.6;">
+                        Gõ <code style="background: rgba(167,139,250,0.2); padding: 2px 6px; border-radius: 4px; color: #a78bfa;">/next</code>
+                        và AI sẽ phân tích dự án của bạn, sau đó gợi ý bước tiếp theo phù hợp nhất.
+                        Hoặc gõ <code style="background: rgba(167,139,250,0.2); padding: 2px 6px; border-radius: 4px; color: #a78bfa;">/help</code>
+                        để xem tất cả các lệnh có sẵn.
+                    </p>
+                </div>
             </div>
         </div>
     </section>

@@ -318,3 +318,50 @@ window.addEventListener('load', () => {
         });
     }, 500);
 });
+
+/* --- 6. STAGGER ANIMATION TRIGGER --- */
+const staggerObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animated');
+            staggerObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.2 });
+
+document.querySelectorAll('.stagger-container').forEach(container => {
+    staggerObserver.observe(container);
+});
+
+/* --- 7. COUNTER ANIMATION --- */
+function animateCounter(element, target, duration = 1500) {
+    let start = 0;
+    const increment = target / (duration / 16);
+
+    function updateCounter() {
+        start += increment;
+        if (start < target) {
+            element.textContent = Math.floor(start) + '+';
+            requestAnimationFrame(updateCounter);
+        } else {
+            element.textContent = target + '+';
+        }
+    }
+    updateCounter();
+}
+
+const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const countTarget = parseInt(entry.target.dataset.count);
+            if (countTarget) {
+                animateCounter(entry.target, countTarget);
+            }
+            counterObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+document.querySelectorAll('[data-count]').forEach(el => {
+    counterObserver.observe(el);
+});
